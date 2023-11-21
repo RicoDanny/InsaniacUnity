@@ -19,6 +19,8 @@ public class CharacterBehaviour : MonoBehaviour
 
     private SpriteRenderer HighlightRenderer;
 
+    private StatBehaviour StatText;
+
     private TickCounter TickCounterObject;
 
     private bool IsTarget;
@@ -129,7 +131,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         IsTarget = TickCounterObject.Targets.Contains(ThisCharacterBehaviour);
 
-        CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = battlerEntity.hp.ToString();
+        CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = StatText.hp.ToString();
 
         HighlightRenderer.color = new Color(255, 255, 255, 255 * (IsTarget ? 1 : 0) * (TickCounterObject.Targeting ? 1 : 0));
 
