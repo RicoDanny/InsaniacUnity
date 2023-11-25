@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class CharacterBehaviour : MonoBehaviour
 {
-    private string battlerName;
-
     [SerializeField] private GameObject CharacterHPText;
 
     private List<string> Actions; //List of premoves of Abilities/Actions
@@ -21,17 +19,50 @@ public class CharacterBehaviour : MonoBehaviour
 
     private TickCounter TickCounterObject;
 
+    public Character CharacterEntity;
+
     private bool IsTarget;
 
     private bool User;
 
     private string TempActionString;
 
+    public TextAsset textJSON;
+
+    [System.Serializable]
+    public class Character
+    {
+        public string Name;
+        public int hp;
+        public int sp;
+        public int atk;
+        public int def;
+        public int spd;
+        public int energy;
+        public int hit;
+        public int avo;
+        public int avop;
+        public int luck;
+        public int luckp;
+        public int crit;
+        public int critp;
+    }
+
+    [System.Serializable]
+    public class CharacterList
+    {
+        public Character[] character;
+    }
+
+    public CharacterList myCharacterList = new CharacterList();
+
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log(battlerEntity.energy); //Legacy Item
 
+        myCharacterList = JsonUtility.FromJson<CharacterList>(textJSON.text);
+        
         HighlightObject = this.gameObject.transform.Find("Highlight").gameObject;
 
         ThisCharacterBehaviour = transform.gameObject.GetComponent<CharacterBehaviour>();
@@ -43,6 +74,14 @@ public class CharacterBehaviour : MonoBehaviour
         Actions = new List<string>();
 
         TargetsPerAction = new List<CharacterBehaviour[]>();
+
+        foreach(Character JsonCharacter in myCharacterList.character) 
+        {
+            if(JsonCharacter.Name == transform.name) 
+            {
+                CharacterEntity = JsonCharacter;
+            }
+        }
     }
 
     void Update()
@@ -72,6 +111,8 @@ public class CharacterBehaviour : MonoBehaviour
 
             TargetsPerAction.RemoveAt(0);
         }
+
+        CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = CharacterEntity.hp.ToString();
     }
 
     public void HandleTargeting(string ActionString)

@@ -25,8 +25,6 @@ public class TickCounter : MonoBehaviour
 
     public bool NewTick;
 
-    private JsonReader.myCharacterList.character CharacterInfo;
-
     void Start()
     {
         Transform parentTransform = GameObject.Find("Menus").transform;
@@ -67,15 +65,17 @@ public class TickCounter : MonoBehaviour
         // Loop through the array of characters and do something with them.
         foreach (GameObject character in Units)
         {
-            JsonReader characterScript = character.GetComponent<JsonReader>();
+            CharacterBehaviour characterScript = character.GetComponent<CharacterBehaviour>();
 
-            if (CharacterInfo.energy >= 60) {
+            if (characterScript.CharacterEntity.energy >= 60) {
                 Active.Add(characterScript);
 
-                CharacterInfo.energy -= 60;
+                characterScript.CharacterEntity.energy -= 60;
             }
 
-            CharacterInfo.energy += CharacterInfo.spd;
+            characterScript.CharacterEntity.energy += characterScript.CharacterEntity.spd;
+
+            Debug.Log(characterScript.CharacterEntity.Name + ": " + characterScript.CharacterEntity.hp);
         }
 
         Tickcounter++;
