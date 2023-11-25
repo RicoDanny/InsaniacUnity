@@ -3099,7 +3099,7 @@ GameObject:
   - component: {fileID: 1772524031}
   - component: {fileID: 1772524032}
   m_Layer: 0
-  m_Name: CSVdingetje
+  m_Name: JsonReader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3129,9 +3129,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772524029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49d3d7249d3cefb4ea00726d14c04d8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 64be4d1f9e2de034abe80c2b981ecadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
+  myCharacterList:
+    character: []
 --- !u!1 &1774473853
 GameObject:
   m_ObjectHideFlags: 0
