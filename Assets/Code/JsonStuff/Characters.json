@@ -16,7 +16,8 @@
       "luck": 8,
       "luckp": 0,
       "crit": 0,
-      "critp": 0
+      "critp": 0,
+      "prime": 2
     },
     {
       "Name": "Min",
@@ -34,7 +35,8 @@
       "luck": 9,
       "luckp": 0,
       "crit": 0,
-      "critp": 0
+      "critp": 0,
+      "prime": 3
     },
     {
       "Name": "Grungo",
@@ -52,7 +54,8 @@
       "luck": 0,
       "luckp": 0,
       "crit": 0,
-      "critp": 0
+      "critp": 0,
+      "prime": 5
     },
     {
       "Name": "Freddy",
@@ -160,7 +163,8 @@
       "luck": 0,
       "luckp": 0,
       "crit": 0,
-      "critp": 0
+      "critp": 0,
+      "prime": 23
     },
     {
       "Name": "Fantolectrique",
@@ -178,7 +182,8 @@
       "luck": 0,
       "luckp": 0,
       "crit": 0,
-      "critp": 0
+      "critp": 0,
+      "prime": 29
     },
     {
       "Name": "AngryOnlooker",

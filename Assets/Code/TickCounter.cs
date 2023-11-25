@@ -23,6 +23,14 @@ public class TickCounter : MonoBehaviour
 
     public bool IsActionAccepted;
 
+    public int TargetsFactor = 1;
+
+    public int GoodGuysFactor = 1;
+
+    public int BadGuysFactor = 1;
+    
+    public GameObject SubmitButton;
+
     public bool NewTick;
 
     void Start()
@@ -39,6 +47,23 @@ public class TickCounter : MonoBehaviour
             MenusChildren.Add(child);
         }
 
+        parentTransform = GameObject.Find("GoodGuys").transform;
+
+        // Loop through each child and add it to the list
+        for (int i = 0; i < parentTransform.childCount; i++)
+        {
+            Transform child = parentTransform.GetChild(i);
+            GoodGuysFactor *= child.GetComponent<CharacterBehaviour>().CharacterEntity.prime;
+        }
+
+        parentTransform = GameObject.Find("BadGuys").transform;
+
+        // Loop through each child and add it to the list
+        for (int i = 0; i < parentTransform.childCount; i++)
+        {
+            Transform child = parentTransform.GetChild(i);
+            BadGuysFactor *= child.GetComponent<CharacterBehaviour>().CharacterEntity.prime;
+        }
 
         // Find all game objects with the "Units" tag and store them in an array.
         Units = GameObject.FindGameObjectsWithTag("Units");

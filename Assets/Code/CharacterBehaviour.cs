@@ -21,6 +21,8 @@ public class CharacterBehaviour : MonoBehaviour
 
     public Character CharacterEntity;
 
+    private int TargetingType;
+
     private bool IsTarget;
 
     private bool User;
@@ -46,6 +48,7 @@ public class CharacterBehaviour : MonoBehaviour
         public int luckp;
         public int crit;
         public int critp;
+        public int prime;
     }
 
     [System.Serializable]
@@ -101,6 +104,11 @@ public class CharacterBehaviour : MonoBehaviour
             HandleAction();
         }
 
+        if(TickCounterObject.Targeting) 
+        {
+            TickCounterObject.SubmitButton.SetActive(TargetingChecker(TargetingType));
+        }
+
         if(TickCounterObject.Active.Contains(this) && Actions.Count > 0)
         {
             Invoke(Actions[0], 0);
@@ -117,19 +125,13 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void HandleTargeting(string ActionString)
     {
-        //-2: Ally team
-
-        //-1: Enemy team
-
-        //0: All
-
-        // alles 1 of hoger is amount of targets
-
         System.Reflection.MethodInfo ActionMethod = this.GetType().GetMethod("Targets" + ActionString);
 
-        int TargetingType = (int) ActionMethod.Invoke(this, null);
+        TargetingType = (int) ActionMethod.Invoke(this, null);
 
         TickCounterObject.Targets.Clear();
+
+        TickCounterObject.TargetsFactor = 1;
 
         TickCounterObject.Targeting = true;
 
@@ -140,6 +142,44 @@ public class CharacterBehaviour : MonoBehaviour
         TickCounterObject.MenusChildren.ForEach(p => p.gameObject.SetActive(false));
 
         TickCounterObject.TargetAccept.SetActive(true);
+    }
+
+    public bool TargetingChecker(int TargetingInt) 
+    {
+        if(TargetingInt == -2) //-2: Ally team
+        {
+            if(TickCounterObject.TargetsFactor == TickCounterObject.GoodGuysFactor) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+        if(TargetingInt == -1) //-1: Enemy team
+        {
+            if(TickCounterObject.TargetsFactor == TickCounterObject.BadGuysFactor) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+        if(TargetingInt == 0) //0: All
+        {
+            if(TickCounterObject.TargetsFactor == TickCounterObject.GoodGuysFactor * TickCounterObject.BadGuysFactor) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        if(TickCounterObject.Targets.Count == TargetingInt) // alles 1 of hoger is amount of targets 
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void HandleAction()

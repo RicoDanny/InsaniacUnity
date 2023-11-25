@@ -8,22 +8,32 @@ public class TargetScript : MonoBehaviour
 
     private bool Enabled;
 
+    private TickCounter TickCounterScript;
+
+    private CharacterBehaviour CurrentCharacterBehaviour;
     public void Enable(GameObject FunctionInput)
     {
-        Enabled = TickCounterObject.GetComponent<TickCounter>().Targets.Contains(FunctionInput.GetComponent<CharacterBehaviour>());
+        CurrentCharacterBehaviour = FunctionInput.GetComponent<CharacterBehaviour>();
 
+        TickCounterScript = TickCounterObject.GetComponent<TickCounter>();
+        
+        Enabled = TickCounterScript.Targets.Contains(CurrentCharacterBehaviour);
 
         if (!Enabled)
         {
-            TickCounterObject.GetComponent<TickCounter>().Targets.Add(FunctionInput.GetComponent<CharacterBehaviour>());
+            TickCounterScript.Targets.Add(CurrentCharacterBehaviour);
+
+            TickCounterScript.TargetsFactor *= CurrentCharacterBehaviour.CharacterEntity.prime;
 
             Enabled = true;
         }
         else
         {
-            TickCounterObject.GetComponent<TickCounter>().Targets.Remove(FunctionInput.GetComponent<CharacterBehaviour>());
+            TickCounterScript.Targets.Remove(CurrentCharacterBehaviour);
 
             Enabled = false;
+
+            TickCounterScript.TargetsFactor /= CurrentCharacterBehaviour.CharacterEntity.prime;
         }
     }
 }

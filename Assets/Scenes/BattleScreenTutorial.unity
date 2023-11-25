@@ -2062,6 +2062,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    prime: 0
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
   myCharacterList:
     character: []
@@ -2443,6 +2444,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    prime: 0
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
   myCharacterList:
     character: []
@@ -2622,6 +2624,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    prime: 0
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
   myCharacterList:
     character: []
@@ -2787,6 +2790,10 @@ MonoBehaviour:
   MenusChildren: []
   TargetAccept: {fileID: 1774473853}
   IsActionAccepted: 0
+  TargetsFactor: 1
+  GoodGuysFactor: 1
+  BadGuysFactor: 1
+  SubmitButton: {fileID: 1404933552}
   NewTick: 0
 --- !u!1 &1373000687
 GameObject:
@@ -3328,6 +3335,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    prime: 0
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
   myCharacterList:
     character: []
@@ -3682,7 +3690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1903548294
 RectTransform:
   m_ObjectHideFlags: 0
