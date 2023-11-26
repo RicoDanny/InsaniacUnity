@@ -15,7 +15,7 @@ public class TickCounter : MonoBehaviour
 
     public List<CharacterBehaviour> Targets; //List of characters that are targeted (Selected) on the UnitCanvas (Unfiltered)
 
-    public bool Targeting = false;
+    public bool Targeting;
 
     public List<Transform> MenusChildren;
 
@@ -35,6 +35,8 @@ public class TickCounter : MonoBehaviour
 
     void Start()
     {
+        Targeting = false;
+
         Transform parentTransform = GameObject.Find("Menus").transform;
 
         // Create a list to store MenusChildren
@@ -46,25 +48,7 @@ public class TickCounter : MonoBehaviour
             Transform child = parentTransform.GetChild(i);
             MenusChildren.Add(child);
         }
-
-        parentTransform = GameObject.Find("GoodGuys").transform;
-
-        // Loop through each child and add it to the list
-        for (int i = 0; i < parentTransform.childCount; i++)
-        {
-            Transform child = parentTransform.GetChild(i);
-            GoodGuysFactor *= child.GetComponent<CharacterBehaviour>().CharacterEntity.prime;
-        }
-
-        parentTransform = GameObject.Find("BadGuys").transform;
-
-        // Loop through each child and add it to the list
-        for (int i = 0; i < parentTransform.childCount; i++)
-        {
-            Transform child = parentTransform.GetChild(i);
-            BadGuysFactor *= child.GetComponent<CharacterBehaviour>().CharacterEntity.prime;
-        }
-
+        
         // Find all game objects with the "Units" tag and store them in an array.
         Units = GameObject.FindGameObjectsWithTag("Units");
 

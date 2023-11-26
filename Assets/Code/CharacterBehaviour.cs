@@ -85,6 +85,15 @@ public class CharacterBehaviour : MonoBehaviour
                 CharacterEntity = JsonCharacter;
             }
         }
+
+        if (transform.parent.gameObject.name == "GoodGuys")
+        {
+            TickCounterObject.GoodGuysFactor *= CharacterEntity.prime;
+        }
+        else
+        {
+            TickCounterObject.BadGuysFactor *= CharacterEntity.prime;
+        }
     }
 
     void Update()
@@ -125,9 +134,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void HandleTargeting(string ActionString)
     {
-        System.Reflection.MethodInfo ActionMethod = this.GetType().GetMethod("Targets" + ActionString);
-
-        TargetingType = (int) ActionMethod.Invoke(this, null);
+        TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -3; //Als hij 420 is dan bleh
 
         TickCounterObject.Targets.Clear();
 
@@ -146,6 +153,11 @@ public class CharacterBehaviour : MonoBehaviour
 
     public bool TargetingChecker(int TargetingInt) 
     {
+        if(TargetingInt == -3)
+        {
+            Debug.Log("Yea nah you done goofed, check HandleTargeting.");
+            return false;
+        }
         if(TargetingInt == -2) //-2: Ally team
         {
             if(TickCounterObject.TargetsFactor == TickCounterObject.GoodGuysFactor) 
@@ -191,10 +203,12 @@ public class CharacterBehaviour : MonoBehaviour
 
     //Attacks
 
-    public int TargetsBasicAttack()
+    //Dictionary of targets per every action
+    Dictionary<string, int> NumberOfTargets = new Dictionary<string, int>
     {
-        return 1;
-    }
+        { "BasicAttack", 1 },
+        { "NonbasicAttack", -1 }
+    };
 
     public void BasicAttack()
     {
