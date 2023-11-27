@@ -85,15 +85,6 @@ public class CharacterBehaviour : MonoBehaviour
                 CharacterEntity = JsonCharacter;
             }
         }
-
-        if (transform.parent.gameObject.name == "GoodGuys")
-        {
-            TickCounterObject.GoodGuysFactor *= CharacterEntity.prime;
-        }
-        else
-        {
-            TickCounterObject.BadGuysFactor *= CharacterEntity.prime;
-        }
     }
 
     void Update()
@@ -116,6 +107,8 @@ public class CharacterBehaviour : MonoBehaviour
         if(TickCounterObject.Targeting) 
         {
             TickCounterObject.SubmitButton.SetActive(TargetingChecker(TargetingType));
+
+            Debug.Log(TargetingChecker(TargetingType));
         }
 
         if(TickCounterObject.Active.Contains(this) && Actions.Count > 0)
@@ -132,13 +125,14 @@ public class CharacterBehaviour : MonoBehaviour
         CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = CharacterEntity.hp.ToString();
     }
 
+    //Dit moet OnClick bij een skill guys!!!
     public void HandleTargeting(string ActionString)
     {
-        TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -3; //Als hij 420 is dan bleh
+        TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -3; 
+
+        Debug.Log(TargetingType);
 
         TickCounterObject.Targets.Clear();
-
-        TickCounterObject.TargetsFactor = 1;
 
         TickCounterObject.Targeting = true;
 
@@ -149,47 +143,70 @@ public class CharacterBehaviour : MonoBehaviour
         TickCounterObject.MenusChildren.ForEach(p => p.gameObject.SetActive(false));
 
         TickCounterObject.TargetAccept.SetActive(true);
+
+        if(TargetingType == -3) 
+        {
+            Debug.Log("You ain't cooking 💀");
+        }
+        else if(TargetingType == -2)
+        {
+            TickCounterObject.Frozen = true;
+
+            Transform parentTransform = GameObject.Find("BadGuys").transform;
+
+            // Loop through each child and add it to the list
+            for (int i = 0; i < parentTransform.childCount; i++)
+            {
+                CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                TickCounterObject.Targets.Add(child);
+            }
+        }
+        else if(TargetingType == -1)
+        {
+            TickCounterObject.Frozen = true;
+
+            Transform parentTransform = GameObject.Find("GoodGuys").transform;
+
+            // Loop through each child and add it to the list
+            for (int i = 0; i < parentTransform.childCount; i++)
+            {
+                CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                TickCounterObject.Targets.Add(child);
+            }
+        }
+        else if(TargetingType == 0)
+        {
+            TickCounterObject.Frozen = true;
+
+            Transform parentTransform = GameObject.Find("BadGuys").transform;
+
+            // Loop through each child and add it to the list
+            for (int i = 0; i < parentTransform.childCount; i++)
+            {
+                CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                TickCounterObject.Targets.Add(child);
+            }
+
+            parentTransform = GameObject.Find("GoodGuys").transform;
+
+            // Loop through each child and add it to the list
+            for (int i = 0; i < parentTransform.childCount; i++)
+            {
+                CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                TickCounterObject.Targets.Add(child);
+            }
+        }
     }
 
     public bool TargetingChecker(int TargetingInt) 
     {
-        if(TargetingInt == -3)
+        if(TargetingInt > 0 && TickCounterObject.Targets.Count == TargetingInt) // alles 1 of hoger is amount of targets 
         {
-            Debug.Log("Yea nah you done goofed, check HandleTargeting.");
-            return false;
-        }
-        if(TargetingInt == -2) //-2: Ally team
-        {
-            if(TickCounterObject.TargetsFactor == TickCounterObject.GoodGuysFactor) 
-            {
-                return true;
-            }
-
-            return false;
-        }
-        if(TargetingInt == -1) //-1: Enemy team
-        {
-            if(TickCounterObject.TargetsFactor == TickCounterObject.BadGuysFactor) 
-            {
-                return true;
-            }
-
-            return false;
-        }
-        if(TargetingInt == 0) //0: All
-        {
-            if(TickCounterObject.TargetsFactor == TickCounterObject.GoodGuysFactor * TickCounterObject.BadGuysFactor) 
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        if(TickCounterObject.Targets.Count == TargetingInt) // alles 1 of hoger is amount of targets 
-        {
+            Debug.Log("True");
             return true;
         }
+
+        Debug.Log("False");
 
         return false;
     }

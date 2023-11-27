@@ -22,22 +22,18 @@ public class TickCounter : MonoBehaviour
     public GameObject TargetAccept;
 
     public bool IsActionAccepted;
-
-    public int TargetsFactor = 1;
-
-    public int GoodGuysFactor = 1;
-
-    public int BadGuysFactor = 1;
     
     public GameObject SubmitButton;
 
     public bool NewTick;
 
+    public bool Frozen = false;
+
     void Start()
     {
         Targeting = false;
 
-        Transform parentTransform = GameObject.Find("Menus").transform;
+        Transform parentTransform = GameObject.Find("BattleUI").transform;
 
         // Create a list to store MenusChildren
         MenusChildren = new List<Transform>();
@@ -83,8 +79,6 @@ public class TickCounter : MonoBehaviour
             }
 
             characterScript.CharacterEntity.energy += characterScript.CharacterEntity.spd;
-
-            Debug.Log(characterScript.CharacterEntity.Name + ": " + characterScript.CharacterEntity.hp);
         }
 
         Tickcounter++;
