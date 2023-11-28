@@ -2280,13 +2280,14 @@ GameObject:
   - component: {fileID: 638438754}
   - component: {fileID: 638438756}
   - component: {fileID: 638438755}
+  - component: {fileID: 638438757}
   m_Layer: 5
   m_Name: SelectUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638438754
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2344,6 +2345,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638438753}
   m_CullTransparentMesh: 1
+--- !u!114 &638438757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638438753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95a8a5654b233d4394354bf6bf9c45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &659389870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,6 +3522,7 @@ GameObject:
   - component: {fileID: 1369214865}
   - component: {fileID: 1369214867}
   - component: {fileID: 1369214866}
+  - component: {fileID: 1369214868}
   m_Layer: 5
   m_Name: SelectTargets
   m_TagString: Untagged
@@ -3573,6 +3587,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369214864}
   m_CullTransparentMesh: 1
+--- !u!114 &1369214868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369214864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95a8a5654b233d4394354bf6bf9c45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379546808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,7 +3751,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 7036e8e90c5c37b47bab91c0efee7bc2, type: 3}
-  m_Type: 2
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4235,7 +4261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1774473854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4524,6 +4550,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   TargetingButtonsObject: {fileID: 1774473853}
+  SelectUnitBanner: {fileID: 0}
+  SelectTargetBanner: {fileID: 0}
 --- !u!1 &1962223539
 GameObject:
   m_ObjectHideFlags: 0

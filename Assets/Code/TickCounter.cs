@@ -31,6 +31,10 @@ public class TickCounter : MonoBehaviour
 
     private float TimeDiff = 0;
 
+    private GameObject SelectTargetBanner;
+
+    private GameObject SelectUnitBanner;
+
     void Start()
     {
         Targeting = false;
@@ -55,6 +59,10 @@ public class TickCounter : MonoBehaviour
         Targets = new List<CharacterBehaviour>();
 
         NewTick = true;
+
+        SelectTargetBanner = GameObject.Find("SelectTargets");
+
+        SelectUnitBanner = GameObject.Find("SelectUnit");
     }
 
     void Update()
@@ -97,6 +105,10 @@ public class TickCounter : MonoBehaviour
         Targeting = false;
 
         TargetAccept.SetActive(false);
+
+        SelectTargetBanner.SetActive(false);
+
+        SelectUnitBanner.SetActive(true);
     }
 
     public void AcceptAction()
@@ -106,5 +118,9 @@ public class TickCounter : MonoBehaviour
         Targeting = false;
 
         TargetAccept.SetActive(false);
+
+        SelectTargetBanner.SetActive(false);
+
+        SelectUnitBanner.SetActive(true);
     }
 }

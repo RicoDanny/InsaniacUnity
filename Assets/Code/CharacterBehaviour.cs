@@ -31,6 +31,10 @@ public class CharacterBehaviour : MonoBehaviour
 
     public TextAsset textJSON;
 
+    private GameObject SelectTargetBanner;
+
+    private GameObject SelectUnitBanner;
+
     [System.Serializable]
     public class Character
     {
@@ -101,6 +105,13 @@ public class CharacterBehaviour : MonoBehaviour
 
     void Update()
     {
+        if(SelectTargetBanner == null)
+        {
+            SelectTargetBanner = transform.parent.gameObject.transform.parent.gameObject.GetComponent<ToggleActive>().SelectTargetBanner;
+
+            SelectUnitBanner = transform.parent.gameObject.transform.parent.gameObject.GetComponent<ToggleActive>().SelectUnitBanner;
+        }
+
         IsTarget = TickCounterObject.Targets.Contains(ThisCharacterBehaviour);
 
         //CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = StatText.hp.ToString();
@@ -136,6 +147,8 @@ public class CharacterBehaviour : MonoBehaviour
     //Dit moet OnClick bij een skill guys!!!
     public void HandleTargeting(string ActionString)
     {
+        SelectTargetBanner.SetActive(!SelectTargetBanner.activeSelf);
+
         TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -3; 
 
         TickCounterObject.Targets.Clear();

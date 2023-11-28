@@ -11,9 +11,21 @@ public class ToggleActive : MonoBehaviour
 
     private TickCounter TickCounterObject;
 
+    public GameObject SelectUnitBanner;
+
+    public GameObject SelectTargetBanner;
+
     void Start()
     {
         TickCounterObject = GameObject.Find("MainCanvas").GetComponent<TickCounter>();
+
+        SelectUnitBanner = GameObject.Find("SelectUnit");
+
+        SelectTargetBanner = GameObject.Find("SelectTargets");
+
+        SelectTargetBanner.SetActive(false);
+
+        
     }
 
     public void ToggleObjectActive(GameObject a)
@@ -39,6 +51,8 @@ public class ToggleActive : MonoBehaviour
             children.Remove(TargetingButtonsObject.transform);
 
             children.ForEach(p => p.gameObject.SetActive(false));
+
+            SelectUnitBanner.SetActive(!SelectUnitBanner.activeSelf);
         }
     }
 }
