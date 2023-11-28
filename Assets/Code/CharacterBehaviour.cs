@@ -49,6 +49,8 @@ public class CharacterBehaviour : MonoBehaviour
         public int crit;
         public int critp;
         public int prime;
+
+        public int turn;
     }
 
     [System.Serializable]
@@ -63,6 +65,8 @@ public class CharacterBehaviour : MonoBehaviour
     void Start()
     {
         //Debug.Log(battlerEntity.energy); //Legacy Item
+
+        CharacterEntity.turn = 0;
 
         myCharacterList = JsonUtility.FromJson<CharacterList>(textJSON.text);
         
@@ -119,6 +123,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(TickCounterObject.Active.Contains(this) && Actions.Count > 0)
         {
+            CharacterEntity.turn++;
+
             Invoke(Actions[0], 0);
 
             TickCounterObject.Active.Remove(this);
@@ -255,4 +261,8 @@ public class CharacterBehaviour : MonoBehaviour
 
         TargetsPerAction.RemoveAt(0);
     }
+
+    //public void Toro
+
+
 }
