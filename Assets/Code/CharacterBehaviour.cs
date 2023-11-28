@@ -85,6 +85,14 @@ public class CharacterBehaviour : MonoBehaviour
                 CharacterEntity = JsonCharacter;
             }
         }
+
+        if (this.gameObject.name != "Min")
+        {
+            Actions.Add("BasicAttack");
+
+
+            TargetsPerAction.Add( new CharacterBehaviour[] {GameObject.Find("Min").GetComponent<CharacterBehaviour>()} );
+        }
     }
 
     void Update()
@@ -114,10 +122,6 @@ public class CharacterBehaviour : MonoBehaviour
             Invoke(Actions[0], 0);
 
             TickCounterObject.Active.Remove(this);
-
-            Actions.RemoveAt(0);
-
-            TargetsPerAction.RemoveAt(0);
         }
 
         CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = CharacterEntity.hp.ToString();
@@ -222,29 +226,33 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void BasicAttack()
     {
-        //UserScript userScript = UnitCanvas.GetComponent<UserScript>();
+        CharacterBehaviour[] TargetBattlerList = TargetsPerAction[0];
+        Character UserBattler = CharacterEntity;
 
-        //TargetScript targetScript = UnitCanvas.GetComponent<TargetScript>();
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        //CharacterBehaviour TargetBattler = targetScript.Target.GetComponent<CharacterBehaviour>();
-        //CharacterBehaviour UserBattler = userScript.User.GetComponent<CharacterBehaviour>();
 
-        //GameObject TargetBattler = TargetsPerAction[0][0];
-        
-        //int DMG = battlerEntity.atk - TargetBattler.battlerEntity.def;
+        //Dit per target (met meerdere targets gebruik foreach)
+        int DMG = UserBattler.atk - TargetBattler.def;
 
-        //int BaseDMG = 1;
+        int BaseDMG = 1;
 
-        //if (DMG < 1)
-        //{
-        //    DMG = BaseDMG;
-        //}
+        if (DMG < 1)
+        {
+            DMG = BaseDMG;
+        }
 
-        //if (TargetBattler.battlerEntity.hp - DMG < 0)
-        //{
-        //    DMG = TargetBattler.battlerEntity.hp;
-        //}
+        if (TargetBattler.hp - DMG < 0)
+        {
+            DMG = TargetBattler.hp;
+        }
 
-        //TargetBattler.battlerEntity.hp -= DMG;
+        TargetBattler.hp -= DMG;
+
+        //Dit onder elke action
+        Actions.RemoveAt(0);
+
+        TargetsPerAction.RemoveAt(0);
     }
 }
