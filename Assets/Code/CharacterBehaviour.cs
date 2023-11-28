@@ -252,6 +252,7 @@ public class CharacterBehaviour : MonoBehaviour
         if (TargetBattler.hp - DMG < 0)
         {
             DMG = TargetBattler.hp;
+            Debug.Log("Breh dead", TargetBattlerList[0].gameObject);
         }
 
         TargetBattler.hp -= DMG;
