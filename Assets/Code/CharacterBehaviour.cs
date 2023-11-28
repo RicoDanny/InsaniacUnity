@@ -104,11 +104,9 @@ public class CharacterBehaviour : MonoBehaviour
             HandleAction();
         }
 
-        if(TickCounterObject.Targeting) 
+        if(TickCounterObject.Targeting && User) 
         {
             TickCounterObject.SubmitButton.SetActive(TargetingChecker(TargetingType));
-
-            Debug.Log(TargetingChecker(TargetingType));
         }
 
         if(TickCounterObject.Active.Contains(this) && Actions.Count > 0)
@@ -129,8 +127,6 @@ public class CharacterBehaviour : MonoBehaviour
     public void HandleTargeting(string ActionString)
     {
         TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -3; 
-
-        Debug.Log(TargetingType);
 
         TickCounterObject.Targets.Clear();
 
@@ -202,11 +198,8 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if(TargetingInt > 0 && TickCounterObject.Targets.Count == TargetingInt) // alles 1 of hoger is amount of targets 
         {
-            Debug.Log("True");
             return true;
         }
-
-        Debug.Log("False");
 
         return false;
     }
