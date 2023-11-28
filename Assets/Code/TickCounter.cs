@@ -29,6 +29,8 @@ public class TickCounter : MonoBehaviour
 
     public bool Frozen = false;
 
+    private float TimeDiff = 0;
+
     void Start()
     {
         Targeting = false;
@@ -57,8 +59,12 @@ public class TickCounter : MonoBehaviour
 
     void Update()
     {
-        if(NewTick == true && Active.Count == 0)
+        TimeDiff += Time.deltaTime;
+
+        if(NewTick == true && Active.Count == 0 && TimeDiff > 1)
         {
+            TimeDiff = 0;
+
             NewTick = false;
 
             Tickfunction();
