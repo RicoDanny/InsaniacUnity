@@ -88,10 +88,10 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (this.gameObject.name != "Min")
         {
-            Actions.Add("BasicAttack");
-
-
-            TargetsPerAction.Add( new CharacterBehaviour[] {GameObject.Find("Min").GetComponent<CharacterBehaviour>()} );
+            for (int i = 0; i < 15; i++){
+                Actions.Add("BasicAttack");
+                TargetsPerAction.Add( new CharacterBehaviour[] {GameObject.Find("Min").GetComponent<CharacterBehaviour>()} );
+            }
         }
     }
 
