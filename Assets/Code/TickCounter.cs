@@ -79,6 +79,8 @@ public class TickCounter : MonoBehaviour
 
             Tickfunction();
         }
+
+        SelectUnitBanner.SetActive(!Selected);
     }
 
     private void Tickfunction()
@@ -110,7 +112,7 @@ public class TickCounter : MonoBehaviour
 
         SelectTargetBanner.SetActive(false);
 
-        SelectUnitBanner.SetActive(true);
+        Selected = false;
     }
 
     public void AcceptAction()
