@@ -151,7 +151,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         SelectTargetBanner.SetActive(!SelectTargetBanner.activeSelf);
 
-        TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -3; 
+        TargetingType = NumberOfTargets.ContainsKey(ActionString) ? NumberOfTargets[ActionString] : -4; 
 
         TickCounterObject.Targets.Clear();
 
@@ -165,9 +165,14 @@ public class CharacterBehaviour : MonoBehaviour
 
         TickCounterObject.TargetAccept.SetActive(true);
 
-        if(TargetingType == -3) 
+        if(TargetingType == -4) 
         {
             Debug.Log("You ain't cooking 💀");
+        }
+        else if(TargetingType == -3)
+        {
+            TickCounterObject.Frozen = true;
+            TickCounterObject.Targets.Add(this);
         }
         else if(TargetingType == -2)
         {
@@ -242,7 +247,8 @@ public class CharacterBehaviour : MonoBehaviour
     Dictionary<string, int> NumberOfTargets = new Dictionary<string, int>
     {
         { "BasicAttack", 1 },
-        { "NonbasicAttack", -1 }
+        { "WorkHarder", -3 },
+        { "BodyCheck", 1 }
     };
 
     public void BasicAttack()
