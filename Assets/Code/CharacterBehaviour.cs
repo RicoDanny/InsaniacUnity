@@ -107,7 +107,7 @@ public class CharacterBehaviour : MonoBehaviour
         }
 
         //Testen voor statuses. Voor de vibes:
-        CharacterEntity.status = "Thrilled";
+        CharacterEntity.status = "thrilled";
     }
 
     void Update()
