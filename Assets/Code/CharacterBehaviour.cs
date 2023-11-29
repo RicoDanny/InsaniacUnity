@@ -40,7 +40,9 @@ public class CharacterBehaviour : MonoBehaviour
     {
         public string Name;
         public int hp;
+        public int maxhp;
         public int sp;
+        public int maxsp;
         public int atk;
         public int def;
         public int spd;
@@ -52,7 +54,7 @@ public class CharacterBehaviour : MonoBehaviour
         public int luckp;
         public int crit;
         public int critp;
-        public int prime;
+        public int loweredspcost;
 
         public int turn;
     }
@@ -276,7 +278,63 @@ public class CharacterBehaviour : MonoBehaviour
         TargetsPerAction.RemoveAt(0);
     }
 
-    //public void Toro
+    public void WorkHarder()
+    {
+        CharacterBehaviour[] TargetBattlerList = TargetsPerAction[0];
+        Character UserBattler = CharacterEntity;
+
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
 
+        //Dit per target (met meerdere targets gebruik foreach)
+        UserBattler.atk += 1;
+        UserBattler.luck += 2;
+        UserBattler.maxsp += 10;
+        int spcost = 6 - UserBattler.loweredspcost;
+
+        //Dit onder elke action
+        Actions.RemoveAt(0);
+
+        TargetsPerAction.RemoveAt(0);
+    }
+
+    public void BodyCheck()
+    {
+        CharacterBehaviour[] TargetBattlerList = TargetsPerAction[0];
+        Character UserBattler = CharacterEntity;
+
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
+
+
+        //Dit per target (met meerdere targets gebruik foreach)
+        int DMG = (int)(UserBattler.atk - TargetBattler.def * 0.5);
+        int spcost = 4 - UserBattler.loweredspcost;
+        int BaseDMG = 1;
+
+        if (TargetBattler.hp > TargetBattler.maxhp * 0.5)
+        {
+            double CRIT = 1.5;
+        }
+
+
+        if (DMG < 1)
+        {
+            DMG = BaseDMG;
+        }
+
+        if (TargetBattler.hp - DMG < 0)
+        {
+            DMG = TargetBattler.hp;
+            Debug.Log("Breh dead", TargetBattlerList[0].gameObject);
+        }
+
+        TargetBattler.hp -= DMG;
+
+        //Dit onder elke action
+        Actions.RemoveAt(0);
+
+        TargetsPerAction.RemoveAt(0);
+    }
 }
