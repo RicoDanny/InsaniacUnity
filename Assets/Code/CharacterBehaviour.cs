@@ -57,6 +57,8 @@ public class CharacterBehaviour : MonoBehaviour
         public int loweredspcost;
 
         public int turn;
+
+        public List<Object[]> quirks = new List<Object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go
     }
 
     [System.Serializable]
@@ -343,4 +345,6 @@ public class CharacterBehaviour : MonoBehaviour
 
         TargetsPerAction.RemoveAt(0);
     }
+
+    //Quirks
 }
