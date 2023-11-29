@@ -38,7 +38,9 @@ public class CharacterBehaviour : MonoBehaviour
     {
         public string Name;
         public int hp;
+        public int maxhp;
         public int sp;
+        public int maxsp;
         public int atk;
         public int def;
         public int spd;
@@ -50,7 +52,7 @@ public class CharacterBehaviour : MonoBehaviour
         public int luckp;
         public int crit;
         public int critp;
-        public int prime;
+        public int loweredspcost;
 
         public int turn;
     }
@@ -296,7 +298,7 @@ public class CharacterBehaviour : MonoBehaviour
 
 
         //Dit per target (met meerdere targets gebruik foreach)
-        int DMG = UserBattler.atk - TargetBattler.def * 0.5;
+        int DMG = (int)(UserBattler.atk - TargetBattler.def * 0.5);
         int spcost = 4 - UserBattler.loweredspcost;
         int BaseDMG = 1;
 
