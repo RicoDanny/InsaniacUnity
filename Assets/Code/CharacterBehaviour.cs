@@ -304,7 +304,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         if (TargetBattler.hp > TargetBattler.maxhp * 0.5)
         {
-            CRIT = 1.5;
+            double CRIT = 1.5;
         }
 
 

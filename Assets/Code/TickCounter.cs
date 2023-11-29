@@ -35,6 +35,8 @@ public class TickCounter : MonoBehaviour
 
     private GameObject SelectUnitBanner;
 
+    public bool Selected = false;
+
     void Start()
     {
         Targeting = false;
