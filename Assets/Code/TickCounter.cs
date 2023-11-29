@@ -35,6 +35,8 @@ public class TickCounter : MonoBehaviour
 
     private GameObject SelectUnitBanner;
 
+    public bool Selected = false;
+
     void Start()
     {
         Targeting = false;
@@ -77,6 +79,8 @@ public class TickCounter : MonoBehaviour
 
             Tickfunction();
         }
+
+        SelectUnitBanner.SetActive(!Selected);
     }
 
     private void Tickfunction()
@@ -108,7 +112,7 @@ public class TickCounter : MonoBehaviour
 
         SelectTargetBanner.SetActive(false);
 
-        SelectUnitBanner.SetActive(true);
+        Selected = false;
     }
 
     public void AcceptAction()
@@ -121,6 +125,6 @@ public class TickCounter : MonoBehaviour
 
         SelectTargetBanner.SetActive(false);
 
-        SelectUnitBanner.SetActive(true);
+        Selected = false;
     }
 }

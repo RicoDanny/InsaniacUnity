@@ -46,6 +46,8 @@ public class ToggleActive : MonoBehaviour
 
             a.SetActive(!a.activeSelf);
 
+            if(a.activeSelf){ TickCounterObject.Selected = true; }
+
             children.Remove(a.transform);
 
             children.Remove(TargetingButtonsObject.transform);
