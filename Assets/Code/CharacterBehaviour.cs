@@ -55,9 +55,8 @@ public class CharacterBehaviour : MonoBehaviour
         public int crit;
         public int critp;
         public int loweredspcost;
-
         public int turn;
-
+        public string status;
         public List<Object[]> quirks = new List<Object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go
     }
 
@@ -98,6 +97,7 @@ public class CharacterBehaviour : MonoBehaviour
             }
         }
 
+        //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs):
         if (this.gameObject.name != "Min")
         {
             for (int i = 0; i < 15; i++){
@@ -105,6 +105,9 @@ public class CharacterBehaviour : MonoBehaviour
                 TargetsPerAction.Add( new CharacterBehaviour[] {GameObject.Find("Min").GetComponent<CharacterBehaviour>()} );
             }
         }
+
+        //Testen voor statuses. Voor de vibes:
+        CharacterEntity.status = "Thrilled";
     }
 
     void Update()
