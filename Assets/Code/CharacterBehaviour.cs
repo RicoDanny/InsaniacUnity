@@ -57,7 +57,7 @@ public class CharacterBehaviour : MonoBehaviour
         public int loweredspcost;
         public int turn;
         public string status;
-        public List<Object[]> quirks = new List<Object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go: {["quirkname", int], ["quirkname", int]}
+        public List<object[]> quirks = new List<object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go: {["quirkname", int], ["quirkname", int]}
     }
 
     [System.Serializable]
@@ -106,8 +106,15 @@ public class CharacterBehaviour : MonoBehaviour
             }
         }
 
-        //Testen voor statuses. Voor de vibes:
+        //Testen voor statuses en quirks. Voor de vibes:
         CharacterEntity.status = "thrilled";
+
+        object[] QuirkArray = {"cursed", 3};
+
+        CharacterEntity.quirks.Add(QuirkArray);
+
+        Debug.Log(CharacterEntity.Name + ": " + CharacterEntity.quirks[0][0]);
+        Debug.Log(CharacterEntity.Name + ": " + CharacterEntity.status);
     }
 
     void Update()
@@ -151,6 +158,30 @@ public class CharacterBehaviour : MonoBehaviour
         CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = CharacterEntity.hp.ToString();
     }
 
+    //Quirks
+    public void Quirks()
+    {
+        //Loop through quirks
+        for (int i = 0; i < CharacterEntity.quirks.Count; i++)
+        {
+            object[] QuirkArray = CharacterEntity.quirks[i];
+            string QuirkName = (string) QuirkArray[0];
+
+            string MethodName = char.ToUpper(( (string) QuirkName)[0]) + ( (string) QuirkName).Substring(1); //Wrm eerste capitilized? ja leuk toch haha im losing my mind 
+            
+            Invoke(MethodName, 0);
+
+            if (((int) CharacterEntity.quirks[i][1]) > 0)
+            {
+                CharacterEntity.quirks[i][1] = (int) CharacterEntity.quirks[i][1] - 1;
+            }
+            else
+            {
+                CharacterEntity.quirks.RemoveAt(i);
+            }
+        }
+    }
+
     //Dit moet OnClick bij een skill guys!!!
     public void HandleTargeting(string ActionString)
     {
@@ -179,7 +210,7 @@ public class CharacterBehaviour : MonoBehaviour
             TickCounterObject.Frozen = true;
             TickCounterObject.Targets.Add(this);
         }
-        else if(TargetingType == -2)
+        else if(TargetingType == -2) 
         {
             TickCounterObject.Frozen = true;
 
