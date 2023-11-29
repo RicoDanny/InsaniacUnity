@@ -32,7 +32,7 @@ public class ToggleActive : MonoBehaviour
     {
         if (!TickCounterObject.Targeting)
         {
-            Transform parentTransform = GameObject.Find("Menus").transform;
+            Transform parentTransform = GameObject.Find("BattleUI").transform;
 
             // Create a list to store children
             List<Transform> children = new List<Transform>();
@@ -46,13 +46,13 @@ public class ToggleActive : MonoBehaviour
 
             a.SetActive(!a.activeSelf);
 
-            if(a.activeSelf){ TickCounterObject.Selected = true; }
-
             children.Remove(a.transform);
 
             children.Remove(TargetingButtonsObject.transform);
 
             children.ForEach(p => p.gameObject.SetActive(false));
+
+            TickCounterObject.Selected = a.activeSelf;
 
             SelectUnitBanner.SetActive(!SelectUnitBanner.activeSelf);
         }
