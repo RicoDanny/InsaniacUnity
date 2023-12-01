@@ -2,129 +2,76 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Main statics
+using static TickCounterStatics;
+using static UiStatics;
+
 
 public class TickCounter : MonoBehaviour
 {
     public int Tickcounter = 0;
-
-    private GameObject[] Units;
-
+    public GameObject[] Units;
     [SerializeField] private GameObject UnitCanvas;
-
-    public List<CharacterBehaviour> Active; //Here are the characters that have an action on this turn
-
-    public List<CharacterBehaviour> Targets; //List of characters that are targeted (Selected) on the UnitCanvas (Unfiltered)
-
+    public List<CharacterBehaviour> Active = new List<CharacterBehaviour>(); //Here are the characters that have an action on this turn
+    public List<CharacterBehaviour> Targets = new List<CharacterBehaviour>(); //List of characters that are targeted (Selected) on the UnitCanvas (Unfiltered)
     public bool Targeting;
-
-    public List<Transform> MenusChildren;
-
+    public List<Transform> MenusChildren  = new List<Transform>();
     public GameObject TargetAccept;
-
     public bool IsActionAccepted;
-    
     public GameObject SubmitButton;
-
     public bool NewTick;
-
     public bool Frozen = false;
-
-    private float TimeDiff = 0;
-
-    private GameObject SelectTargetBanner;
-
-    private GameObject SelectUnitBanner;
-
+    public float TimeDiff = 0;
+    public GameObject SelectTargetBanner;
+    public GameObject SelectUnitBanner;
     public bool Selected = false;
 
     void Start()
     {
         Targeting = false;
 
-        Transform parentTransform = GameObject.Find("BattleUI").transform;
-
-        // Create a list to store MenusChildren
-        MenusChildren = new List<Transform>();
-
-        // Loop through each child and add it to the list
-        for (int i = 0; i < parentTransform.childCount; i++)
-        {
-            Transform child = parentTransform.GetChild(i);
-            MenusChildren.Add(child);
-        }
-        
-        // Find all game objects with the "Units" tag and store them in an array.
-        Units = GameObject.FindGameObjectsWithTag("Units");
-
-        Active = new List<CharacterBehaviour>();
-
-        Targets = new List<CharacterBehaviour>();
-
         NewTick = true;
 
-        SelectTargetBanner = GameObject.Find("SelectTargets");
+        DefineMenusChildren(this); //de menus van de characters even allemaal pakken zodat we die aan en uit kunnen zetten, denkend aan wie geselect is
+        
+        Units = GameObject.FindGameObjectsWithTag("Units"); //Pakt elk character
 
-        SelectUnitBanner = GameObject.Find("SelectUnit");
+        DefineTickSelectBanners(this); //Defined de UI banners dat zegt dat je dingetjes moet selecten
     }
 
     void Update()
     {
-        TimeDiff += Time.deltaTime;
+        UpdateSelectUnitBanner(this); //UI dingetjes updaten elke frame ("Select Unit"!!)
 
-        if(NewTick == true && Active.Count == 0 && TimeDiff > 1)
-        {
-            TimeDiff = 0;
-
-            NewTick = false;
-
-            Tickfunction();
-        }
-
-        SelectUnitBanner.SetActive(!Selected);
+        UpdateTick(this); //Check of nieuwe tick en zo ja, Tickfunction
     }
 
-    private void Tickfunction()
+    public void Tickfunction()
     {
-        // Loop through the array of characters and do something with them.
-        foreach (GameObject character in Units)
-        {
-            CharacterBehaviour characterScript = character.GetComponent<CharacterBehaviour>();
+        LoopThroughUnits(this); //Op nieuwe tick gewoon door idereen heen loopen om te kijken wie aan de beurt is, mensjes energy te geven, mensen die aan de beurt zijn meteen te naaien met quirks, enz
 
-            if (characterScript.CharacterEntity.energy >= 60) {
-                Active.Add(characterScript);
+        Tickcounter++; // verrassend
 
-                characterScript.CharacterEntity.energy -= 60;
-            }
-
-            characterScript.CharacterEntity.energy += characterScript.CharacterEntity.spd;
-        }
-
-        Tickcounter++;
-
-        NewTick = true;
+        NewTick = true; //NewTick is technisch gezien niet nodig vgm, je kan gwn if dingetjetime > 1 aanhouden, maarja
     }
 
     public void CancelAction()
     {
-        Targeting = false;
+        Targeting = false; //Targeting uit want je wilt na cancellen weer gwn je units kunnen selecten
 
-        TargetAccept.SetActive(false);
+        Selected = false; // Deze is er om aan te duiden of de "select a unit!" banner aanmoet of niet, "Selected" komt voor op de raarste plekken maar het werkt
 
-        SelectTargetBanner.SetActive(false);
-
-        Selected = false;
+        UpdateBanners(this); //Zet de banners weer goed ("Select unit!")
     }
 
     public void AcceptAction()
     {
-        IsActionAccepted = true;
+        IsActionAccepted = true; //Hetzelfde verhaal als hierboven alleen dan is isactionaccepted nu true want de action is geaccept :0!
 
         Targeting = false;
 
-        TargetAccept.SetActive(false);
-
-        SelectTargetBanner.SetActive(false);
-
         Selected = false;
+        
+        UpdateBanners(this);
     }
 }
