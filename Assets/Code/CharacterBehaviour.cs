@@ -72,6 +72,8 @@ public class CharacterBehaviour : MonoBehaviour
                 RedirectQuirk(MethodName);
             }  //Invoke werk niet met args dus nu redirecten ;-; unity whyy (╯°□°)╯︵ ┻━┻
         }
+
+        Death(this);
     }
 
     //Dit moet OnClick bij een skill guys!!!

@@ -137,6 +137,36 @@ public static class ActionStatics
         return false;
     }
 
+    public static int DmgCalculation(Character UserBattler, Character TargetBattler) 
+    {
+        
+        
+        //Damage = (((ATK + ATK BOOST) x ATK MULTIPLIER) x LUCKY - DEF + DMG Buffs) x CRIT x STATUS MULTIPLIER x GUARD MULTIPLIER + FLAT DAMAGE/MINIMUM DAMAGE
+        int DMG = (int)((((UserBattler.atk + UserBattler.atkboost) * UserBattler.atkmultiplier) * UserBattler.luckymultiplier - ((TargetBattler.def + TargetBattler.defboost) * TargetBattler.defmultiplier) + UserBattler.dmgboost) * UserBattler.critmultiplier * UserBattler.statusmultiplier * TargetBattler.guardmultiplier);
+
+        if (DMG < TargetBattler.basedmg)
+        {
+            DMG = TargetBattler.basedmg;
+        }
+
+        if (TargetBattler.hp - DMG < 0)
+        {
+            DMG = TargetBattler.hp;
+        }
+
+        return DMG;
+    }
+
+    public static void Death(CharacterBehaviour CallingCharacterBehaviour) 
+    {
+        CallingCharacterBehaviour.CharacterEntity.quirks.ForEach(x => {if(x[0] == "adrenalinekick") {CallingCharacterBehaviour.CharacterEntity.hp = 1; CallingCharacterBehaviour.CharacterEntity.quirks.Remove(x);}});
+
+        if(CallingCharacterBehaviour.CharacterEntity.hp == 0)
+        {
+            CallingCharacterBehaviour.gameObject.SetActive(false);
+        }
+    }
+
     public static void BasicAttack(CharacterBehaviour CallingCharacterBehaviour)
     {
         CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
@@ -145,23 +175,7 @@ public static class ActionStatics
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-
-        //Dit per target (met meerdere targets gebruik foreach)
-        int DMG = UserBattler.atk - TargetBattler.def;
-
-        int BaseDMG = 1;
-
-        if (DMG < 1)
-        {
-            DMG = BaseDMG;
-        }
-
-        if (TargetBattler.hp - DMG < 0)
-        {
-            DMG = TargetBattler.hp;
-        }
-
-        TargetBattler.hp -= DMG;
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
 
         //Dit onder elke action
         CallingCharacterBehaviour.Actions.RemoveAt(0);

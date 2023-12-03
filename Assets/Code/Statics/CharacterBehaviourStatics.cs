@@ -23,9 +23,19 @@ public static class CharacterBehaviourStatics
         public int luckp;
         public int crit;
         public int critp;
-        public int loweredspcost;
-        public int turn;
+        public int basedmg = 1;
+        public int atkboost = 0;
+        public int defboost = 0;
+        public int dmgboost = 0;
+        public double atkmultiplier = 1.0;
+        public double defmultiplier = 1.0;
+        public double luckymultiplier = 1.0;
+        public double critmultiplier = 1.0;
+        public double guardmultiplier = 1.0;
+        public int loweredspcost = 0;
+        public int turn = 0;
         public string status;
+        public double statusmultiplier = 1.0;
         public List<object[]> quirks = new List<object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go: {["quirkname", int], ["quirkname", int]}
     }
 
