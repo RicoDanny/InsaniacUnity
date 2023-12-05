@@ -16,12 +16,17 @@ public static class DialogueStatics
     [System.Serializable]
     public class DialogueList
     {
-        public Dialogue[] dialogue;
+        public Dialogue[][] dialogue;
     }
-    
+
     // Start is called before the first frame update
     public static void DefineDialogue(DialogueScript CallingDialogueScript)
     {
         CallingDialogueScript.myDialogueList = JsonUtility.FromJson<DialogueList>(CallingDialogueScript.textJSON.text);
+
+        CallingDialogueScript.StageIndeces = new Dictionary<string, int>(){
+            {"0-0", 0},
+            {"0-1", 1}
+        };
     }
 }

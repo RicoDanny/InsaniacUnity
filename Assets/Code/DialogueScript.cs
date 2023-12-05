@@ -8,6 +8,8 @@ public class DialogueScript : MonoBehaviour
     public TextAsset textJSON;
 
     public DialogueList myDialogueList = new DialogueList();
+
+    public Dictionary<string, int> StageIndeces = new Dictionary<string, int>();
     
     // Start is called before the first frame update
     void Start()
