@@ -44,12 +44,12 @@ public static class DialogueStatics
 
     public static void DisplayDialogue(DialogueScript CallingDialogueScript)
     {
-        CallingDialogueScript.DialogueBox.Find("TextBox").GetComponent<TMPro.TextMeshProUGUI>().text = CallingDialogueScript.CurrentDialogue[CallingDialogueScript.DialogueNumber].DialogueString;
+        GameObject.Find("TextBox").GetComponent<TMPro.TextMeshProUGUI>().text = CallingDialogueScript.CurrentDialogue[CallingDialogueScript.DialogueNumber].DialogueString;
     }
 
     public static void CheckNextDialogue(DialogueScript CallingDialogueScript)
     {
-        
+
     }
 
 }
