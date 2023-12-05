@@ -6,20 +6,25 @@ using static DialogueStatics;
 public class DialogueScript : MonoBehaviour
 {
     public TextAsset textJSON;
-
     public DialogueList myDialogueList = new DialogueList();
-
     public Dictionary<string, int> StageIndeces = new Dictionary<string, int>();
+    public GameObject BackgroundObject;
+    public GameObject ForegroundObject;
+    public GameObject DialogueBox;
+    public Dialogue[] CurrentDialogue;
+    public int DialogueNumber = 0;
     
-    // Start is called before the first frame update
     void Start()
     {
         DefineDialogue(this);
+
+        SetScene(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        DisplayDialogue(this);
+
+        CheckNextDialogue(this);
     }
 }
