@@ -1,0 +1,96 @@
+{
+    "0-0": [
+      {
+        "DialogueString": "He did WHAT!?!",
+        "CharacterName": "Oixxy",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "Diabolical, ain't it…",
+        "CharacterName": "Plijwolx",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "Did he give any reason for this intervention? <s><i><b>Svfik</s></i></b> wouldn't just do that for no reason, right…",
+        "CharacterName": "Kixlbkmf",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "He's done this too many times… First the thing he did to Neoton, now this.",
+        "CharacterName": "Jqroxb",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "I am through with this injustice! I will search for new ones to break this cycle!",
+        "CharacterName": "Oixxy",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "You're just gonna get more people killed, <s><i><b>Oixxy</s></i></b>.",
+        "CharacterName": "Plijwolx",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "I agree with <s><i><b>Plijwolx</s></i></b>, your 'calls to action' have only ended in those people dying.",
+        "CharacterName": "Kixlbkmf",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "Oh come on, <s><i><b>Jqroxb</s></i></b>, don't you agree at least?",
+        "CharacterName": "Oixxy",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "There isn't gonna be another one like Crossfort…",
+        "CharacterName": "Jqroxb",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "Nonsense! Crossfort was a spineless backstabber!",
+        "CharacterName": "Oixxy",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "Don't say that!",
+        "CharacterName": "Jqroxb",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "I will resume my plans, elsewhere…",
+        "CharacterName": "Oixxy",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "*Footsteps*",
+        "CharacterName": "Scene",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      },
+      {
+        "DialogueString": "Alright, let's see how the carrier is doing, I think it's time…",
+        "CharacterName": "Oixxy",
+        "CharacterEmotion": "Neutral",
+        "BackgroundImage": "Black"
+      }
+    ],
+    "0-1": [
+        {
+            "DialogueString": "He did WHAT!?!",
+            "CharacterName": "Oixxy",
+            "CharacterEmotion": "Neutral",
+            "BackgroundImage": "Black"
+        }
+      ]
+}
