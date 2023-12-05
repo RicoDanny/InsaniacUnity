@@ -7,17 +7,15 @@ public class DialogueScript : MonoBehaviour
 {
     public TextAsset textJSON;
     public DialogueList myDialogueList = new DialogueList();
-    public Dictionary<string, int> StageIndeces = new Dictionary<string, int>();
     public GameObject BackgroundObject;
     public GameObject ForegroundObject;
     public GameObject DialogueBox;
-    public Dialogue[] CurrentDialogue;
+    public TMPro.TextMeshProUGUI TextBoxComponent;
+    public TMPro.TextMeshProUGUI NameBoxComponent;
     public int DialogueNumber = 0;
     
     void Start()
     {
-        DefineDialogue(this);
-
         SetScene(this);
     }
 
