@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public static class DialogueStatics 
 {
@@ -24,7 +25,9 @@ public static class DialogueStatics
 
     public static void SetScene(DialogueScript CallingDialogueScript)
     {
-        CallingDialogueScript.myDialogueList = JsonUtility.FromJson<DialogueList>(CallingDialogueScript.textJSON.text);
+        string path = "Assets/Code/JsonStuff/StageDialogues/" + SceneManager.GetActiveScene().name + ".json";
+        StreamReader reader = new StreamReader(path); 
+        CallingDialogueScript.myDialogueList = JsonUtility.FromJson<DialogueList>(reader.ReadToEnd());
 
         GameObject Canvas = GameObject.Find("Canvas");
 
