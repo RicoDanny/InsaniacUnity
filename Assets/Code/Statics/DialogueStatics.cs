@@ -45,9 +45,16 @@ public static class DialogueStatics
 
     public static void CheckNextDialogue(DialogueScript CallingDialogueScript)
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length - 1)
+        if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length - 1)
         {
-            CallingDialogueScript.DialogueNumber++; 
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+            {
+                CallingDialogueScript.DialogueNumber++; 
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("HomeScreen");
         }
     }
 
