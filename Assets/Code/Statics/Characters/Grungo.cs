@@ -23,7 +23,7 @@ public static class Grungo
 
         if (TargetBattler.hp > TargetBattler.maxhp * 0.5)
         {
-            double CRIT = 1.5;
+            //double CRIT = 1.5;
         }
 
         if (DMG < 1)

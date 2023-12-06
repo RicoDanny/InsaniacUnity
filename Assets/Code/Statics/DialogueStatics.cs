@@ -21,8 +21,6 @@ public static class DialogueStatics
         public string BackgroundImage;
     }
 
-
-
     public static void SetScene(DialogueScript CallingDialogueScript)
     {
         string path = "Assets/Code/JsonStuff/StageDialogues/" + SceneManager.GetActiveScene().name + ".json";
@@ -36,8 +34,6 @@ public static class DialogueStatics
         CallingDialogueScript.DialogueBox = Canvas.transform.GetChild(2).gameObject;       //Volgorde van children maakt dus uit!!!!!
     }
 
-
-
     public static void DisplayDialogue(DialogueScript CallingDialogueScript)
     {
         CallingDialogueScript.TextBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString;
@@ -46,9 +42,9 @@ public static class DialogueStatics
 
     public static void CheckNextDialogue(DialogueScript CallingDialogueScript)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length - 1)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length - 1)
         {
-            CallingDialogueScript.DialogueNumber++;
+            CallingDialogueScript.DialogueNumber++; 
         }
     }
 
