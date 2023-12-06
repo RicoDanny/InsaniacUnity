@@ -23,21 +23,24 @@ public static class DialogueStatics
 
     public static void SetScene(DialogueScript CallingDialogueScript)
     {
-        string path = "Assets/Code/JsonStuff/StageDialogues/" + SceneManager.GetActiveScene().name + ".json";
+        string path = "Assets/Code/JsonStuff/StageDialogues/" + SceneManager.GetActiveScene().name + ".json"; //Pak de goede json file
         StreamReader reader = new StreamReader(path); 
         CallingDialogueScript.myDialogueList = JsonUtility.FromJson<DialogueList>(reader.ReadToEnd());
 
         GameObject Canvas = GameObject.Find("Canvas");
 
         CallingDialogueScript.BackgroundObject = Canvas.transform.GetChild(0).gameObject;  //Volgorde van children maakt dus uit
-        CallingDialogueScript.ForegroundObject = Canvas.transform.GetChild(1).gameObject;  //Volgorde van children maakt dus uit!
-        CallingDialogueScript.DialogueBox = Canvas.transform.GetChild(2).gameObject;       //Volgorde van children maakt dus uit!!!!!
+        CallingDialogueScript.ForegroundObject = Canvas.transform.GetChild(1).gameObject;
+        CallingDialogueScript.DialogueBox = Canvas.transform.GetChild(2).gameObject;
     }
 
     public static void DisplayDialogue(DialogueScript CallingDialogueScript)
     {
         CallingDialogueScript.TextBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString;
-        CallingDialogueScript.NameBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterName;
+
+        string CharacterNameToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterName;
+        CallingDialogueScript.NameBoxComponent.text = CharacterNameToDisplay;
+        CallingDialogueScript.NameBoxSprite.SetActive(CharacterNameToDisplay != ""); //Als het de scene is die dingen zegt, dan moet de sprite achter de naam weg, want er is geen naam :0! 
     }
 
     public static void CheckNextDialogue(DialogueScript CallingDialogueScript)

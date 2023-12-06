@@ -1,0 +1,17 @@
+{
+  "dialogue": 
+  [
+    {
+      "DialogueString": "He did WHAT!?!",
+      "CharacterName": "<s><i><b>Oixxy</s></i></b>",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Black"
+    },
+    {
+      "DialogueString": "Diabolical, ain't it...",
+      "CharacterName": "<s><i><b>Plijwolx</s></i></b>",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Black"
+    }
+  ]
+}

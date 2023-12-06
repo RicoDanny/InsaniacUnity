@@ -10,6 +10,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject BackgroundObject;
     public GameObject ForegroundObject;
     public GameObject DialogueBox;
+    public GameObject NameBoxSprite;
     public TMPro.TextMeshProUGUI TextBoxComponent;
     public TMPro.TextMeshProUGUI NameBoxComponent;
     public int DialogueNumber = 0;
