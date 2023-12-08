@@ -50,13 +50,13 @@
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "There isn't gonna be another one like Crossfort...",
+      "DialogueString": "There isn't gonna be another one like <b>Crossfort</b>...",
       "CharacterName": "<s><i><b>Jqroxb</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Nonsense! Crossfort was a spineless backstabber!",
+      "DialogueString": "Nonsense! <b>Crossfort</b> was a spineless backstabber!",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
