@@ -7,6 +7,7 @@ using static CharacterBehaviourStatics;
 
 public static class ActionStatics
 {
+    public static string ChosenScene;
     public static List<string> ChosenCharacters;
     public static int GetNumberOfTargets(string Action)
     {
