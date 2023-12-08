@@ -2,16 +2,304 @@
   "dialogue": 
   [
     {
-      "DialogueString": "He did WHAT!?!",
-      "CharacterName": "<s><i><b>Oixxy</s></i></b>",
-      "CharacterEmotion": "Neutral",
-      "BackgroundImage": "Black"
-    },
-    {
-      "DialogueString": "Diabolical, ain't it...",
-      "CharacterName": "<s><i><b>Plijwolx</s></i></b>",
-      "CharacterEmotion": "Neutral",
-      "BackgroundImage": "Black"
-    }
+    "DialogueString": "“Well hello sport, you seem a bit down on your luck. I have an enticing offer for you, if you’re willing to lend your ear?”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Oh golly, well the name’s Geneva if you weren’t aware, and as you may have seen, some people don’t really take kindly to the things I say when I’m doing my craft. ‘N lets just say I’d prefer it if I didn’t die before I became president.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“And what does this have to do wi-”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Now you see that’s where you come in buddy, my bodyguard has been a bit on the slacking side lately, and my reputation has been a bit iffy as of late, which means I could really use another pair of helping hands, you see?”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Why are you asking me about this?”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Well look at you, you’re a freaking house! I don’t think any loon in their right mind wants to get on my case with you around!”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“How much does this pay..?”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Something we will negotiate on at a later notice! Now follow me!”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“This is home base buddy, whatcha think? Isn’t the scenery and crowd not the best?”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Uh yea this is nice I suppose…”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“HEY GRUG, GET YOUR LAZY BUM OVER HERE.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Angry",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Yea boss, what’s up, who’s this guy?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Your new colleague of course!”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“You replacin’ me, neat, I needed retirement anyway…”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Happy",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“No you buffoon, you said we needed more manpower so I got more!”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Silly",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Oh yea, I did say that yesterday… Wait, when did you find this guy?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“2 minutes ago.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“How did you find him?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“He was looking at my rally.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“And you were rallying while I wasn’t there to stand guard?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Grungo Grungo Grungo, you’re too lazy, if I had to stick to your schedule I’d never get my numbers up!”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Silly",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Mr. Geneva, please tell me how this job is gonna work and what I am getting out of this you have not told me anything.”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Angry",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Oh damnit Min, how have you not told the employee what the job is even about?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“But I did, oh no is this one all brawn?”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Wouldn’t that be a good thing?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“I’m not stupid, you just pulled me over here cause you said you needed a bodyguard, you didn’t give me any more explanation than that…”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Oh damn, I’m very sorry about that, Min gets a bit ahead of his case easily.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“I prefer to call it being faster than everyone.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Silly",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Let me do the negotiatin' here okay?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Ok”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Happy",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Okay so, the job’s basically making it so Mr. President over here doesn’t get beat up while he’s holding a rally. Considering your… build, I assume you know how to punch someone.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“H-How common are those altercations?”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Common enough that we need another bodyguard.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“And why exactly do people want to kill Mr. Geneva?”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Min tells me every politician gets treated like this, he has it worse cause his ideas are a bit zany.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Zany, how?”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“A lot of stuff about the water, he wants to invest tax money into solutions but people do not seem to get it.”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“That’s… actually way better than I thought it was gonna be, my town had a lot of problems with the water shortage.”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Ya did? Where ya from bub?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Tumbletree.”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Wait, you a druid?”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Yes…”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Aha, neat, very cool.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Oh gee, someone’s a bit scared of magic.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“I am for quite a good reason I’ll have you know… Just please watch out around me when using your ajimaji bullcrap.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“How much would I be getting paid for this?”",
+    "CharacterName": "Pygor",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Wait, you're gonna pay this guy? Be happy kid, I don’t even get that pleasure.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Confused",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Shut up, freeloader.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“You’re the one that let’s me do it.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  },
+  {
+    "DialogueString": "“Okay okay, now to get to the business. Let’s make it a bit enticing for you, I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn. Which is better pay than any oddjob you’d find around here.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Black"
+  }
   ]
 }

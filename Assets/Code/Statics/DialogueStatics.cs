@@ -43,6 +43,11 @@ public static class DialogueStatics
         CallingDialogueScript.NameBoxSprite.SetActive(CharacterNameToDisplay != ""); //Als het de scene is die dingen zegt, dan moet de sprite achter de naam weg, want er is geen naam :0! 
     }
 
+    public static void DisplayBackground(DialogueScript CallingDialogueScript)
+    {
+        
+    }
+
     public static void CheckNextDialogue(DialogueScript CallingDialogueScript)
     {
         if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length - 1)
