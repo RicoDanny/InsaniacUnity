@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d026d30803a0449dadbbf7d59d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 0}
+  textJSON: {fileID: 4900000, guid: 3120cd38026c9924fb62b06d45193f11, type: 3}
   myDialogueList:
     dialogue: []
   BackgroundObject: {fileID: 1021978279}

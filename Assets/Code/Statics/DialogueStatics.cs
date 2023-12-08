@@ -23,9 +23,7 @@ public static class DialogueStatics
 
     public static void SetScene(DialogueScript CallingDialogueScript)
     {
-        string path = "Assets/Code/JsonStuff/StageDialogues/" + SceneManager.GetActiveScene().name + ".json"; //Pak de goede json file
-        StreamReader reader = new StreamReader(path); 
-        CallingDialogueScript.myDialogueList = JsonUtility.FromJson<DialogueList>(reader.ReadToEnd());
+        CallingDialogueScript.myDialogueList = JsonUtility.FromJson<DialogueList>(CallingDialogueScript.textJSON.text);
 
         GameObject Canvas = GameObject.Find("Canvas");
 
@@ -45,7 +43,7 @@ public static class DialogueStatics
 
     public static void DisplayBackground(DialogueScript CallingDialogueScript)
     {
-        
+        //CallingDialogueScript.BackgroundImage.sprite;
     }
 
     public static void CheckNextDialogue(DialogueScript CallingDialogueScript)
