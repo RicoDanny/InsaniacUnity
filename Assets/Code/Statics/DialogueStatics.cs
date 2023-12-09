@@ -34,30 +34,75 @@ public static class DialogueStatics
 
     public static void DisplayDialogue(DialogueScript CallingDialogueScript)
     {
-        CallingDialogueScript.TextBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString;
+        if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length)
+        {
+            CallingDialogueScript.TextBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString;
+            CallingDialogueScript.CharacterNameToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterName;
+            CallingDialogueScript.NameBoxComponent.text = CallingDialogueScript.CharacterNameToDisplay;
+            CallingDialogueScript.NameBoxSprite.SetActive(CallingDialogueScript.CharacterNameToDisplay != ""); //Als het de scene is die dingen zegt, dan moet de sprite achter de naam weg, want er is geen naam :0! 
+            
+            CallingDialogueScript.CharacterEmotionToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterEmotion;
+            CallingDialogueScript.BackgroundToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].BackgroundImage;
+        }
+    }
 
-        string CharacterNameToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterName;
-        CallingDialogueScript.NameBoxComponent.text = CharacterNameToDisplay;
-        CallingDialogueScript.NameBoxSprite.SetActive(CharacterNameToDisplay != ""); //Als het de scene is die dingen zegt, dan moet de sprite achter de naam weg, want er is geen naam :0! 
+    public static void DisplayCharacter(DialogueScript CallingDialogueScript)
+    {
+        if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length)
+        {
+            foreach (Transform CharacterSpritesTransform in CallingDialogueScript.ForegroundObject.transform)
+            {
+                if(CharacterSpritesTransform.name == CallingDialogueScript.CharacterNameToDisplay)
+                {
+                    CharacterSpritesTransform.gameObject.SetActive(true);
+
+                    foreach (Transform CharacterEmotionSpritesTransform in CharacterSpritesTransform)
+                    {
+                        if(CharacterEmotionSpritesTransform.name == CallingDialogueScript.CharacterEmotionToDisplay)
+                        {
+                            CharacterEmotionSpritesTransform.gameObject.SetActive(true);
+                        }
+                        else
+                        {
+                            CharacterEmotionSpritesTransform.gameObject.SetActive(false);
+                        }
+                    }
+                }
+                else
+                {
+                    CharacterSpritesTransform.gameObject.SetActive(false);
+                }
+            }
+        }
     }
 
     public static void DisplayBackground(DialogueScript CallingDialogueScript)
     {
-        //CallingDialogueScript.BackgroundImage.sprite;
+        if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length)
+        {
+            foreach (Transform BackgroundSpritesTransform in CallingDialogueScript.BackgroundObject.transform)
+            {
+                BackgroundSpritesTransform.gameObject.SetActive(BackgroundSpritesTransform.name == CallingDialogueScript.BackgroundToDisplay);
+            }
+        }
     }
 
-    public static void CheckNextDialogue(DialogueScript CallingDialogueScript)
+    public static bool CheckNextDialogue(DialogueScript CallingDialogueScript)
     {
-        if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length - 1)
+        if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length)
         {
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
             {
-                CallingDialogueScript.DialogueNumber++; 
+                CallingDialogueScript.DialogueNumber++;
+                return true; 
             }
+
+            return false;
         }
         else
         {
             SceneManager.LoadScene("HomeScreen");
+            return false;
         }
     }
 
