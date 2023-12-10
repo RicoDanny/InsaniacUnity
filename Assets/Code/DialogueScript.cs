@@ -8,6 +8,9 @@ public class DialogueScript : MonoBehaviour
 {
     public TextAsset textJSON;
     public DialogueList myDialogueList = new DialogueList();
+    public string CharacterNameToDisplay;
+    public string CharacterEmotionToDisplay;
+    public string BackgroundToDisplay;
     public GameObject BackgroundObject;
     public Image BackgroundImage;
     public GameObject ForegroundObject;
@@ -20,13 +23,19 @@ public class DialogueScript : MonoBehaviour
     void Start()
     {
         SetScene(this);
+
+        DisplayDialogue(this);
+        DisplayBackground(this);
+        DisplayCharacter(this);
     }
 
     void Update()
     {
-        DisplayDialogue(this);
-        DisplayBackground(this);
-
-        CheckNextDialogue(this);
+        if(CheckNextDialogue(this))
+        {
+            DisplayDialogue(this);
+            DisplayBackground(this);
+            DisplayCharacter(this);
+        }
     }
 }
