@@ -2412,10 +2412,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterHPText: {fileID: 2044829591}
+  Actions: []
+  HighlightObject: {fileID: 0}
+  HighlightRenderer: {fileID: 0}
+  TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
     hp: 0
+    maxhp: 0
     sp: 0
+    maxsp: 0
     atk: 0
     def: 0
     spd: 0
@@ -2427,9 +2433,26 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
-    prime: 0
+    basedmg: 1
+    atkboost: 0
+    defboost: 0
+    dmgboost: 0
+    atkmultiplier: 1
+    defmultiplier: 1
+    luckymultiplier: 1
+    critmultiplier: 1
+    guardmultiplier: 1
+    loweredspcost: 0
     turn: 0
+    status: 
+    statusmultiplier: 1
+  TargetingType: 0
+  IsTarget: 0
+  User: 0
+  TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
+  SelectTargetBanner: {fileID: 0}
+  SelectUnitBanner: {fileID: 0}
   myCharacterList:
     character: []
 --- !u!114 &659389873
@@ -2795,10 +2818,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterHPText: {fileID: 331114392}
+  Actions: []
+  HighlightObject: {fileID: 0}
+  HighlightRenderer: {fileID: 0}
+  TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
     hp: 0
+    maxhp: 0
     sp: 0
+    maxsp: 0
     atk: 0
     def: 0
     spd: 0
@@ -2810,9 +2839,26 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
-    prime: 0
+    basedmg: 1
+    atkboost: 0
+    defboost: 0
+    dmgboost: 0
+    atkmultiplier: 1
+    defmultiplier: 1
+    luckymultiplier: 1
+    critmultiplier: 1
+    guardmultiplier: 1
+    loweredspcost: 0
     turn: 0
+    status: 
+    statusmultiplier: 1
+  TargetingType: 0
+  IsTarget: 0
+  User: 0
+  TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
+  SelectTargetBanner: {fileID: 0}
+  SelectUnitBanner: {fileID: 0}
   myCharacterList:
     character: []
 --- !u!1 &860962080
@@ -3046,10 +3092,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterHPText: {fileID: 596647789}
+  Actions: []
+  HighlightObject: {fileID: 0}
+  HighlightRenderer: {fileID: 0}
+  TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
     hp: 0
+    maxhp: 0
     sp: 0
+    maxsp: 0
     atk: 0
     def: 0
     spd: 0
@@ -3061,9 +3113,26 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
-    prime: 0
+    basedmg: 1
+    atkboost: 0
+    defboost: 0
+    dmgboost: 0
+    atkmultiplier: 1
+    defmultiplier: 1
+    luckymultiplier: 1
+    critmultiplier: 1
+    guardmultiplier: 1
+    loweredspcost: 0
     turn: 0
+    status: 
+    statusmultiplier: 1
+  TargetingType: 0
+  IsTarget: 0
+  User: 0
+  TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
+  SelectTargetBanner: {fileID: 0}
+  SelectUnitBanner: {fileID: 0}
   myCharacterList:
     character: []
 --- !u!1 &960450772
@@ -3368,6 +3437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tickcounter: 0
+  Units: []
   UnitCanvas: {fileID: 1930523809}
   Active: []
   Targets: []
@@ -3378,6 +3448,11 @@ MonoBehaviour:
   SubmitButton: {fileID: 1404933552}
   NewTick: 0
   Frozen: 0
+  TimeDiff: 0
+  SelectTargetBanner: {fileID: 1369214864}
+  SelectUnitBanner: {fileID: 638438753}
+  Selected: 0
+  GoodGuysObject: {fileID: 509115488}
 --- !u!1 &1205212718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4061,10 +4136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterHPText: {fileID: 75155302}
+  Actions: []
+  HighlightObject: {fileID: 0}
+  HighlightRenderer: {fileID: 0}
+  TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
     hp: 0
+    maxhp: 0
     sp: 0
+    maxsp: 0
     atk: 0
     def: 0
     spd: 0
@@ -4076,9 +4157,26 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
-    prime: 0
+    basedmg: 1
+    atkboost: 0
+    defboost: 0
+    dmgboost: 0
+    atkmultiplier: 1
+    defmultiplier: 1
+    luckymultiplier: 1
+    critmultiplier: 1
+    guardmultiplier: 1
+    loweredspcost: 0
     turn: 0
+    status: 
+    statusmultiplier: 1
+  TargetingType: 0
+  IsTarget: 0
+  User: 0
+  TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
+  SelectTargetBanner: {fileID: 0}
+  SelectUnitBanner: {fileID: 0}
   myCharacterList:
     character: []
 --- !u!114 &1721804509

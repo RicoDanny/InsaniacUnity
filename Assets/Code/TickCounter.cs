@@ -5,7 +5,7 @@ using UnityEngine;
 //Main statics
 using static TickCounterStatics;
 using static UiStatics;
-
+using static ActionStatics;
 
 public class TickCounter : MonoBehaviour
 {
@@ -25,9 +25,12 @@ public class TickCounter : MonoBehaviour
     public GameObject SelectTargetBanner;
     public GameObject SelectUnitBanner;
     public bool Selected = false;
+    public GameObject GoodGuysObject;
 
     void Start()
     {
+        SpawnCharacters(this);
+
         Targeting = false;
 
         NewTick = true;

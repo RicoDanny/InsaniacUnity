@@ -4,9 +4,26 @@ using UnityEngine;
 
 //Main statics
 using static QuirkStatics;
+using static ActionStatics;
 
 public static class  TickCounterStatics
 {
+    public static void SpawnCharacters(TickCounter CallingTickCounter)
+    {
+        foreach (Transform GoodGuysTransform in CallingTickCounter.GoodGuysObject.transform)
+        {
+            bool contained = false;
+            
+            foreach (GameObject ChosenCharactersGameObject in ChosenCharacters)
+            {
+                if ( ChosenCharactersGameObject.name ==  GoodGuysTransform.name + "Button"){
+                    contained = true;
+                }
+            }
+            GoodGuysTransform.gameObject.SetActive(contained);
+        }
+    }
+
     public static void UpdateTick(TickCounter CallingTickCounter)
     {
         CallingTickCounter.TimeDiff += Time.deltaTime;
