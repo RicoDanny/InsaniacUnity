@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static HomeScreenStatics;
+using static ActionStatics;
 
 public class HomeScreen : MonoBehaviour
 {
+    void Start() 
+    {
+        ChosenCharacters = new List<GameObject>();
+    }
     public void CallSetChosenScene(string ProxyDesiredScene)
     {
         SetChosenScene(ProxyDesiredScene);
@@ -15,19 +21,19 @@ public class HomeScreen : MonoBehaviour
         MoveToScene();
     }
     
-    public void ToggleCharacter(string CharacterName)
+    public void ToggleCharacter(GameObject CharacterButton)
     {
-        if(ChosenCharacters.Contains(CharacterName))
+        if(ChosenCharacters.Contains(CharacterButton))
         {
-            ChosenCharacters.Remove(CharacterName);
+            ChosenCharacters.Remove(CharacterButton);
 
-            GameObject.Find(CharacterName + "Button").GetComponent<Sprite>().color = new Color(255, 255, 255);
+            CharacterButton.GetComponent<Image>().color = new Color(255, 255, 255);
         }
         else
         {
-            ChosenCharacters.Add(CharacterName);
+            ChosenCharacters.Add(CharacterButton);
 
-            GameObject.Find(CharacterName + "Button").GetComponent<Sprite>().color = new Color(0, 255, 0);
+            CharacterButton.GetComponent<Image>().color = new Color(0, 255, 0);
         }
     }
 }

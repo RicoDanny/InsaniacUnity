@@ -8,7 +8,7 @@ using static CharacterBehaviourStatics;
 public static class ActionStatics
 {
     public static string ChosenScene;
-    public static List<string> ChosenCharacters;
+    public static List<GameObject> ChosenCharacters;
     public static int GetNumberOfTargets(string Action)
     {
         Dictionary<string, int> NumberOfTargets = new Dictionary<string, int>
