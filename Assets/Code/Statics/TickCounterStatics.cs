@@ -52,9 +52,6 @@ public static class  TickCounterStatics
             if (characterScript.CharacterEntity.energy >= 60) {
                 CallingTickCounter.Active.Add(characterScript);
 
-                //Do the quirk scripts
-                LoopThroughQuirks(characterScript);
-
                 characterScript.CharacterEntity.energy -= 60;
             }
 

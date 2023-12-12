@@ -62,7 +62,7 @@ public static class CharacterBehaviourStatics
         CallingCharacterBehaviour.Actions = new List<string>();
 
         CallingCharacterBehaviour.TargetsPerAction = new List<CharacterBehaviour[]>();
-
+        
         foreach(Character JsonCharacter in CallingCharacterBehaviour.myCharacterList.character) 
         {
             if(JsonCharacter.Name == CallingCharacterBehaviour.name) 

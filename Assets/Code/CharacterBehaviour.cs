@@ -45,13 +45,14 @@ public class CharacterBehaviour : MonoBehaviour
         if(IsGoodGuy(this)){
             SpawnSkillList(this);
         }
-        
 
         DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
 
         CharacterEntity.status = "thrilled"; //Tests
         object[] QuirkArray = {"cursed", 3}; //syntax van zo'n quirk array
         CharacterEntity.quirks.Add(QuirkArray); //In de lijst
+
+        Debug.Log( StatusChart[ MatchupNum[CharacterEntity.status], MatchupNum["vexed"] ] );
     }
 
     void Update()
@@ -75,7 +76,7 @@ public class CharacterBehaviour : MonoBehaviour
             string[] QuirkMethods = LoopThroughQuirks(this);
             foreach (string MethodName in QuirkMethods) {
                 CallStaticFunction(MethodName, this, "Quirk");
-            }  //Invoke werk niet met args dus nu redirecten ;-; unity whyy (╯°□°)╯︵ ┻━┻
+            }
         }
 
         Death(this);

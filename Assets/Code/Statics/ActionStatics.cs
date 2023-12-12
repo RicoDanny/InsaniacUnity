@@ -13,25 +13,55 @@ public static class ActionStatics
 
     public static Dictionary<string, string[]> ChosenSkills = new Dictionary<string, string[]>
         {
-            { "Min",      new string[] {"Swivel","Investigate"} },
-            { "Grungo",   new string[] {"Swivel","Investigate"} },
-            { "Guinn",    new string[] {"Swivel","Investigate"} },
-            { "Capri",    new string[] {"Swivel","Investigate"} },
-            { "Freckle",  new string[] {"Swivel","Investigate"} },
-            { "Freddy",   new string[] {"Swivel","Investigate"} },
-            { "Orami",    new string[] {"Swivel","Investigate"} },
-            { "RosyMary", new string[] {"Swivel","Investigate"} },
-            { "Dough",    new string[] {"Swivel","Investigate"} },
-            { "Tan",      new string[] {"Swivel","Investigate"} },
-            { "Pygor",    new string[] {"Swivel","Investigate"} },
-            { "Frogor",   new string[] {"Swivel","Investigate"} },
-            { "Jazzy",    new string[] {"Swivel","Investigate"} },
-            { "Cequeba",  new string[] {"Swivel","Investigate"} },
-            { "Mick",     new string[] {"Swivel","Investigate"} },
-            { "Poky",     new string[] {"Swivel","Investigate"} },
-            { "Risleigh", new string[] {"Swivel","Investigate"} }
+            { "Min",      new string[] {"swivel","investigate"} },
+            { "Grungo",   new string[] {"swivel","investigate"} },
+            { "Guinn",    new string[] {"swivel","investigate"} },
+            { "Capri",    new string[] {"swivel","investigate"} },
+            { "Freckle",  new string[] {"swivel","investigate"} },
+            { "Freddy",   new string[] {"swivel","investigate"} },
+            { "Orami",    new string[] {"swivel","investigate"} },
+            { "RosyMary", new string[] {"swivel","investigate"} },
+            { "Dough",    new string[] {"swivel","investigate"} },
+            { "Tan",      new string[] {"swivel","investigate"} },
+            { "Pygor",    new string[] {"swivel","investigate"} },
+            { "Frogor",   new string[] {"swivel","investigate"} },
+            { "Jazzy",    new string[] {"swivel","investigate"} },
+            { "Cequeba",  new string[] {"swivel","investigate"} },
+            { "Mick",     new string[] {"swivel","investigate"} },
+            { "Poky",     new string[] {"swivel","investigate"} },
+            { "Risleigh", new string[] {"swivel","investigate"} }
         };
 
+    public static Dictionary<string, int> MatchupNum = new Dictionary<string, int>
+        {
+            { "empty",      0 },
+            { "thrilled",   1 },
+            { "paranoid",   2 },
+            { "delusional", 3 },
+            { "vexed",      4 },
+            { "depressed",  5 },
+            { "manic",      6 },
+            { "hysterical", 7 },
+            { "psycho",     8 },
+            { "throthing",  9 },
+            { "bored",      10 }
+        };
+
+    public static double[,] StatusChart = 
+        {
+            {1.1, 0.9, 1.1, 1.0, 0.9,    1.2, 0.8, 1.2, 1.0, 0.8, 0.9},
+            {1.1, 1.0, 0.9, 0.9, 1.1,    1.2, 1.0, 0.8, 0.8, 1.2, 0.9},
+            {1.0, 1.1, 0.9, 0.9, 1.1,    1.0, 1.2, 0.8, 0.8, 1.2, 0.9},
+            {0.9, 1.1, 1.9, 1.0, 1.1,    0.8, 1.2, 0.8, 1.0, 1.2, 0.9},
+            {0.9, 0.9, 1.1, 1.1, 1.0,    0.8, 0.8, 1.2, 1.2, 1.0, 0.9},
+
+            {1.2, 0.8, 1.2, 1.0, 0.8,    1.3, 0.7, 1.3, 1.0, 0.7, 0.9},
+            {1.2, 1.0, 0.8, 0.8, 1.2,    1.3, 1.0, 0.7, 0.7, 1.3, 0.9},
+            {1.0, 1.2, 0.8, 0.8, 1.2,    1.0, 1.3, 0.7, 0.7, 1.3, 0.9},
+            {0.8, 1.2, 0.8, 1.0, 1.2,    0.7, 1.3, 0.7, 1.0, 1.3, 0.9},
+            {0.8, 0.8, 1.2, 1.2, 1.0,    0.7, 0.7, 1.3, 1.3, 1.0, 0.9},
+            {0.8, 0.8, 0.8, 0.8, 0.8,    0.8, 0.8, 0.8, 0.8, 0.8, 0.9}
+        };
 
     public static int GetNumberOfTargets(string Action)
     {
@@ -165,7 +195,7 @@ public static class ActionStatics
 
     public static int DmgCalculation(Character UserBattler, Character TargetBattler) 
     {
-        
+        UserBattler.statusmultiplier = StatusCalculation(UserBattler, TargetBattler);
         
         //Damage = (((ATK + ATK BOOST) x ATK MULTIPLIER) x LUCKY - DEF + DMG Buffs) x CRIT x STATUS MULTIPLIER x GUARD MULTIPLIER + FLAT DAMAGE/MINIMUM DAMAGE
         int DMG = (int)((((UserBattler.atk + UserBattler.atkboost) * UserBattler.atkmultiplier) * UserBattler.luckymultiplier - ((TargetBattler.def + TargetBattler.defboost) * TargetBattler.defmultiplier) + UserBattler.dmgboost) * UserBattler.critmultiplier * UserBattler.statusmultiplier * TargetBattler.guardmultiplier);
@@ -181,6 +211,11 @@ public static class ActionStatics
         }
 
         return DMG;
+    }
+
+    public static double StatusCalculation(Character AttickingCharacter, Character DefendingCharacter)
+    {
+        return StatusChart[MatchupNum[AttickingCharacter.status], MatchupNum[DefendingCharacter.status]];
     }
 
     public static void Death(CharacterBehaviour CallingCharacterBehaviour) 
