@@ -7,6 +7,8 @@ using static ActionStatics;
 
 public class HomeScreen : MonoBehaviour
 {
+    public GameObject StartButtonObject;
+
     void Start() 
     {
         ChosenCharacters = new List<GameObject>();
@@ -35,5 +37,10 @@ public class HomeScreen : MonoBehaviour
 
             CharacterButton.GetComponent<Image>().color = new Color(0, 255, 0);
         }
+    }
+    
+    void Update()
+    {
+        StartButtonObject.SetActive(ChosenCharacters.Count >= 3);
     }
 }
