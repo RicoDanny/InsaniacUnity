@@ -2972,6 +2972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e34826360d131141b1de53d429aeba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartButtonObject: {fileID: 1592713971}
 --- !u!1 &805417578
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,7 +6235,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1-1
+          m_StringArgument: BattleScreenTutorial
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1287683173

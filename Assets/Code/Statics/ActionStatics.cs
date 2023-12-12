@@ -9,6 +9,30 @@ public static class ActionStatics
 {
     public static string ChosenScene;
     public static List<GameObject> ChosenCharacters;
+    public static List<string> ChosenCharacterStrings;
+
+    public static Dictionary<string, string[]> ChosenSkills = new Dictionary<string, string[]>
+        {
+            { "Min",      new string[] {"Swivel","Investigate"} },
+            { "Grungo",   new string[] {"Swivel","Investigate"} },
+            { "Guinn",    new string[] {"Swivel","Investigate"} },
+            { "Capri",    new string[] {"Swivel","Investigate"} },
+            { "Freckle",  new string[] {"Swivel","Investigate"} },
+            { "Freddy",   new string[] {"Swivel","Investigate"} },
+            { "Orami",    new string[] {"Swivel","Investigate"} },
+            { "RosyMary", new string[] {"Swivel","Investigate"} },
+            { "Dough",    new string[] {"Swivel","Investigate"} },
+            { "Tan",      new string[] {"Swivel","Investigate"} },
+            { "Pygor",    new string[] {"Swivel","Investigate"} },
+            { "Frogor",   new string[] {"Swivel","Investigate"} },
+            { "Jazzy",    new string[] {"Swivel","Investigate"} },
+            { "Cequeba",  new string[] {"Swivel","Investigate"} },
+            { "Mick",     new string[] {"Swivel","Investigate"} },
+            { "Poky",     new string[] {"Swivel","Investigate"} },
+            { "Risleigh", new string[] {"Swivel","Investigate"} }
+        };
+
+
     public static int GetNumberOfTargets(string Action)
     {
         Dictionary<string, int> NumberOfTargets = new Dictionary<string, int>

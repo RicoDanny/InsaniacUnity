@@ -9,6 +9,6 @@ public static class Min
 {
     public static void MinSpecificAbility(CharacterBehaviour CallingCharacterBehaviour)
     {
-
+        Debug.Log("Thank god!", CallingCharacterBehaviour.gameObject);
     }
 }

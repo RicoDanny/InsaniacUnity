@@ -5,6 +5,7 @@ using UnityEngine;
 //Main statics
 using static QuirkStatics;
 using static ActionStatics;
+using static CharacterBehaviourStatics;
 
 public static class  TickCounterStatics
 {
@@ -13,11 +14,15 @@ public static class  TickCounterStatics
         foreach (Transform GoodGuysTransform in CallingTickCounter.GoodGuysObject.transform)
         {
             bool contained = false;
+
+            if(ChosenCharacterStrings == null){break;}
             
-            foreach (GameObject ChosenCharactersGameObject in ChosenCharacters)
+            foreach (string ChosenCharacter in ChosenCharacterStrings)
             {
-                if ( ChosenCharactersGameObject.name ==  GoodGuysTransform.name + "Button"){
+                if ( ChosenCharacter ==  GoodGuysTransform.name){
                     contained = true;
+
+                    SpawnSkillList(GoodGuysTransform.gameObject.GetComponent<CharacterBehaviour>());
                 }
             }
             GoodGuysTransform.gameObject.SetActive(contained);
@@ -33,7 +38,7 @@ public static class  TickCounterStatics
             CallingTickCounter.TimeDiff = 0;
 
             CallingTickCounter.NewTick = false;
-
+            
             CallingTickCounter.Tickfunction();
         }
     }

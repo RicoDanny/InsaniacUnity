@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ActionStatics;
 
 public static class CharacterBehaviourStatics
 {
@@ -64,10 +65,23 @@ public static class CharacterBehaviourStatics
 
         foreach(Character JsonCharacter in CallingCharacterBehaviour.myCharacterList.character) 
         {
-            if(JsonCharacter.Name == CallingCharacterBehaviour.transform.name) 
+            if(JsonCharacter.Name == CallingCharacterBehaviour.name) 
             {
                 CallingCharacterBehaviour.CharacterEntity = JsonCharacter;
             }
         }
+    }
+
+    public static void SpawnSkillList(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        foreach (string SkillString in ChosenSkills[CallingCharacterBehaviour.name])
+        {
+            Debug.Log(SkillString, CallingCharacterBehaviour.SkillList);
+        }
+    }
+
+    public static bool IsGoodGuy(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        return (CallingCharacterBehaviour.transform.parent.name == "GoodGuys");
     }
 }

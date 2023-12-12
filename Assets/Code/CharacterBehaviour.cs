@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Reflection;
 
 //Main statics
 using static CharacterBehaviourStatics;
@@ -33,16 +35,19 @@ public class CharacterBehaviour : MonoBehaviour
     public GameObject SelectTargetBanner;
     public GameObject SelectUnitBanner;
     public CharacterList myCharacterList = new CharacterList();
+    public GameObject SkillList;
 
     // Start is called before the first frame update
     void Start()
     {
         DefineCharacter(this); //Definieerd de character, gebruikt de json file
 
+        if(IsGoodGuy(this)){
+            SpawnSkillList(this);
+        }
+        
+
         DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
-
-
-
 
         CharacterEntity.status = "thrilled"; //Tests
         object[] QuirkArray = {"cursed", 3}; //syntax van zo'n quirk array
@@ -64,12 +69,12 @@ public class CharacterBehaviour : MonoBehaviour
         if(CharacterActive(this)) //Does char have turn right now?
         {
             //Do your move
-            RedirectAction(Actions[0]);
+            CallStaticFunction(Actions[0], this, "Action");
 
             //Loop through quirks and do their respective methods
             string[] QuirkMethods = LoopThroughQuirks(this);
             foreach (string MethodName in QuirkMethods) {
-                RedirectQuirk(MethodName);
+                CallStaticFunction(MethodName, this, "Quirk");
             }  //Invoke werk niet met args dus nu redirecten ;-; unity whyy (╯°□°)╯︵ ┻━┻
         }
 
@@ -91,41 +96,54 @@ public class CharacterBehaviour : MonoBehaviour
         TargetsPerAction.Add(TickCounterObject.Targets.ToArray()); // met daarbij de bijbehorende targets
     }
 
-    //Quirks
-    public void RedirectQuirk(string QuirkMethodName)
+    public void CallStaticFunction(string functionName, CharacterBehaviour character, string functionType)
     {
-        switch(QuirkMethodName) //Hier van quirk naar method van quirk om quirk effecten te doen enz
-        {
-            case "Cursed":
-                Cursed(this);
-                break;
-            case "Ablaze":
-                Ablaze(this);
-                break;
-            //case enzovoort (succes hiermee haha)
-            default:
-                Debug.Log("Couldn't redirect quirk becasue of invalid QuirkMethodName");
-                break;
-        }
-    }
+        object[] parameters = new object[] { character }; // Parameters for the function call
 
-    public void RedirectAction(string ActionName)
-    {
-        switch(ActionName) //Hier redirect naar actions, in de respectievelijke static scripts van de characters in Assets/Code/Statics/Characters
+        Type staticClassType = null;
+
+
+        if(functionType == "Action"){
+            if(functionName != "BasicAttack"){
+                switch(name)
+                {
+                    case "Min":
+                        staticClassType = typeof(Min); 
+                        break;
+                    case "Pygor":
+                        staticClassType = typeof(Pygor); 
+                        break;
+                    case "Grungo":
+                        staticClassType = typeof(Pygor); 
+                        break;
+                    default:
+                        staticClassType = typeof(ActionStatics); 
+                        break;
+                }
+            }
+            else
+            {
+                staticClassType = typeof(ActionStatics); 
+            }
+        }
+        else if (functionType == "Quirk")
         {
-            case "BasicAttack":
-                BasicAttack(this);
-                break;
-            case "WorkHarder":
-                WorkHarder(this);
-                break;
-            case "BodyCheck":
-                BodyCheck(this);
-                break;
-            //case enzovoort (succes hiermee haha x2 want ctrl c ctrl v de goats)
-            default:
-                Debug.Log("Couldn't redirect action becasue of invalid ActionName");
-                break;
+            staticClassType = typeof(QuirkStatics); 
+        }
+        else //dus hier is het geen quirk of action, dan is het kansloos
+        {
+            staticClassType = typeof(CharacterBehaviour);
+        }
+
+        MethodInfo method = staticClassType.GetMethod(functionName, BindingFlags.Public | BindingFlags.Static);
+
+        if (method != null)
+        {
+            method.Invoke(null, parameters);
+        }
+        else
+        {
+            Debug.LogError("Static method " + functionName + " not found in " + staticClassType.Name);
         }
     }
 }
