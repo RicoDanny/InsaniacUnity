@@ -11,6 +11,7 @@ public static class ActionStatics
     public static string ChosenLetter;
     public static string ChosenStageType;
     public static int ChosenLetterAmount;
+    public static int ChosenEXAmount = 0;
     public static List<GameObject> ChosenCharacters;
     public static List<string> ChosenCharacterStrings;
 
