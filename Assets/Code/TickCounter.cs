@@ -26,6 +26,7 @@ public class TickCounter : MonoBehaviour
     public GameObject SelectUnitBanner;
     public bool Selected = false;
     public GameObject GoodGuysObject;
+    public Sprite SkillSprite;
 
     void Start()
     {

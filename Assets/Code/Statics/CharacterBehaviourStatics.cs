@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static ActionStatics;
 using static QuirkStatics;
 using static ModifierStatics;
@@ -77,9 +78,27 @@ public static class CharacterBehaviourStatics
 
     public static void SpawnSkillList(CharacterBehaviour CallingCharacterBehaviour)
     {
+        if(!(CallingCharacterBehaviour.SkillList)){return;}
+
+        float yOffset = 8;
+        float yOffsetDelta = 16/(ChosenSkills[CallingCharacterBehaviour.name].Length-1);
+
         foreach (string SkillString in ChosenSkills[CallingCharacterBehaviour.name])
         {
-            Debug.Log(SkillString, CallingCharacterBehaviour.SkillList);
+            GameObject Skill = new GameObject();
+            Skill.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1);
+            Skill.transform.parent = CallingCharacterBehaviour.SkillList.transform;
+
+            RectTransform SkillRectTransform = Skill.AddComponent<RectTransform>();
+            SkillRectTransform.anchoredPosition = new Vector2(0.5f, 0.5f + yOffset);
+            yOffset -= yOffsetDelta;
+
+            CanvasRenderer SkillCanvasRenderer = Skill.AddComponent<CanvasRenderer>();
+
+            Image SkillImage = Skill.AddComponent<Image>();
+            SkillImage.sprite = CallingCharacterBehaviour.TickCounterObject.SkillSprite;
+
+            Button SkillButton = Skill.AddComponent<Button>();
         }
     }
 
