@@ -20,6 +20,13 @@ using static Grungo;
 public class CharacterBehaviour : MonoBehaviour
 {
     public GameObject CharacterHPText;
+    public GameObject CharacterSPText;
+    public GameObject CharacterATKText;
+    public GameObject CharacterDEFText;
+    public GameObject CharacterSPDText;
+    public GameObject CharacterHITText;
+    public GameObject CharacterAVOText;
+    public GameObject CharacterLUCKText;
     public List<string> Actions; //List of premoves of Abilities/Actions
     public List<CharacterBehaviour[]> TargetsPerAction; //List of Targets that are on the same Indexes as the Actions that they are Targets for in the Actions list
     public GameObject HighlightObject;
@@ -42,7 +49,8 @@ public class CharacterBehaviour : MonoBehaviour
     {
         DefineCharacter(this); //Definieerd de character, gebruikt de json file
 
-        if(IsGoodGuy(this)){
+        if(IsGoodGuy(this))
+        {
             SpawnSkillList(this);
         }
 
@@ -63,7 +71,18 @@ public class CharacterBehaviour : MonoBehaviour
 
         EnableActionSubmit(this); //Elke frame wanneer je target wordt er gekeken of je het juiste aantal targets hebt, dan pas kan je submit klikken
 
-        UpdateHP(this); //Update het hp van de characters
+        //Update de stats van de characters
+        if(IsGoodGuy(this))
+        {
+        UpdateHP(this);
+        UpdateSP(this);
+        UpdateATK(this);
+        UpdateDEF(this);
+        UpdateSPD(this);
+        UpdateHIT(this);
+        UpdateAVO(this);
+        UpdateLUCK(this);
+        }
 
         ActionAccepted(this); //Als de action submit dan is ingedrukt, wordt de stuff gestuurd naar HandleAction
 

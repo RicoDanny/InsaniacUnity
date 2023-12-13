@@ -32,7 +32,42 @@ public static class  UiStatics
 
     public static void UpdateHP(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = CallingCharacterBehaviour.CharacterEntity.hp.ToString();
+        CallingCharacterBehaviour.CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = "HP: " + CallingCharacterBehaviour.CharacterEntity.hp.ToString();
+    }
+
+    public static void UpdateSP(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterSPText.GetComponent<TMPro.TextMeshProUGUI>().text = "SP: " + CallingCharacterBehaviour.CharacterEntity.sp.ToString();
+    }
+
+    public static void UpdateATK(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterATKText.GetComponent<TMPro.TextMeshProUGUI>().text = "ATK: " + CallingCharacterBehaviour.CharacterEntity.atk.ToString();
+    }
+
+    public static void UpdateDEF(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterDEFText.GetComponent<TMPro.TextMeshProUGUI>().text = "DEF: " + CallingCharacterBehaviour.CharacterEntity.def.ToString();
+    }
+
+    public static void UpdateSPD(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterSPDText.GetComponent<TMPro.TextMeshProUGUI>().text = "SPD: " + CallingCharacterBehaviour.CharacterEntity.spd.ToString();
+    }
+
+    public static void UpdateHIT(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterHITText.GetComponent<TMPro.TextMeshProUGUI>().text = "HIT: " + CallingCharacterBehaviour.CharacterEntity.hit.ToString();
+    }
+
+    public static void UpdateAVO(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterAVOText.GetComponent<TMPro.TextMeshProUGUI>().text = "AVO: " + CallingCharacterBehaviour.CharacterEntity.avo.ToString();
+    }
+
+    public static void UpdateLUCK(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.CharacterLUCKText.GetComponent<TMPro.TextMeshProUGUI>().text = "LUCK: " + CallingCharacterBehaviour.CharacterEntity.luck.ToString();
     }
 
     public static void UpdateSelectUnitBanner(TickCounter CallingTickCounter)
