@@ -220,7 +220,7 @@ public static class ActionStatics
 
     public static void Death(CharacterBehaviour CallingCharacterBehaviour) 
     {
-        CallingCharacterBehaviour.CharacterEntity.quirks.ForEach(x => {if( (string) x[0] == "adrenalinekick") {CallingCharacterBehaviour.CharacterEntity.hp = 1; CallingCharacterBehaviour.CharacterEntity.quirks.Remove(x);}});
+        CallingCharacterBehaviour.CharacterEntity.quirks.ForEach(x => {if( (string) x.name == "adrenalinekick") {CallingCharacterBehaviour.CharacterEntity.hp = 1; CallingCharacterBehaviour.CharacterEntity.quirks.Remove(x);}});
 
         if(CallingCharacterBehaviour.CharacterEntity.hp == 0)
         {

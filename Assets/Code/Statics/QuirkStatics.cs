@@ -4,40 +4,65 @@ using UnityEngine;
 
 public static class  QuirkStatics
 {
-    public static string[] LoopThroughQuirks(CharacterBehaviour CallingCharacterBehaviour)
+    [System.Serializable]
+    public class Quirk
     {
-        List<string> ReturnList = new List<string>();
+        public string name;
+        public int totalduration;
+        public int duration;
+    }
+
+    public static Quirk[] LoopThroughQuirks(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        List<Quirk> ReturnList = new List<Quirk>();
 
         for (int i = 0; i < CallingCharacterBehaviour.CharacterEntity.quirks.Count; i++)
         {
-            object[] QuirkArray = CallingCharacterBehaviour.CharacterEntity.quirks[i];
-            string QuirkName = (string) QuirkArray[0];
+            Quirk CharacterQuirk = CallingCharacterBehaviour.CharacterEntity.quirks[i];
 
-            string MethodName = char.ToUpper(( (string) QuirkName)[0]) + ( (string) QuirkName).Substring(1); //Capatilezed eerste letter voor redenen (Function readability)
+            ReturnList.Add(CharacterQuirk);
 
-            ReturnList.Add(MethodName);
-
-            if (((int) CallingCharacterBehaviour.CharacterEntity.quirks[i][1]) > 0)
-            {
-                CallingCharacterBehaviour.CharacterEntity.quirks[i][1] = (int) CallingCharacterBehaviour.CharacterEntity.quirks[i][1] - 1;
-            }
-            else
-            {
-                CallingCharacterBehaviour.CharacterEntity.quirks.RemoveAt(i);
-            }
+            CallingCharacterBehaviour.CharacterEntity.quirks[i].duration -= 1;
+            
         }
 
         return ReturnList.ToArray();
     }
 
     //Methods for Individual quirks under here with first capital letter cause yeah reasons
-    public static void Cursed(CharacterBehaviour CallingCharacterBehaviour)
+    public static void Cursed(CharacterBehaviour CallingCharacterBehaviour, Quirk CharacterQuirk)
     {
-        //Doe iets leuks
+        if(CharacterQuirk.duration == CharacterQuirk.totalduration)
+        {
+            //Do stuff that should be done one time when quirk is recieved like atk*0.9
+        }
+        else if (CharacterQuirk.duration == 0)
+        {
+            CallingCharacterBehaviour.CharacterEntity.quirks.Remove(CharacterQuirk);
+
+            //undo stuff from first turn like atk/0.9 (restoring atk to its former glory)
+
+            return;
+        }
+        
+        //Do stuff that needs to be done every move, including the first.
     }
 
-    public static void Ablaze(CharacterBehaviour CallingCharacterBehaviour)
+    public static void Ablaze(CharacterBehaviour CallingCharacterBehaviour, Quirk CharacterQuirk)
     {
-        //Doe iets leuks
+        if(CharacterQuirk.duration == CharacterQuirk.totalduration)
+        {
+            //Do stuff that should be done one time when quirk is recieved like atk*0.9
+        }
+        else if (CharacterQuirk.duration == 0)
+        {
+            CallingCharacterBehaviour.CharacterEntity.quirks.Remove(CharacterQuirk);
+
+            //undo stuff from first turn like atk/0.9 (restoring atk to its former glory)
+
+            return;
+        }
+        
+        //Do stuff that needs to be done every move, including the first.
     }
 }

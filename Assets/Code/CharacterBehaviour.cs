@@ -57,8 +57,6 @@ public class CharacterBehaviour : MonoBehaviour
         DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
 
         CharacterEntity.status = "thrilled"; //Tests
-        object[] QuirkArray = {"cursed", 3}; //syntax van zo'n quirk array
-        CharacterEntity.quirks.Add(QuirkArray); //In de lijst
 
         Debug.Log( StatusChart[ MatchupNum[CharacterEntity.status], MatchupNum["vexed"] ] );
     }
@@ -76,13 +74,13 @@ public class CharacterBehaviour : MonoBehaviour
         
         if(IsGoodGuy(this))
         {
-        UpdateSP(this);
-        UpdateATK(this);
-        UpdateDEF(this);
-        UpdateSPD(this);
-        UpdateHIT(this);
-        UpdateAVO(this);
-        UpdateLUCK(this);
+            UpdateSP(this);
+            UpdateATK(this);
+            UpdateDEF(this);
+            UpdateSPD(this);
+            UpdateHIT(this);
+            UpdateAVO(this);
+            UpdateLUCK(this);
         }
 
         ActionAccepted(this); //Als de action submit dan is ingedrukt, wordt de stuff gestuurd naar HandleAction
@@ -90,13 +88,13 @@ public class CharacterBehaviour : MonoBehaviour
         if(CharacterActive(this)) //Does char have turn right now?
         {
             //Loop through quirks and do their respective methods
-            string[] QuirkMethods = LoopThroughQuirks(this);
-            foreach (string MethodName in QuirkMethods) {
-                CallStaticFunction(MethodName, this, "Quirk");
+            Quirk[] QuirkMethods = LoopThroughQuirks(this);
+            foreach (Quirk CharacterQuirk in QuirkMethods) {
+                CallStaticFunction(char.ToUpper(( (string) CharacterQuirk.name)[0]) + ( (string) CharacterQuirk.name).Substring(1), this, "Quirk", CharacterQuirk);
             }
 
             //Do your move
-            CallStaticFunction(Actions[0], this, "Action");
+            CallStaticFunction(Actions[0], this, "Action", null);
         }
 
         Death(this);
@@ -117,14 +115,18 @@ public class CharacterBehaviour : MonoBehaviour
         TargetsPerAction.Add(TickCounterObject.Targets.ToArray()); // met daarbij de bijbehorende targets
     }
 
-    public void CallStaticFunction(string functionName, CharacterBehaviour character, string functionType)
+    public void CallStaticFunction(string functionName, CharacterBehaviour character, string functionType, Quirk CharacterQuirk)
     {
-        object[] parameters = new object[] { character }; // Parameters for the function call
+        object[] parameters;
+        
+        // Parameters for the function call
 
         Type staticClassType = null;
 
 
         if(functionType == "Action"){
+            parameters = new object[] { character };
+
             if(functionName != "BasicAttack"){
                 switch(name)
                 {
@@ -149,10 +151,12 @@ public class CharacterBehaviour : MonoBehaviour
         }
         else if (functionType == "Quirk")
         {
+            parameters = new object[] { character, CharacterQuirk };
             staticClassType = typeof(QuirkStatics); 
         }
         else //dus hier is het geen quirk of action, dan is het kansloos
         {
+            parameters = new object[] { character };
             staticClassType = typeof(CharacterBehaviour);
         }
 
