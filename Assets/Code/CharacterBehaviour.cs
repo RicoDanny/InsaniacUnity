@@ -88,14 +88,14 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(CharacterActive(this)) //Does char have turn right now?
         {
-            //Do your move
-            CallStaticFunction(Actions[0], this, "Action");
-
             //Loop through quirks and do their respective methods
             string[] QuirkMethods = LoopThroughQuirks(this);
             foreach (string MethodName in QuirkMethods) {
                 CallStaticFunction(MethodName, this, "Quirk");
             }
+
+            //Do your move
+            CallStaticFunction(Actions[0], this, "Action");
         }
 
         Death(this);
