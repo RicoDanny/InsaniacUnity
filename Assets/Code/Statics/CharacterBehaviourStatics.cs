@@ -93,9 +93,11 @@ public static class CharacterBehaviourStatics
         foreach (string SkillString in ChosenSkills[CallingCharacterBehaviour.name])
         {
             GameObject Skill = new GameObject();
+            Skill.layer = LayerMask.NameToLayer("UI");
             Skill.transform.parent = CallingCharacterBehaviour.SkillList.transform;
 
             GameObject SkillText = new GameObject();
+            SkillText.layer = LayerMask.NameToLayer("UI");
             SkillText.transform.parent = Skill.transform;
 
             //Skill gameobject definitions
@@ -113,6 +115,7 @@ public static class CharacterBehaviourStatics
 
             Button SkillButton = Skill.AddComponent<Button>();
             SkillButton.targetGraphic = SkillImage;
+            SkillButton.onClick.AddListener(() => Debug.Log("OhmyGah!"));
 
             //Skilltext gameobject definitions
             SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";
