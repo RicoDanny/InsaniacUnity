@@ -85,7 +85,7 @@ public static class CharacterBehaviourStatics
 
         float buttonMargin = 10f;
 
-        float buttonScaler = 0.04f;
+        float buttonScaler = 0.05f;
 
         float yOffset = (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Length-1)))/2;
         float yOffsetDelta = buttonScaler*(buttonHeight + buttonMargin);
@@ -115,7 +115,7 @@ public static class CharacterBehaviourStatics
 
             Button SkillButton = Skill.AddComponent<Button>();
             SkillButton.targetGraphic = SkillImage;
-            SkillButton.onClick.AddListener(() => Debug.Log("OhmyGah!"));
+            SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting(Skill.name));
 
             //Skilltext gameobject definitions
             SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";
@@ -125,6 +125,25 @@ public static class CharacterBehaviourStatics
             SkillTextTMP.fontSize = 20f;
             SkillTextTMP.alignment = TMPro.TextAlignmentOptions.Center;
         }
+
+        GameObject BackButton = new GameObject();
+        BackButton.layer = LayerMask.NameToLayer("UI");
+        BackButton.transform.parent = CallingCharacterBehaviour.SkillList.transform;
+
+        BackButton.name = "BackButton";
+
+        RectTransform BackButtonRectTransform = BackButton.AddComponent<RectTransform>();
+        BackButtonRectTransform.anchoredPosition = new Vector2(4.20f, (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Length-1)))/2 + 40f*buttonScaler);
+        BackButtonRectTransform.sizeDelta = new Vector2(50f, 50f);
+
+        CanvasRenderer BackButtonCanvasRenderer = BackButton.AddComponent<CanvasRenderer>();
+
+        Image BackButtonImage = BackButton.AddComponent<Image>();
+        BackButtonImage.sprite = CallingCharacterBehaviour.TickCounterObject.BackButtonSprite;
+
+        Button BackButtonButton = BackButton.AddComponent<Button>();
+        BackButtonButton.targetGraphic = BackButtonImage;
+        BackButtonButton.onClick.AddListener(() => CallingCharacterBehaviour.SkillList.SetActive(false));
     }
 
     public static bool IsGoodGuy(CharacterBehaviour CallingCharacterBehaviour)
