@@ -80,18 +80,31 @@ public static class CharacterBehaviourStatics
     {
         if(!(CallingCharacterBehaviour.SkillList)){return;}
 
-        float yOffset = 8;
-        float yOffsetDelta = 16/(ChosenSkills[CallingCharacterBehaviour.name].Length-1);
+        float buttonHeight = 50f;
+        float buttonWidth = 150f;
+
+        float buttonMargin = 10f;
+
+        float buttonScaler = 0.04f;
+
+        float yOffset = (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Length-1)))/2;
+        float yOffsetDelta = buttonScaler*(buttonHeight + buttonMargin);
 
         foreach (string SkillString in ChosenSkills[CallingCharacterBehaviour.name])
         {
             GameObject Skill = new GameObject();
-            Skill.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1);
             Skill.transform.parent = CallingCharacterBehaviour.SkillList.transform;
+
+            GameObject SkillText = new GameObject();
+            SkillText.transform.parent = Skill.transform;
+
+            //Skill gameobject definitions
+            Skill.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1);
 
             RectTransform SkillRectTransform = Skill.AddComponent<RectTransform>();
             SkillRectTransform.anchoredPosition = new Vector2(0.5f, 0.5f + yOffset);
             yOffset -= yOffsetDelta;
+            SkillRectTransform.sizeDelta = new Vector2(buttonWidth, buttonHeight);
 
             CanvasRenderer SkillCanvasRenderer = Skill.AddComponent<CanvasRenderer>();
 
@@ -99,6 +112,15 @@ public static class CharacterBehaviourStatics
             SkillImage.sprite = CallingCharacterBehaviour.TickCounterObject.SkillSprite;
 
             Button SkillButton = Skill.AddComponent<Button>();
+            SkillButton.targetGraphic = SkillImage;
+
+            //Skilltext gameobject definitions
+            SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";
+
+            TMPro.TextMeshProUGUI SkillTextTMP = SkillText.AddComponent<TMPro.TextMeshProUGUI>();
+            SkillTextTMP.text = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1);
+            SkillTextTMP.fontSize = 20f;
+            SkillTextTMP.alignment = TMPro.TextAlignmentOptions.Center;
         }
     }
 
