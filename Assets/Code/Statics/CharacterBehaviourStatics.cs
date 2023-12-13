@@ -37,7 +37,7 @@ public static class CharacterBehaviourStatics
         public int turn = 0;
         public string status;
         public double statusmultiplier = 1.0;
-        public List<object[]> quirks = new List<object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go en last effected turn: {["quirkname", int, int], ["quirkname", int, int]}
+        public List<object[]> quirks = new List<object[]>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go: {["quirkname", int], ["quirkname", int]}
     }
 
     [System.Serializable]

@@ -49,7 +49,7 @@ public class CharacterBehaviour : MonoBehaviour
         DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
 
         CharacterEntity.status = "thrilled"; //Tests
-        object[] QuirkArray = {"cursed", 3, 1}; //syntax van zo'n quirk array
+        object[] QuirkArray = {"cursed", 3}; //syntax van zo'n quirk array
         CharacterEntity.quirks.Add(QuirkArray); //In de lijst
 
         Debug.Log( StatusChart[ MatchupNum[CharacterEntity.status], MatchupNum["vexed"] ] );
@@ -69,14 +69,14 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(CharacterActive(this)) //Does char have turn right now?
         {
-            //Do your move
-            CallStaticFunction(Actions[0], this, "Action");
-
             //Loop through quirks and do their respective methods
             string[] QuirkMethods = LoopThroughQuirks(this);
             foreach (string MethodName in QuirkMethods) {
                 CallStaticFunction(MethodName, this, "Quirk");
             }
+
+            //Do your move
+            CallStaticFunction(Actions[0], this, "Action");
         }
 
         Death(this);
