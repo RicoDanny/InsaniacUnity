@@ -8,6 +8,8 @@ using static CharacterBehaviourStatics;
 public static class ActionStatics
 {
     public static string ChosenScene;
+    public static string ChosenLetter;
+    public static string ChosenStoryLetter;
     public static List<GameObject> ChosenCharacters;
     public static List<string> ChosenCharacterStrings;
 
