@@ -74,7 +74,7 @@ public static class ActionStatics
             { "BasicAttack", 1 },
             { "WorkHarder", -3 },
             { "BodyCheck", 1 },
-            { "Swivel", 1 }
+            { "Swivel", -3 }
         };
 
         return NumberOfTargets[Action];
