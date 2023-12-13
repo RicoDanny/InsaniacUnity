@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static ActionStatics;
 using static QuirkStatics;
+using static ModifierStatics;
 
 public static class CharacterBehaviourStatics
 {
@@ -39,6 +40,7 @@ public static class CharacterBehaviourStatics
         public string status;
         public double statusmultiplier = 1.0;
         public List<Quirk> quirks = new List<Quirk>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go: {["quirkname", int], ["quirkname", int]}
+        public List<Modifier> modifiers = new List<Modifier>();
     }
 
     [System.Serializable]

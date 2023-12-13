@@ -95,7 +95,7 @@ public class CharacterBehaviour : MonoBehaviour
             }
 
             //Do your move
-            CallStaticFunction(Actions[0], this);
+            CallStaticAction(Actions[0], this);
         }
 
         Death(this);
