@@ -72,9 +72,10 @@ public class CharacterBehaviour : MonoBehaviour
         EnableActionSubmit(this); //Elke frame wanneer je target wordt er gekeken of je het juiste aantal targets hebt, dan pas kan je submit klikken
 
         //Update de stats van de characters
+        UpdateHP(this);
+        
         if(IsGoodGuy(this))
         {
-        UpdateHP(this);
         UpdateSP(this);
         UpdateATK(this);
         UpdateDEF(this);
