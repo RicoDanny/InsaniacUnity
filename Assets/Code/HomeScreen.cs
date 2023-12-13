@@ -8,7 +8,7 @@ using static ActionStatics;
 public class HomeScreen : MonoBehaviour
 {
     public GameObject StartButtonObject;
-
+    public GameObject StoryStartButtonObject;
     void Start() 
     {
         ChosenCharacters = new List<GameObject>();
@@ -47,6 +47,8 @@ public class HomeScreen : MonoBehaviour
     
     void Update()
     {
-        StartButtonObject.SetActive(ChosenCharacters.Count == 3);
+        StartButtonObject.SetActive(ChosenCharacters.Count == 3 && ChosenLetter == null);
+
+        StoryStartButtonObject.SetActive(ChosenStoryLetter != null);
     }
 }

@@ -13,6 +13,16 @@ public static class HomeScreenStatics
     {
         ChosenScene = DesiredScene;
     }
+
+    public static void SetChosenLetter(string LevelLetter)
+    {
+        ChosenLetter = LevelLetter;
+    }
+
+    public static void SetChosenStoryLetter(string StoryLevelLetter)
+    {
+        ChosenStoryLetter = StoryLevelLetter;
+    }
     
     public static void MoveToScene()
     {
