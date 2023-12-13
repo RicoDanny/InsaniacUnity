@@ -10,6 +10,7 @@ using static CharacterBehaviourStatics;
 using static ActionStatics;
 using static UiStatics;
 using static QuirkStatics;
+using static ModifierStatics;
 
 //Character statics
 using static Min;
@@ -89,12 +90,20 @@ public class CharacterBehaviour : MonoBehaviour
         {
             //Loop through quirks and do their respective methods
             Quirk[] QuirkMethods = LoopThroughQuirks(this);
-            foreach (Quirk CharacterQuirk in QuirkMethods) {
-                CallStaticFunction(char.ToUpper(( (string) CharacterQuirk.name)[0]) + ( (string) CharacterQuirk.name).Substring(1), this, "Quirk", CharacterQuirk);
+            foreach (Quirk CharacterQuirk in QuirkMethods) 
+            {
+                CallStaticQuirk(char.ToUpper(( (string) CharacterQuirk.name)[0]) + ( (string) CharacterQuirk.name).Substring(1), this, CharacterQuirk);
+            }
+
+            //Loop through modifiers and do their respective methods
+            Modifier[] ModifierMethods = LoopThroughModifiers(this);
+            foreach (Modifier CharacterModifier in ModifierMethods) 
+            {
+                CallStaticModifier(char.ToUpper(( (string) CharacterModifier.name)[0]) + ( (string) CharacterModifier.name).Substring(1), this, CharacterModifier);
             }
 
             //Do your move
-            CallStaticFunction(Actions[0], this, "Action", null);
+            CallStaticAction(Actions[0], this);
         }
 
         Death(this);
@@ -115,7 +124,7 @@ public class CharacterBehaviour : MonoBehaviour
         TargetsPerAction.Add(TickCounterObject.Targets.ToArray()); // met daarbij de bijbehorende targets
     }
 
-    public void CallStaticFunction(string functionName, CharacterBehaviour character, string functionType, Quirk CharacterQuirk)
+    public void CallStaticAction(string functionName, CharacterBehaviour character)
     {
         object[] parameters;
         
@@ -123,42 +132,75 @@ public class CharacterBehaviour : MonoBehaviour
 
         Type staticClassType = null;
 
+        parameters = new object[] { character };
 
-        if(functionType == "Action"){
-            parameters = new object[] { character };
-
-            if(functionName != "BasicAttack"){
-                switch(name)
-                {
-                    case "Min":
-                        staticClassType = typeof(Min); 
-                        break;
-                    case "Pygor":
-                        staticClassType = typeof(Pygor); 
-                        break;
-                    case "Grungo":
-                        staticClassType = typeof(Pygor); 
-                        break;
-                    default:
-                        staticClassType = typeof(ActionStatics); 
-                        break;
-                }
-            }
-            else
+        if(functionName != "BasicAttack"){
+            switch(name)
             {
-                staticClassType = typeof(ActionStatics); 
+                case "Min":
+                    staticClassType = typeof(Min); 
+                    break;
+                case "Pygor":
+                    staticClassType = typeof(Pygor); 
+                    break;
+                case "Grungo":
+                    staticClassType = typeof(Pygor); 
+                    break;
+                default:
+                    staticClassType = typeof(ActionStatics); 
+                    break;
             }
         }
-        else if (functionType == "Quirk")
+        else
         {
-            parameters = new object[] { character, CharacterQuirk };
-            staticClassType = typeof(QuirkStatics); 
+            staticClassType = typeof(ActionStatics); 
         }
-        else //dus hier is het geen quirk of action, dan is het kansloos
+
+        MethodInfo method = staticClassType.GetMethod(functionName, BindingFlags.Public | BindingFlags.Static);
+
+        if (method != null)
         {
-            parameters = new object[] { character };
-            staticClassType = typeof(CharacterBehaviour);
+            method.Invoke(null, parameters);
         }
+        else
+        {
+            Debug.LogError("Static method " + functionName + " not found in " + staticClassType.Name);
+        }
+    }
+
+    public void CallStaticQuirk(string functionName, CharacterBehaviour character, Quirk CharacterQuirk)
+    {
+        object[] parameters;
+        
+        // Parameters for the function call
+
+        Type staticClassType = null;
+
+        parameters = new object[] { character, CharacterQuirk };
+        staticClassType = typeof(QuirkStatics); 
+
+        MethodInfo method = staticClassType.GetMethod(functionName, BindingFlags.Public | BindingFlags.Static);
+
+        if (method != null)
+        {
+            method.Invoke(null, parameters);
+        }
+        else
+        {
+            Debug.LogError("Static method " + functionName + " not found in " + staticClassType.Name);
+        }
+    }
+
+    public void CallStaticModifier(string functionName, CharacterBehaviour character, Modifier CharacterModifier)
+    {
+        object[] parameters;
+        
+        // Parameters for the function call
+
+        Type staticClassType = null;
+
+        parameters = new object[] { character, CharacterModifier };
+        staticClassType = typeof(ModifierStatics); 
 
         MethodInfo method = staticClassType.GetMethod(functionName, BindingFlags.Public | BindingFlags.Static);
 
