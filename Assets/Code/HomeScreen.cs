@@ -41,11 +41,15 @@ public class HomeScreen : MonoBehaviour
     public void CallSetStageType(string ProxyDesiredStageType)
     {
         SetStageType(ProxyDesiredStageType);
+
+        Debug.Log(ProxyDesiredStageType);
     }
 
     public void CallSetLetterAmount(int ProxyDesiredLetterAmount)
     {
         SetLetterAmount(ProxyDesiredLetterAmount);
+
+        Debug.Log(ProxyDesiredLetterAmount);
     }
     public void CallSetEXAmount(int ProxyDesiredEXAmount)
     {
@@ -84,11 +88,11 @@ public class HomeScreen : MonoBehaviour
         LetterB.SetActive(ChosenStageType == "Battle" && ChosenLetterAmount >= 2);
         LetterC.SetActive(ChosenStageType == "Battle" && ChosenLetterAmount >= 3);
         LetterEXA.SetActive(ChosenStageType == "Battle" && ChosenEXAmount >= 1);
-        LetterB.SetActive(ChosenStageType == "Battle" && ChosenEXAmount >= 2);
+        LetterEXB.SetActive(ChosenStageType == "Battle" && ChosenEXAmount >= 2);
 
         StoryLetterA.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 1);
-        StoryLetterA.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 2);
-        StoryLetterA.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 3);
-        StoryLetterA.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 4);
+        StoryLetterB.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 2);
+        StoryLetterC.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 3);
+        StoryLetterD.SetActive(ChosenStageType == "Story" && ChosenLetterAmount >= 4);
     }
 }
