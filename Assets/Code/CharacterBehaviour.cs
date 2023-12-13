@@ -90,8 +90,16 @@ public class CharacterBehaviour : MonoBehaviour
         {
             //Loop through quirks and do their respective methods
             Quirk[] QuirkMethods = LoopThroughQuirks(this);
-            foreach (Quirk CharacterQuirk in QuirkMethods) {
+            foreach (Quirk CharacterQuirk in QuirkMethods) 
+            {
                 CallStaticQuirk(char.ToUpper(( (string) CharacterQuirk.name)[0]) + ( (string) CharacterQuirk.name).Substring(1), this, CharacterQuirk);
+            }
+
+            //Loop through modifiers and do their respective methods
+            Modifier[] ModifierMethods = LoopThroughModifiers(this);
+            foreach (Modifier CharacterModifier in ModifierMethods) 
+            {
+                CallStaticModifier(char.ToUpper(( (string) CharacterModifier.name)[0]) + ( (string) CharacterModifier.name).Substring(1), this, CharacterModifier);
             }
 
             //Do your move

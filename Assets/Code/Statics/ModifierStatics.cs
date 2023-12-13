@@ -14,19 +14,18 @@ public static class  ModifierStatics
 
     public static Modifier[] LoopThroughModifiers(CharacterBehaviour CallingCharacterBehaviour)
     {
-        // List<Quirk> ReturnList = new List<Quirk>();
+        List<Modifier> ReturnList = new List<Modifier>();
 
-        // for (int i = 0; i < CallingCharacterBehaviour.CharacterEntity.quirks.Count; i++)
-        // {
-        //     Quirk CharacterQuirk = CallingCharacterBehaviour.CharacterEntity.quirks[i];
+        for (int i = 0; i < CallingCharacterBehaviour.CharacterEntity.modifiers.Count; i++)
+        {
+            Modifier CharacterModifier = CallingCharacterBehaviour.CharacterEntity.modifiers[i];
 
-        //     ReturnList.Add(CharacterQuirk);
+            ReturnList.Add(CharacterModifier);
 
-        //     CallingCharacterBehaviour.CharacterEntity.quirks[i].duration -= 1;
-            
-        // }
+            CallingCharacterBehaviour.CharacterEntity.modifiers[i].duration -= 1;
+        
+        }
 
-        // return ReturnList.ToArray();
-        return null;
+        return ReturnList.ToArray();
     }
 }
