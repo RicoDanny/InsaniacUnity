@@ -49,7 +49,7 @@ public class CharacterBehaviour : MonoBehaviour
         DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
 
         CharacterEntity.status = "thrilled"; //Tests
-        object[] QuirkArray = {"cursed", 3}; //syntax van zo'n quirk array
+        object[] QuirkArray = {"cursed", 3, 1}; //syntax van zo'n quirk array
         CharacterEntity.quirks.Add(QuirkArray); //In de lijst
 
         Debug.Log( StatusChart[ MatchupNum[CharacterEntity.status], MatchupNum["vexed"] ] );

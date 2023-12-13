@@ -33,6 +33,20 @@ public static class  QuirkStatics
     //Methods for Individual quirks under here with first capital letter cause yeah reasons
     public static void Cursed(CharacterBehaviour CallingCharacterBehaviour)
     {
+        foreach ( object[] Quirk in CallingCharacterBehaviour.CharacterEntity.quirks )
+        {
+            if((string) Quirk[0] == "cursed")
+            {
+                if((int) Quirk[1] == 1)
+                {
+                    CallingCharacterBehaviour.CharacterEntity.quirks.Remove(Quirk);
+                }
+                else
+                {
+
+                }
+            }
+        }
         //Doe iets leuks
     }
 
