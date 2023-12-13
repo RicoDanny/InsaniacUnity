@@ -56,10 +56,6 @@ public class CharacterBehaviour : MonoBehaviour
         }
 
         DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
-
-        CharacterEntity.status = "thrilled"; //Tests
-
-        Debug.Log( StatusChart[ MatchupNum[CharacterEntity.status], MatchupNum["vexed"] ] );
     }
 
     void Update()

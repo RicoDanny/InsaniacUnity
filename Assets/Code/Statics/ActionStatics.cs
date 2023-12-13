@@ -215,6 +215,8 @@ public static class ActionStatics
 
     public static double StatusCalculation(Character AttickingCharacter, Character DefendingCharacter)
     {
+        if(!(AttickingCharacter.status != null && DefendingCharacter.status != null)){return 1.0;} //If a status doesn't exist, it just returns 1 as multiplier
+
         return StatusChart[MatchupNum[AttickingCharacter.status], MatchupNum[DefendingCharacter.status]];
     }
 
