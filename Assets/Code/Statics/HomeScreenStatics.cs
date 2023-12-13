@@ -18,14 +18,19 @@ public static class HomeScreenStatics
     {
         ChosenLetter = LevelLetter;
     }
-
-    public static void SetChosenStoryLetter(string StoryLevelLetter)
-    {
-        ChosenStoryLetter = StoryLevelLetter;
-    }
     
+    public static void SetStageType(string StageType)
+    {
+        ChosenStageType = StageType;
+    }
+
+    public static void SetLetterAmount(int LetterAmount)
+    {
+        ChosenLetterAmount = LetterAmount;
+    }
+
     public static void MoveToScene()
     {
-        SceneManager.LoadScene(ChosenScene);
+        SceneManager.LoadScene(ChosenScene + ChosenLetter);
     }
 }

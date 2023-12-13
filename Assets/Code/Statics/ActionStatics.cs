@@ -9,7 +9,8 @@ public static class ActionStatics
 {
     public static string ChosenScene;
     public static string ChosenLetter;
-    public static string ChosenStoryLetter;
+    public static string ChosenStageType;
+    public static int ChosenLetterAmount;
     public static List<GameObject> ChosenCharacters;
     public static List<string> ChosenCharacterStrings;
 
