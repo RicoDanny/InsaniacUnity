@@ -29,6 +29,11 @@ public static class HomeScreenStatics
         ChosenLetterAmount = LetterAmount;
     }
 
+    public static void SetEXAmount(int EXAmount)
+    {
+        ChosenEXAmount = EXAmount;
+    }
+
     public static void MoveToScene()
     {
         SceneManager.LoadScene(ChosenScene + ChosenLetter);
