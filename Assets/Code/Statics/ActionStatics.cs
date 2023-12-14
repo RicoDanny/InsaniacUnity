@@ -194,6 +194,10 @@ public static class ActionStatics
         {
             return true;
         }
+        else if(TargetingInt <= 0)
+        {
+            return true;
+        }
 
         return false;
     }

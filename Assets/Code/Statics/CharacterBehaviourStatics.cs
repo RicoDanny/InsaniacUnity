@@ -116,6 +116,7 @@ public static class CharacterBehaviourStatics
             Button SkillButton = Skill.AddComponent<Button>();
             SkillButton.targetGraphic = SkillImage;
             SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting(Skill.name));
+            SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.SkillList.SetActive(false));
 
             //Skilltext gameobject definitions
             SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";
