@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 //Main statics
 using static CharacterBehaviourStatics;
@@ -69,6 +70,12 @@ public static class ActionStatics
 
     public static int GetNumberOfTargets(string Action)
     {
+        //-3 = Target jezelf
+        //-2 = Target Enemy Team
+        //-1 = Target Ally Team
+        //0 = Target Iedereen
+        //>0 = Aantal targets
+
         Dictionary<string, int> NumberOfTargets = new Dictionary<string, int>
         {
             { "BasicAttack", 1 },
@@ -77,7 +84,7 @@ public static class ActionStatics
             { "Swivel", -3 }
         };
 
-        return NumberOfTargets[Action];
+        return NumberOfTargets.ContainsKey(Action) ? NumberOfTargets[Action] : -4;
     }
 
     public static void ActionAccepted(CharacterBehaviour CallingCharacterBehaviour)
@@ -89,17 +96,6 @@ public static class ActionStatics
             CallingCharacterBehaviour.TickCounterObject.IsActionAccepted = false;
 
             CallingCharacterBehaviour.HandleAction();
-        }
-    }
-
-    public static void DefineAI(CharacterBehaviour CallingCharacterBehaviour)
-    {
-        if (CallingCharacterBehaviour.gameObject.name != "Min")
-        {
-            for (int i = 0; i < 15; i++){
-                CallingCharacterBehaviour.Actions.Add("BasicAttack");
-                CallingCharacterBehaviour.TargetsPerAction.Add( new CharacterBehaviour[] {GameObject.Find("Min").GetComponent<CharacterBehaviour>()} );
-            }
         }
     }
 
@@ -186,6 +182,10 @@ public static class ActionStatics
                 CallingCharacterBehaviour.TickCounterObject.Targets.Add(child);
             }
         }
+        else
+        {
+            CallingCharacterBehaviour.TickCounterObject.Frozen = false;
+        }
     }
 
     public static bool TargetingChecker(CharacterBehaviour CallingCharacterBehaviour, int TargetingInt) 
@@ -239,6 +239,28 @@ public static class ActionStatics
         }
     }
 
+    public static void EndAction(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        Debug.Log(CallingCharacterBehaviour.name + " performed " + CallingCharacterBehaviour.Actions[0] + " on " +  CallingCharacterBehaviour.TargetsPerAction[0][0].name);
+        CallingCharacterBehaviour.Actions.RemoveAt(0);
+        CallingCharacterBehaviour.TargetsPerAction.RemoveAt(0);
+    }
+
+    public static void AImove(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        if(CallingCharacterBehaviour.TickCounterObject.Active.Contains(CallingCharacterBehaviour))
+        {
+            int iq = CallingCharacterBehaviour.CharacterEntity.iq;
+
+            if (iq <= 100)
+            {
+                CallingCharacterBehaviour.Actions.Add("BasicAttack");
+                
+                CallingCharacterBehaviour.TargetsPerAction.Add( new CharacterBehaviour[] {CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>()} );
+            }
+        }
+    }
+
     public static void BasicAttack(CharacterBehaviour CallingCharacterBehaviour)
     {
         CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
@@ -249,9 +271,6 @@ public static class ActionStatics
 
         TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
 
-        //Dit onder elke action
-        CallingCharacterBehaviour.Actions.RemoveAt(0);
-
-        CallingCharacterBehaviour.TargetsPerAction.RemoveAt(0);
+        EndAction(CallingCharacterBehaviour);
     }
 }

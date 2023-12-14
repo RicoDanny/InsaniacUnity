@@ -28,9 +28,15 @@ public class TickCounter : MonoBehaviour
     public GameObject GoodGuysObject;
     public Sprite SkillSprite;
     public Sprite BackButtonSprite;
+    public double TickInterval = 0.5;
 
     void Start()
     {
+        if (ChosenCharacterStrings == null)
+        {
+            ChosenCharacterStrings = new List<string>(){"Min"}; //Defealt team in case of bug ig
+        }
+
         SpawnCharacters(this);
 
         Targeting = false;

@@ -728,8 +728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -21, y: -54}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -14.149963, y: -54}
+  m_SizeDelta: {x: 603.69995, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75155304
 MonoBehaviour:
@@ -2317,8 +2317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66, y: 48}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 48}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331114394
 MonoBehaviour:
@@ -2374,7 +2374,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3615,8 +3615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 603}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 603}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596647791
 MonoBehaviour:
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4031,6 +4031,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    iq: 100
     basedmg: 1
     atkboost: 0
     defboost: 0
@@ -4891,6 +4892,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    iq: 100
     basedmg: 1
     atkboost: 0
     defboost: 0
@@ -5487,6 +5489,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    iq: 100
     basedmg: 1
     atkboost: 0
     defboost: 0
@@ -6465,6 +6468,7 @@ MonoBehaviour:
   GoodGuysObject: {fileID: 509115488}
   SkillSprite: {fileID: 21300000, guid: 7036e8e90c5c37b47bab91c0efee7bc2, type: 3}
   BackButtonSprite: {fileID: 21300000, guid: 9f737978b8e14a844b19360c8d1581cf, type: 3}
+  TickInterval: 0.5
 --- !u!1 &1105839681
 GameObject:
   m_ObjectHideFlags: 0
@@ -9456,6 +9460,7 @@ MonoBehaviour:
     luckp: 0
     crit: 0
     critp: 0
+    iq: 100
     basedmg: 1
     atkboost: 0
     defboost: 0
@@ -12151,8 +12156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26, y: 279}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 279}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044829593
 MonoBehaviour:
@@ -12208,7 +12213,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

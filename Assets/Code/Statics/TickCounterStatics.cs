@@ -33,7 +33,7 @@ public static class  TickCounterStatics
     {
         CallingTickCounter.TimeDiff += Time.deltaTime;
 
-        if(CallingTickCounter.NewTick == true && CallingTickCounter.Active.Count == 0 && CallingTickCounter.TimeDiff > 1)
+        if(CallingTickCounter.NewTick == true && CallingTickCounter.Active.Count == 0 && CallingTickCounter.TimeDiff > (float) CallingTickCounter.TickInterval)
         {
             CallingTickCounter.TimeDiff = 0;
 

@@ -54,8 +54,6 @@ public class CharacterBehaviour : MonoBehaviour
         {
             SpawnSkillList(this);
         }
-
-        DefineAI(this); //Voor primitive AI behaviour eventjes dit (15x basicattack tegen min voor alle npcs)
     }
 
     void Update()
@@ -78,6 +76,10 @@ public class CharacterBehaviour : MonoBehaviour
             UpdateHIT(this);
             UpdateAVO(this);
             UpdateLUCK(this);
+        }
+        else
+        {
+            AImove(this);
         }
 
         ActionAccepted(this); //Als de action submit dan is ingedrukt, wordt de stuff gestuurd naar HandleAction
@@ -110,7 +112,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         InitiateTargeting(this, ActionString); //Initiation of targeting (defining vars)
 
-        FreezeTargeting(this); //Only freezes target selection if action requires so, else it's free reign (FREEZE TARGETING IS NOG NIET GETEST BTW!!)
+        FreezeTargeting(this); //Only freezes target selection if action requires so, else it's free reign
     }
 
     public void HandleAction()
@@ -162,6 +164,7 @@ public class CharacterBehaviour : MonoBehaviour
         {
             Debug.LogError("Static method " + functionName + " not found in " + staticClassType.Name);
         }
+
     }
 
     public void CallStaticQuirk(string functionName, CharacterBehaviour character, Quirk CharacterQuirk)

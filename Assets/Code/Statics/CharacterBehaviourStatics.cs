@@ -27,6 +27,7 @@ public static class CharacterBehaviourStatics
         public int luckp;
         public int crit;
         public int critp;
+        public int iq = 100;
         public int basedmg = 1;
         public int atkboost = 0;
         public int defboost = 0;
@@ -117,6 +118,7 @@ public static class CharacterBehaviourStatics
             SkillButton.targetGraphic = SkillImage;
             SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting(Skill.name));
             SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.SkillList.SetActive(false));
+            SkillButton.interactable = (GetNumberOfTargets(Skill.name) != -4);
 
             //Skilltext gameobject definitions
             SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";

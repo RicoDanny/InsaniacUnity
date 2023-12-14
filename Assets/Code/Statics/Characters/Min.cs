@@ -4,11 +4,14 @@ using UnityEngine;
 
 //Main statics
 using static CharacterBehaviourStatics;
+using static ActionStatics;
 
 public static class Min
 {
-    public static void MinSpecificAbility(CharacterBehaviour CallingCharacterBehaviour)
+    public static void Swivel(CharacterBehaviour CallingCharacterBehaviour)
     {
-        Debug.Log("Thank god!", CallingCharacterBehaviour.gameObject);
+        CallingCharacterBehaviour.CharacterEntity.hp += 10;
+        
+        EndAction(CallingCharacterBehaviour);
     }
 }
