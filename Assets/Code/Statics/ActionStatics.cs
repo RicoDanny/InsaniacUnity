@@ -16,25 +16,40 @@ public static class ActionStatics
     public static List<GameObject> ChosenCharacters;
     public static List<string> ChosenCharacterStrings;
 
-    public static Dictionary<string, string[]> ChosenSkills = new Dictionary<string, string[]>
+    [System.Serializable]
+    public class Skill
+    {
+        public string name;
+        public int targetNumber;
+        public int requiredSP;
+        public string description;
+    }
+
+    public static Dictionary<string, Skill> Skills = new Dictionary<string, Skill>
         {
-            { "Min",      new string[] {"swivel","investigate"} },
-            { "Grungo",   new string[] {"swivel","investigate"} },
-            { "Guinn",    new string[] {"swivel","investigate"} },
-            { "Capri",    new string[] {"swivel","investigate"} },
-            { "Freckle",  new string[] {"swivel","investigate"} },
-            { "Freddy",   new string[] {"swivel","investigate"} },
-            { "Orami",    new string[] {"swivel","investigate"} },
-            { "RosyMary", new string[] {"swivel","investigate"} },
-            { "Dough",    new string[] {"swivel","investigate"} },
-            { "Tan",      new string[] {"swivel","investigate"} },
-            { "Pygor",    new string[] {"swivel","investigate"} },
-            { "Frogor",   new string[] {"swivel","investigate"} },
-            { "Jazzy",    new string[] {"swivel","investigate"} },
-            { "Cequeba",  new string[] {"swivel","investigate"} },
-            { "Mick",     new string[] {"swivel","investigate"} },
-            { "Poky",     new string[] {"swivel","investigate"} },
-            { "Risleigh", new string[] {"swivel","investigate"} }
+            { "BasicAttack",   new Skill {name = "BasicAttack", targetNumber = 1, requiredSP = 0} },
+            { "Swivel",   new Skill {name = "Swivel", targetNumber = -3, requiredSP = 20} },
+        };
+
+    public static Dictionary<string, Skill[]> ChosenSkills = new Dictionary<string, Skill[]>
+        {
+            { "Min",      new Skill[] {Skills["Swivel"]} },
+            { "Grungo",   new Skill[] {Skills["Swivel"]} },
+            { "Guinn",    new Skill[] {Skills["Swivel"]} },
+            { "Capri",    new Skill[] {Skills["Swivel"]} },
+            { "Freckle",  new Skill[] {Skills["Swivel"]} },
+            { "Freddy",   new Skill[] {Skills["Swivel"]} },
+            { "Orami",    new Skill[] {Skills["Swivel"]} },
+            { "RosyMary", new Skill[] {Skills["Swivel"]} },
+            { "Dough",    new Skill[] {Skills["Swivel"]} },
+            { "Tan",      new Skill[] {Skills["Swivel"]} },
+            { "Pygor",    new Skill[] {Skills["Swivel"]} },
+            { "Frogor",   new Skill[] {Skills["Swivel"]} },
+            { "Jazzy",    new Skill[] {Skills["Swivel"]} },
+            { "Cequeba",  new Skill[] {Skills["Swivel"]} },
+            { "Mick",     new Skill[] {Skills["Swivel"]} },
+            { "Poky",     new Skill[] {Skills["Swivel"]} },
+            { "Risleigh", new Skill[] {Skills["Swivel"]} }
         };
 
     public static Dictionary<string, int> MatchupNum = new Dictionary<string, int>
@@ -68,25 +83,6 @@ public static class ActionStatics
             {0.8, 0.8, 0.8, 0.8, 0.8,    0.8, 0.8, 0.8, 0.8, 0.8, 0.9}
         };
 
-    public static int GetNumberOfTargets(string Action)
-    {
-        //-3 = Target jezelf
-        //-2 = Target Enemy Team
-        //-1 = Target Ally Team
-        //0 = Target Iedereen
-        //>0 = Aantal targets
-
-        Dictionary<string, int> NumberOfTargets = new Dictionary<string, int>
-        {
-            { "BasicAttack", 1 },
-            { "WorkHarder", -3 },
-            { "BodyCheck", 1 },
-            { "Swivel", -3 }
-        };
-
-        return NumberOfTargets.ContainsKey(Action) ? NumberOfTargets[Action] : -4;
-    }
-
     public static void ActionAccepted(CharacterBehaviour CallingCharacterBehaviour)
     {
         if(CallingCharacterBehaviour.User && CallingCharacterBehaviour.TickCounterObject.IsActionAccepted)
@@ -116,7 +112,7 @@ public static class ActionStatics
     {
         CallingCharacterBehaviour.SelectTargetBanner.SetActive(!CallingCharacterBehaviour.SelectTargetBanner.activeSelf);
 
-        CallingCharacterBehaviour.TargetingType = GetNumberOfTargets(ActionString);
+        CallingCharacterBehaviour.TargetingType = Skills[ActionString].targetNumber;
 
         CallingCharacterBehaviour.TickCounterObject.Targets.Clear();
 

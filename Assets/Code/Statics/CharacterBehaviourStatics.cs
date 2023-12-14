@@ -91,8 +91,10 @@ public static class CharacterBehaviourStatics
         float yOffset = (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Length-1)))/2;
         float yOffsetDelta = buttonScaler*(buttonHeight + buttonMargin);
 
-        foreach (string SkillString in ChosenSkills[CallingCharacterBehaviour.name])
+        foreach (Skill SkillSkill in ChosenSkills[CallingCharacterBehaviour.name])
         {
+            string SkillString = SkillSkill.name;
+
             GameObject Skill = new GameObject();
             Skill.layer = LayerMask.NameToLayer("UI");
             Skill.transform.parent = CallingCharacterBehaviour.SkillList.transform;
@@ -118,7 +120,11 @@ public static class CharacterBehaviourStatics
             SkillButton.targetGraphic = SkillImage;
             SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting(Skill.name));
             SkillButton.onClick.AddListener(() => CallingCharacterBehaviour.SkillList.SetActive(false));
-            SkillButton.interactable = (GetNumberOfTargets(Skill.name) != -4);
+
+            CheckSkillSP SkillCheckSkillSP = Skill.AddComponent<CheckSkillSP>();
+            SkillCheckSkillSP.CharacterObject = CallingCharacterBehaviour.gameObject;
+            SkillCheckSkillSP.RequiredSP = SkillSkill.requiredSP;
+            SkillCheckSkillSP.SkillButton = SkillButton;
 
             //Skilltext gameobject definitions
             SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";
