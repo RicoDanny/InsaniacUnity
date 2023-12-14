@@ -25,10 +25,33 @@ public static class ActionStatics
         public string description;
     }
 
+    //-3: Target Self
+    //-2: Target Enemy Team
+    //-1: Target Ally Team
+    //0: Target Everyone
     public static Dictionary<string, Skill> Skills = new Dictionary<string, Skill>
         {
-            { "BasicAttack",   new Skill {name = "BasicAttack", targetNumber = 1, requiredSP = 0} },
-            { "Swivel",   new Skill {name = "Swivel", targetNumber = -3, requiredSP = 20} },
+            //ALLY SKILLS
+            { "BasicAttack",    new Skill {name = "BasicAttack",    targetNumber = 1,   requiredSP = 0} },
+
+            //Min
+            { "Swivel",         new Skill {name = "Swivel",         targetNumber = -3,  requiredSP = 0} },
+            { "LookOverThere",  new Skill {name = "LookOverThere",  targetNumber = 1,   requiredSP = 5} },
+
+            //Grungo
+            { "BodyCheck",      new Skill {name = "BodyCheck",      targetNumber = 1,   requiredSP = 4} },
+            { "Break",          new Skill {name = "Break",          targetNumber = 1,   requiredSP = 5} },
+
+            //Pygor
+            { "Matchsticks",    new Skill {name = "Matchsticks",    targetNumber = 1,   requiredSP = 1} },
+            { "LateForWork",    new Skill {name = "LateForWork",    targetNumber = 1,   requiredSP = 8} },
+
+            //ENEMY SKILLS
+            //LaVigneSuspecte
+            { "Grapeshot",      new Skill {name = "Grapeshot",      targetNumber = -2,  requiredSP = 3} },
+
+            //Fantolectrique
+            { "ShockingNews",   new Skill {name = "ShockingNews",   targetNumber = 1,   requiredSP = 4} },
         };
 
     public static Dictionary<string, Skill[]> ChosenSkills = new Dictionary<string, Skill[]>
@@ -81,6 +104,12 @@ public static class ActionStatics
             {0.8, 1.2, 0.8, 1.0, 1.2,    0.7, 1.3, 0.7, 1.0, 1.3, 0.9},
             {0.8, 0.8, 1.2, 1.2, 1.0,    0.7, 0.7, 1.3, 1.3, 1.0, 0.9},
             {0.8, 0.8, 0.8, 0.8, 0.8,    0.8, 0.8, 0.8, 0.8, 0.8, 0.9}
+        };
+
+    public static Dictionary<string, Skill[]> EnemySkills = new Dictionary<string, Skill[]> //Hier moet basicattack wel bij want hier boeien we niet om een of ander skilllist die apart staat van basicattack
+        {
+            { "LaVigneSuspecte",     new Skill[] {Skills["BasicAttack"], Skills["Grapeshot"]} },
+            { "Fantolectrique",      new Skill[] {Skills["BasicAttack"], Skills["ShockingNews"]} },
         };
 
     public static void ActionAccepted(CharacterBehaviour CallingCharacterBehaviour)
@@ -248,11 +277,15 @@ public static class ActionStatics
         {
             int iq = CallingCharacterBehaviour.CharacterEntity.iq;
 
-            if (iq <= 100)
+            if (iq <= 50)
             {
                 CallingCharacterBehaviour.Actions.Add("BasicAttack");
                 
                 CallingCharacterBehaviour.TargetsPerAction.Add( new CharacterBehaviour[] {CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>()} );
+            }
+            if (iq > 50 && iq <= 100)
+            {
+
             }
         }
     }
