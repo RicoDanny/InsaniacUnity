@@ -18,6 +18,10 @@ using static Pygor;
 using static Grungo;
     //enz.
 
+//Enemy statics
+using static LaVigneSuspecte;
+using static Fantolectrique;
+
 public class CharacterBehaviour : MonoBehaviour
 {
     public GameObject CharacterHPText;
@@ -87,17 +91,17 @@ public class CharacterBehaviour : MonoBehaviour
         if(CharacterActive(this)) //Does char have turn right now?
         {
             //Loop through quirks and do their respective methods
-            Quirk[] QuirkMethods = LoopThroughQuirks(this);
-            foreach (Quirk CharacterQuirk in QuirkMethods) 
+            string[] QuirkMethods = LoopThroughQuirks(this);
+            foreach (string CharacterQuirk in QuirkMethods) 
             {
-                CallStaticQuirk(char.ToUpper(( (string) CharacterQuirk.name)[0]) + ( (string) CharacterQuirk.name).Substring(1), this, CharacterQuirk);
+                CallStaticQuirk(CharacterQuirk, this);
             }
 
             //Loop through modifiers and do their respective methods
-            Modifier[] ModifierMethods = LoopThroughModifiers(this);
-            foreach (Modifier CharacterModifier in ModifierMethods) 
+            string[] ModifierMethods = LoopThroughModifiers(this);
+            foreach (string CharacterModifier in ModifierMethods) 
             {
-                CallStaticModifier(char.ToUpper(( (string) CharacterModifier.name)[0]) + ( (string) CharacterModifier.name).Substring(1), this, CharacterModifier);
+                CallStaticModifier(CharacterModifier, this);
             }
 
             //Do your move
@@ -167,7 +171,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     }
 
-    public void CallStaticQuirk(string functionName, CharacterBehaviour character, Quirk CharacterQuirk)
+    public void CallStaticQuirk(string CharacterQuirk, CharacterBehaviour character)
     {
         object[] parameters;
         
@@ -175,10 +179,10 @@ public class CharacterBehaviour : MonoBehaviour
 
         Type staticClassType = null;
 
-        parameters = new object[] { character, CharacterQuirk };
+        parameters = new object[] { character };
         staticClassType = typeof(QuirkStatics); 
 
-        MethodInfo method = staticClassType.GetMethod(functionName, BindingFlags.Public | BindingFlags.Static);
+        MethodInfo method = staticClassType.GetMethod(CharacterQuirk, BindingFlags.Public | BindingFlags.Static);
 
         if (method != null)
         {
@@ -186,11 +190,11 @@ public class CharacterBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Static method " + functionName + " not found in " + staticClassType.Name);
+            Debug.LogError("Static method " + CharacterQuirk + " not found in " + staticClassType.Name);
         }
     }
 
-    public void CallStaticModifier(string functionName, CharacterBehaviour character, Modifier CharacterModifier)
+    public void CallStaticModifier(string CharacterModifier, CharacterBehaviour character)
     {
         object[] parameters;
         
@@ -198,10 +202,10 @@ public class CharacterBehaviour : MonoBehaviour
 
         Type staticClassType = null;
 
-        parameters = new object[] { character, CharacterModifier };
+        parameters = new object[] { character };
         staticClassType = typeof(ModifierStatics); 
 
-        MethodInfo method = staticClassType.GetMethod(functionName, BindingFlags.Public | BindingFlags.Static);
+        MethodInfo method = staticClassType.GetMethod(CharacterModifier, BindingFlags.Public | BindingFlags.Static);
 
         if (method != null)
         {
@@ -209,7 +213,7 @@ public class CharacterBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Static method " + functionName + " not found in " + staticClassType.Name);
+            Debug.LogError("Static method " + CharacterModifier + " not found in " + staticClassType.Name);
         }
     }
 }

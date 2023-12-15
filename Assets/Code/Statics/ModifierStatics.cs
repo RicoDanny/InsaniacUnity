@@ -12,18 +12,21 @@ public static class  ModifierStatics
         public int duration;
     }
 
-    public static Modifier[] LoopThroughModifiers(CharacterBehaviour CallingCharacterBehaviour)
+    public static string[] LoopThroughModifiers(CharacterBehaviour CallingCharacterBehaviour)
     {
-        List<Modifier> ReturnList = new List<Modifier>();
+        List<string> ReturnList = new List<string>();
 
-        for (int i = 0; i < CallingCharacterBehaviour.CharacterEntity.modifiers.Count; i++)
+        foreach(KeyValuePair<string, List<Modifier>> ModifierEntry in CallingCharacterBehaviour.CharacterEntity.modifiers)
         {
-            Modifier CharacterModifier = CallingCharacterBehaviour.CharacterEntity.modifiers[i];
+            if (ModifierEntry.Value.Count > 0)
+            {
+                ReturnList.Add(ModifierEntry.Key);
 
-            ReturnList.Add(CharacterModifier);
-
-            CallingCharacterBehaviour.CharacterEntity.modifiers[i].duration -= 1;
-        
+                foreach( Modifier modifier in ModifierEntry.Value)
+                {
+                    modifier.duration -= 1;
+                }
+            }
         }
 
         return ReturnList.ToArray();

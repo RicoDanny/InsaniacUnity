@@ -5,6 +5,8 @@ using System.Linq;
 
 //Main statics
 using static CharacterBehaviourStatics;
+using static QuirkStatics;
+using static ModifierStatics;
 
 public static class ActionStatics
 {
@@ -54,25 +56,25 @@ public static class ActionStatics
             { "ShockingNews",   new Skill {name = "ShockingNews",   targetNumber = 1,   requiredSP = 4} },
         };
 
-    public static Dictionary<string, Skill[]> ChosenSkills = new Dictionary<string, Skill[]>
+    public static Dictionary<string, List<Skill>> ChosenSkills = new Dictionary<string, List<Skill>>
         {
-            { "Min",      new Skill[] {Skills["Swivel"]} },
-            { "Grungo",   new Skill[] {Skills["Swivel"]} },
-            { "Guinn",    new Skill[] {Skills["Swivel"]} },
-            { "Capri",    new Skill[] {Skills["Swivel"]} },
-            { "Freckle",  new Skill[] {Skills["Swivel"]} },
-            { "Freddy",   new Skill[] {Skills["Swivel"]} },
-            { "Orami",    new Skill[] {Skills["Swivel"]} },
-            { "RosyMary", new Skill[] {Skills["Swivel"]} },
-            { "Dough",    new Skill[] {Skills["Swivel"]} },
-            { "Tan",      new Skill[] {Skills["Swivel"]} },
-            { "Pygor",    new Skill[] {Skills["Swivel"]} },
-            { "Frogor",   new Skill[] {Skills["Swivel"]} },
-            { "Jazzy",    new Skill[] {Skills["Swivel"]} },
-            { "Cequeba",  new Skill[] {Skills["Swivel"]} },
-            { "Mick",     new Skill[] {Skills["Swivel"]} },
-            { "Poky",     new Skill[] {Skills["Swivel"]} },
-            { "Risleigh", new Skill[] {Skills["Swivel"]} }
+            { "Min",      new List<Skill>() {Skills["Swivel"]} },
+            { "Grungo",   new List<Skill>() {Skills["Swivel"]} },
+            { "Guinn",    new List<Skill>() {Skills["Swivel"]} },
+            { "Capri",    new List<Skill>() {Skills["Swivel"]} },
+            { "Freckle",  new List<Skill>() {Skills["Swivel"]} },
+            { "Freddy",   new List<Skill>() {Skills["Swivel"]} },
+            { "Orami",    new List<Skill>() {Skills["Swivel"]} },
+            { "RosyMary", new List<Skill>() {Skills["Swivel"]} },
+            { "Dough",    new List<Skill>() {Skills["Swivel"]} },
+            { "Tan",      new List<Skill>() {Skills["Swivel"]} },
+            { "Pygor",    new List<Skill>() {Skills["Swivel"]} },
+            { "Frogor",   new List<Skill>() {Skills["Swivel"]} },
+            { "Jazzy",    new List<Skill>() {Skills["Swivel"]} },
+            { "Cequeba",  new List<Skill>() {Skills["Swivel"]} },
+            { "Mick",     new List<Skill>() {Skills["Swivel"]} },
+            { "Poky",     new List<Skill>() {Skills["Swivel"]} },
+            { "Risleigh", new List<Skill>() {Skills["Swivel"]} }
         };
 
     public static Dictionary<string, int> MatchupNum = new Dictionary<string, int>
@@ -106,10 +108,10 @@ public static class ActionStatics
             {0.8, 0.8, 0.8, 0.8, 0.8,    0.8, 0.8, 0.8, 0.8, 0.8, 0.9}
         };
 
-    public static Dictionary<string, Skill[]> EnemySkills = new Dictionary<string, Skill[]> //Hier moet basicattack wel bij want hier boeien we niet om een of ander skilllist die apart staat van basicattack
+    public static Dictionary<string, List<Skill>> EnemySkills = new Dictionary<string, List<Skill>> //Hier moet basicattack wel bij want hier boeien we niet om een of ander skilllist die apart staat van basicattack
         {
-            { "LaVigneSuspecte",     new Skill[] {Skills["BasicAttack"], Skills["Grapeshot"]} },
-            { "Fantolectrique",      new Skill[] {Skills["BasicAttack"], Skills["ShockingNews"]} },
+            { "LaVigneSuspecte",     new List<Skill>() {Skills["BasicAttack"], Skills["Grapeshot"]} },
+            { "Fantolectrique",      new List<Skill>() {Skills["BasicAttack"], Skills["ShockingNews"]} },
         };
 
     public static void ActionAccepted(CharacterBehaviour CallingCharacterBehaviour)
@@ -256,7 +258,14 @@ public static class ActionStatics
 
     public static void Death(CharacterBehaviour CallingCharacterBehaviour) 
     {
-        CallingCharacterBehaviour.CharacterEntity.quirks.ForEach(x => {if( (string) x.name == "adrenalinekick") {CallingCharacterBehaviour.CharacterEntity.hp = 1; CallingCharacterBehaviour.CharacterEntity.quirks.Remove(x);}});
+        foreach(KeyValuePair<string, List<Quirk>> QuirkEntry in CallingCharacterBehaviour.CharacterEntity.quirks)
+        {
+            if( QuirkEntry.Key == "AdrenalineKick" && QuirkEntry.Value.Count > 0) 
+            {
+                CallingCharacterBehaviour.CharacterEntity.hp = 1; 
+                QuirkEntry.Value.RemoveAt(0);
+            }
+        }
 
         if(CallingCharacterBehaviour.CharacterEntity.hp == 0)
         {
@@ -285,9 +294,36 @@ public static class ActionStatics
             }
             if (iq > 50 && iq <= 100)
             {
+                Skill ChosenSkill = EnemySkills[CallingCharacterBehaviour.name][Random.Range(0,EnemySkills[CallingCharacterBehaviour.name].Count)]; //not minus one because rondom range int is max-exclusive
 
+                Debug.Log(CallingCharacterBehaviour.name + " chose " + ChosenSkill.name, CallingCharacterBehaviour.gameObject);
+                Debug.Log(ChosenSkill.requiredSP, CallingCharacterBehaviour.gameObject);
+                Debug.Log(CallingCharacterBehaviour.CharacterEntity.sp, CallingCharacterBehaviour.gameObject);
+
+
+                if(ChosenSkill.requiredSP > CallingCharacterBehaviour.CharacterEntity.sp)
+                {
+                    CallingCharacterBehaviour.Actions.Add("BasicAttack");
+                }
+                else
+                {
+                    CallingCharacterBehaviour.Actions.Add(ChosenSkill.name);
+                }
+                
+                //Assuming there's one target:
+                CallingCharacterBehaviour.TargetsPerAction.Add( new CharacterBehaviour[] {CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>()} );
             }
         }
+    }
+
+    public static void InflictQuirk(Character InflictedCharacter, Quirk InflictingQuirk)
+    {
+
+    }
+
+    public static void InflictModifier(Character InflictedCharacter, Modifier InflictingModifier)
+    {
+
     }
 
     public static void BasicAttack(CharacterBehaviour CallingCharacterBehaviour)

@@ -41,8 +41,126 @@ public static class CharacterBehaviourStatics
         public int turn = 0;
         public string status;
         public double statusmultiplier = 1.0;
-        public List<Quirk> quirks = new List<Quirk>(); //Dus voor elke character een lijst met daarin arrays van quirk naam en quirk effect duration to go: {["quirkname", int], ["quirkname", int]}
-        public List<Modifier> modifiers = new List<Modifier>();
+
+        //quirk dict because of that fcking stack bs (calmest flint comment)
+        public Dictionary<string, List<Quirk>> quirks = new Dictionary<string, List<Quirk>>
+        {
+            { "Bleeding",    new List<Quirk>() },
+            { "Hyperthermic",    new List<Quirk>() },
+            { "Hypothermic",    new List<Quirk>() },
+            { "Poisoned",    new List<Quirk>() },
+            { "Acidified",    new List<Quirk>() },
+            { "Decay",    new List<Quirk>() },
+            { "Brittle",    new List<Quirk>() },
+            { "Fried",    new List<Quirk>() },
+            { "Starving",    new List<Quirk>() },
+            { "Haunted",    new List<Quirk>() },
+            { "Frostbite",    new List<Quirk>() },
+            { "Malaise",    new List<Quirk>() },
+            { "Virus",    new List<Quirk>() },
+            { "Vulnerable",    new List<Quirk>() },
+            { "Pierced",    new List<Quirk>() },
+
+            { "Nauseated",    new List<Quirk>() },
+            { "Paralyzed",    new List<Quirk>() },
+            { "Plasma",    new List<Quirk>() },
+            { "Confused",    new List<Quirk>() },
+            { "Trembling",    new List<Quirk>() },
+            { "TuckeredOut",    new List<Quirk>() },
+            { "Tetanus",    new List<Quirk>() },
+            { "Dizzy",    new List<Quirk>() },
+            { "DeathListed",    new List<Quirk>() },
+            { "Soaked",    new List<Quirk>() },
+            { "Pacified",    new List<Quirk>() },
+            { "Ablaze",    new List<Quirk>() },
+            { "BlueFlame",    new List<Quirk>() },
+            { "Reported",    new List<Quirk>() },
+            { "Analyzed",    new List<Quirk>() },
+            { "Defenseless",    new List<Quirk>() },
+            { "Weakened",    new List<Quirk>() },
+            { "Static",    new List<Quirk>() },
+            { "Toppled",    new List<Quirk>() },
+            { "Shattered",    new List<Quirk>() },
+            { "Concussed",    new List<Quirk>() },
+
+            { "PowerHungry",    new List<Quirk>() },
+            { "Ballistic",    new List<Quirk>() },
+            { "Forgetful",    new List<Quirk>() },
+            { "Damaged",    new List<Quirk>() },
+            { "Blind",    new List<Quirk>() },
+            { "Tinnitus",    new List<Quirk>() },
+            { "Intoxicated",    new List<Quirk>() },
+            { "Frenzy",    new List<Quirk>() },
+            { "Horrified",    new List<Quirk>() },
+
+            { "Vampiric",    new List<Quirk>() },
+            { "Sapper",    new List<Quirk>() },
+            { "Hotheaded",    new List<Quirk>() },
+            { "ColdFingers",    new List<Quirk>() },
+            { "HPRegen",    new List<Quirk>() },
+            { "SPRegen",    new List<Quirk>() },
+            { "Munchies",    new List<Quirk>() },
+            { "Armored",    new List<Quirk>() },
+            { "Protected",    new List<Quirk>() },
+            { "Invincible",    new List<Quirk>() },
+            { "AdrenalineKick",    new List<Quirk>() },
+            { "Invisible",    new List<Quirk>() },
+            { "Invigorated",    new List<Quirk>() },
+            { "Ambrosia",    new List<Quirk>() },
+            { "SlushedUp",    new List<Quirk>() },
+            { "Reckless",    new List<Quirk>() },
+            { "Vital power/wall/speed",    new List<Quirk>() }, //tf is dit, verander in doc cmon
+            { "VitalSenses",    new List<Quirk>() },
+            { "ChillingFigure",    new List<Quirk>() },
+            { "CuttingPresence",    new List<Quirk>() },
+            { "Pumped",    new List<Quirk>() },
+            { "SleepWalking",    new List<Quirk>() },
+            { "Sturdy muscle / nerves / wits",    new List<Quirk>() }, //cmon guys wth hiuer kan ik dus ook echt niks mee
+            { "SturdyReflex",    new List<Quirk>() },
+            { "StrikeReady",    new List<Quirk>() },
+            { "Hype",    new List<Quirk>() },
+            { "Blessed",    new List<Quirk>() },
+            { "Hallowed",    new List<Quirk>() },
+            { "Oblivious",    new List<Quirk>() },
+            { "Intensity",    new List<Quirk>() },
+
+            { "Aggravated",    new List<Quirk>() },
+            { "Shareholder",    new List<Quirk>() },
+            { "Manipulable",    new List<Quirk>() },
+            { "Succubus",    new List<Quirk>() },
+            { "Linked",    new List<Quirk>() },
+
+            { "SubstanceReliant",    new List<Quirk>() },
+            { "Insomniac",    new List<Quirk>() },
+            { "Hoarding",    new List<Quirk>() },
+            { "FlippedOut",    new List<Quirk>() },
+            { "Dazed",    new List<Quirk>() },
+
+            { "CoStar",    new List<Quirk>() },
+            { "Star",    new List<Quirk>() },
+            { "Cursed",    new List<Quirk>() },
+            { "Watt",    new List<Quirk>() },
+            { "Data",    new List<Quirk>() },
+            { "TechSavvy",    new List<Quirk>() },
+            { "Trojanned",    new List<Quirk>() },
+            { "Transfer",    new List<Quirk>() },
+            { "Split",    new List<Quirk>() },
+            { "Hooked",    new List<Quirk>() },
+            { "Lined",    new List<Quirk>() },
+            { "Charged",    new List<Quirk>() },
+            { "Boned",    new List<Quirk>() },
+
+            { "Sandswept",    new List<Quirk>() },
+            { "LightningRod",    new List<Quirk>() },
+            { "Avalanched",    new List<Quirk>() },
+            { "Decompose",    new List<Quirk>() },
+            { "Dehydrated",    new List<Quirk>() }
+        };
+
+        public Dictionary<string, List<Modifier>> modifiers = new Dictionary<string, List<Modifier>>
+        {
+            { "idk",    new List<Modifier>() } //kon geen list van modifiers (buffs/debuffs) vinden
+        };
     }
 
     [System.Serializable]
@@ -88,7 +206,7 @@ public static class CharacterBehaviourStatics
 
         float buttonScaler = 0.05f;
 
-        float yOffset = (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Length-1)))/2;
+        float yOffset = (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Count-1)))/2;
         float yOffsetDelta = buttonScaler*(buttonHeight + buttonMargin);
 
         foreach (Skill SkillSkill in ChosenSkills[CallingCharacterBehaviour.name])
@@ -142,7 +260,7 @@ public static class CharacterBehaviourStatics
         BackButton.name = "BackButton";
 
         RectTransform BackButtonRectTransform = BackButton.AddComponent<RectTransform>();
-        BackButtonRectTransform.anchoredPosition = new Vector2(4.20f, (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Length-1)))/2 + 40f*buttonScaler);
+        BackButtonRectTransform.anchoredPosition = new Vector2(4.20f, (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Count-1)))/2 + 40f*buttonScaler);
         BackButtonRectTransform.sizeDelta = new Vector2(50f, 50f);
 
         CanvasRenderer BackButtonCanvasRenderer = BackButton.AddComponent<CanvasRenderer>();
