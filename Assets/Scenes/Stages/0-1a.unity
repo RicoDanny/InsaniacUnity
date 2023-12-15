@@ -2532,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d026d30803a0449dadbbf7d59d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: 59d3e52633274974ba641301ff283837, type: 3}
+  textJSON: {fileID: 4900000, guid: 6af0e0dcf2000ec42b464184827971a7, type: 3}
   myDialogueList:
     dialogue: []
   CharacterNameToDisplay: 
