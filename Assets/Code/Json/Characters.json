@@ -34,7 +34,8 @@
       "luck": 9,
       "luckp": 0,
       "crit": 0,
-      "critp": 0
+      "critp": 0,
+      "status": "Thrilled"
     },
     {
       "Name": "Grungo",

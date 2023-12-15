@@ -101,7 +101,7 @@ public static class DialogueStatics
         }
         else
         {
-            SceneManager.LoadScene("HomeScreen");
+            SceneManager.LoadScene(CallingDialogueScript.NextScene);
             return false;
         }
     }

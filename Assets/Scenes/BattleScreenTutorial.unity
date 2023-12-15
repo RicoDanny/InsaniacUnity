@@ -4045,6 +4045,7 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
+    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
@@ -4904,6 +4905,7 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
+    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
@@ -5499,6 +5501,7 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
+    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
@@ -6460,9 +6463,12 @@ MonoBehaviour:
   SelectUnitBanner: {fileID: 638438753}
   Selected: 0
   GoodGuysObject: {fileID: 509115488}
+  BadGuysObject: {fileID: 517015051}
   SkillSprite: {fileID: 21300000, guid: 7036e8e90c5c37b47bab91c0efee7bc2, type: 3}
   BackButtonSprite: {fileID: 21300000, guid: 9f737978b8e14a844b19360c8d1581cf, type: 3}
   TickInterval: 0.5
+  AllyCount: 0
+  EnemyCount: 0
 --- !u!1 &1105839681
 GameObject:
   m_ObjectHideFlags: 0
@@ -9468,6 +9474,7 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
+    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
