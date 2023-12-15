@@ -2263,7 +2263,7 @@ GameObject:
   - component: {fileID: 431789121}
   - component: {fileID: 431789124}
   m_Layer: 0
-  m_Name: 0-3
+  m_Name: 0-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2332,7 +2332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 91371422}
+      - m_Target: {fileID: 386499112}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2365,7 +2365,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Battle
+          m_StringArgument: Story
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 800632795}
@@ -2668,7 +2668,7 @@ GameObject:
   - component: {fileID: 539645252}
   - component: {fileID: 539645255}
   m_Layer: 0
-  m_Name: 0-4
+  m_Name: 0-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
