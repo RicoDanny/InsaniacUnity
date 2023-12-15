@@ -378,12 +378,12 @@ public static class ActionStatics
 
     public static void InflictQuirk(Character InflictedCharacter, Quirk InflictingQuirk)
     {
-
+        InflictedCharacter.quirks[InflictingQuirk.name].Add(InflictingQuirk);
     }
 
     public static void InflictModifier(Character InflictedCharacter, Modifier InflictingModifier)
     {
-
+        InflictedCharacter.modifiers[InflictingModifier.name].Add(InflictingModifier);
     }
 
     public static void BasicAttack(CharacterBehaviour CallingCharacterBehaviour)

@@ -16,7 +16,11 @@ public static class Fantolectrique
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
+        UserBattler.atk -= 1;
+
         TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+
+        UserBattler.atk += 1;
 
         EndAction(CallingCharacterBehaviour);
     }
