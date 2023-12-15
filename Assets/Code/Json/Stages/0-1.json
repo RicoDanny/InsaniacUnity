@@ -8,7 +8,13 @@
     "BackgroundImage": "Midbourgh"
   },
   {
-    "DialogueString": "“Oh golly, well the name’s Geneva if you weren’t aware, and as you may have seen, some people don’t really take kindly to the things I say when I’m doing my craft. ‘N lets just say I’d prefer it if I didn’t die before I became president.”",
+    "DialogueString": "“Oh golly, well the name’s Geneva if you weren’t aware, and as you may have seen, some people don’t really take kindly to the things I say when I’m doing my craft.”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Midbourgh"
+  },
+  {
+    "DialogueString": "“‘N lets just say I’d prefer it if I didn’t die before I became president.”",
     "CharacterName": "Min",
     "CharacterEmotion": "Neutral",
     "BackgroundImage": "Midbourgh"
@@ -20,7 +26,13 @@
     "BackgroundImage": "Midbourgh"
   },
   {
-    "DialogueString": "“Now you see that’s where you come in buddy, my bodyguard has been a bit on the slacking side lately, and my reputation has been a bit iffy as of late, which means I could really use another pair of helping hands, you see?”",
+    "DialogueString": "“Now you see that’s where you come in buddy, my bodyguard has been a bit on the slacking side lately, and my reputation has been a bit iffy as of late...”",
+    "CharacterName": "Min",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Midbourgh"
+  },
+  {
+    "DialogueString": "“Which means I could really use another pair of helping hands, you see?”",
     "CharacterName": "Min",
     "CharacterEmotion": "Neutral",
     "BackgroundImage": "Midbourgh"
@@ -182,7 +194,13 @@
     "BackgroundImage": "Midbourgh"
   },
   {
-    "DialogueString": "“Okay so, the job’s basically making it so Mr. President over here doesn’t get beat up while he’s holding a rally. Considering your… build, I assume you know how to punch someone.”",
+    "DialogueString": "“Okay so, the job’s basically making it so Mr. President over here doesn’t get beat up while he’s holding a rally.”",
+    "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Midbourgh"
+  },
+  {
+    "DialogueString": "“Considering your… build, I assume you know how to punch someone.”",
     "CharacterName": "Grungo",
     "CharacterEmotion": "Neutral",
     "BackgroundImage": "Midbourgh"
@@ -292,6 +310,12 @@
   {
     "DialogueString": "“You’re the one that let’s me do it.”",
     "CharacterName": "Grungo",
+    "CharacterEmotion": "Neutral",
+    "BackgroundImage": "Midbourgh"
+  },
+  {
+    "DialogueString": "“Okay okay, now to get to the business. Let’s make it a bit enticing for you, I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn. Which is better pay than any oddjob you’d find around here.”",
+    "CharacterName": "Min",
     "CharacterEmotion": "Neutral",
     "BackgroundImage": "Midbourgh"
   },
