@@ -4045,8 +4045,6 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
-    quirks: []
-    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
@@ -4906,8 +4904,6 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
-    quirks: []
-    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
@@ -5503,8 +5499,6 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
-    quirks: []
-    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
@@ -9474,8 +9468,6 @@ MonoBehaviour:
     turn: 0
     status: 
     statusmultiplier: 1
-    quirks: []
-    modifiers: []
   TargetingType: 0
   IsTarget: 0
   User: 0
