@@ -309,9 +309,69 @@ public static class ActionStatics
                 {
                     CallingCharacterBehaviour.Actions.Add(ChosenSkill.name);
                 }
+
                 
-                //Assuming there's one target:
-                CallingCharacterBehaviour.TargetsPerAction.Add( new CharacterBehaviour[] {CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>()} );
+                //-3: Target Self
+                //-2: Target Enemy Team
+                //-1: Target Ally Team
+                //0: Target Everyone
+
+                List<CharacterBehaviour> AITargets = new List<CharacterBehaviour>();
+
+                if(ChosenSkill.targetNumber == -3)
+                {
+                    CallingCharacterBehaviour.TickCounterObject.Targets.Add(CallingCharacterBehaviour);
+                }
+                else if(ChosenSkill.targetNumber == -2)
+                {
+                    Transform parentTransform = GameObject.Find("GoodGuys").transform; //Enemy team van enemies is goodguys
+
+                    for (int i = 0; i < parentTransform.childCount; i++)
+                    {
+                        CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                        AITargets.Add(child);
+                    }
+                }
+                else if(ChosenSkill.targetNumber == -1)
+                {
+                    Transform parentTransform = GameObject.Find("BadGuys").transform; //Ally team van enemies is badguys
+
+                    for (int i = 0; i < parentTransform.childCount; i++)
+                    {
+                        CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                        AITargets.Add(child);
+                    }
+                }
+                else if(ChosenSkill.targetNumber == 0)
+                {
+                    Transform parentTransform = GameObject.Find("BadGuys").transform;
+
+                    for (int i = 0; i < parentTransform.childCount; i++)
+                    {
+                        CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                        AITargets.Add(child);
+                    }
+
+                    parentTransform = GameObject.Find("GoodGuys").transform;
+
+                    for (int i = 0; i < parentTransform.childCount; i++)
+                    {
+                        CharacterBehaviour child = parentTransform.GetChild(i).gameObject.GetComponent<CharacterBehaviour>();
+                        AITargets.Add(child);
+                    }
+                }
+                else if(ChosenSkill.targetNumber == 1)
+                {
+                    AITargets.Add( CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>() );
+                }
+                else if(ChosenSkill.targetNumber == 2)
+                {
+                    
+                }
+                //Als targetNumber 3 is, dan is het hele enemy team, dus -2, dus gebeurd niet bij enemy skills
+            
+
+                CallingCharacterBehaviour.TargetsPerAction.Add(AITargets.ToArray());
             }
         }
     }

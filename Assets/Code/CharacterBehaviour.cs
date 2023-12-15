@@ -137,21 +137,7 @@ public class CharacterBehaviour : MonoBehaviour
         parameters = new object[] { character };
 
         if(functionName != "BasicAttack"){
-            switch(name)
-            {
-                case "Min":
-                    staticClassType = typeof(Min); 
-                    break;
-                case "Pygor":
-                    staticClassType = typeof(Pygor); 
-                    break;
-                case "Grungo":
-                    staticClassType = typeof(Pygor); 
-                    break;
-                default:
-                    staticClassType = typeof(ActionStatics); 
-                    break;
-            }
+            staticClassType = Type.GetType(name);
         }
         else
         {
