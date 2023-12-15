@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Main statics
 using static TickCounterStatics;
@@ -10,7 +11,7 @@ using static ActionStatics;
 public class TickCounter : MonoBehaviour
 {
     public int Tickcounter = 0;
-    public GameObject[] Units;
+    public List<GameObject> Units = new List<GameObject>();
     [SerializeField] private GameObject UnitCanvas;
     public List<CharacterBehaviour> Active = new List<CharacterBehaviour>(); //Here are the characters that have an action on this turn
     public List<CharacterBehaviour> Targets = new List<CharacterBehaviour>(); //List of characters that are targeted (Selected) on the UnitCanvas (Unfiltered)
@@ -26,9 +27,12 @@ public class TickCounter : MonoBehaviour
     public GameObject SelectUnitBanner;
     public bool Selected = false;
     public GameObject GoodGuysObject;
+    public GameObject BadGuysObject;
     public Sprite SkillSprite;
     public Sprite BackButtonSprite;
     public double TickInterval = 0.5;
+    public int AllyCount = 0;
+    public int EnemyCount = 0;
 
     void Start()
     {
@@ -45,7 +49,7 @@ public class TickCounter : MonoBehaviour
 
         DefineMenusChildren(this); //de menus van de characters even allemaal pakken zodat we die aan en uit kunnen zetten, denkend aan wie geselect is
         
-        Units = GameObject.FindGameObjectsWithTag("Units"); //Pakt elk character
+        Units.AddRange(GameObject.FindGameObjectsWithTag("Units")); //Pakt elk character
 
         DefineTickSelectBanners(this); //Defined de UI banners dat zegt dat je dingetjes moet selecten
     }
@@ -55,6 +59,15 @@ public class TickCounter : MonoBehaviour
         UpdateSelectUnitBanner(this); //UI dingetjes updaten elke frame ("Select Unit"!!)
 
         UpdateTick(this); //Check of nieuwe tick en zo ja, Tickfunction
+
+        if(PlayerWon(this))
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+        else if(PlayerLost(this))
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
     }
 
     public void Tickfunction()

@@ -157,10 +157,7 @@ public static class CharacterBehaviourStatics
             { "Dehydrated",    new List<Quirk>() }
         };
 
-        public Dictionary<string, List<Modifier>> modifiers = new Dictionary<string, List<Modifier>>
-        {
-            { "idk",    new List<Modifier>() } //kon geen list van modifiers (buffs/debuffs) vinden
-        };
+        public List<Modifier> modifiers = new List<Modifier>();
     }
 
     [System.Serializable]

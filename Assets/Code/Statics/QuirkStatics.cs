@@ -10,6 +10,7 @@ public static class  QuirkStatics
         public string name;
         public int totalduration;
         public int duration;
+        public bool tickbased = false;
     }
 
     public static string[] LoopThroughQuirks(CharacterBehaviour CallingCharacterBehaviour)
@@ -25,6 +26,23 @@ public static class  QuirkStatics
                 foreach( Quirk quirk in QuirkEntry.Value)
                 {
                     quirk.duration -= 1;
+                }
+            }
+        }
+
+        return ReturnList.ToArray();
+    }
+
+    public static string[] LoopThroughTickQuirks(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        List<string> ReturnList = new List<string>();
+
+        foreach(KeyValuePair<string, List<Quirk>> QuirkEntry in CallingCharacterBehaviour.CharacterEntity.quirks)
+        {
+            if (QuirkEntry.Value.Count > 0)
+            {
+                if(QuirkEntry.Value[0].tickbased){
+                    ReturnList.Add(QuirkEntry.Key);
                 }
             }
         }
@@ -66,5 +84,10 @@ public static class  QuirkStatics
                 AblazeQuirk.duration = AblazeQuirk.totalduration;
             }
         }
+    }
+
+    public static void Paralyzed(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        //Oh no, anyways
     }
 }

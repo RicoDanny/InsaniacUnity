@@ -270,6 +270,7 @@ public static class ActionStatics
         if(CallingCharacterBehaviour.CharacterEntity.hp == 0)
         {
             CallingCharacterBehaviour.gameObject.SetActive(false);
+            CallingCharacterBehaviour.TickCounterObject.Units.Remove(CallingCharacterBehaviour.gameObject);
         }
     }
 
@@ -295,11 +296,6 @@ public static class ActionStatics
             if (iq > 50 && iq <= 100)
             {
                 Skill ChosenSkill = EnemySkills[CallingCharacterBehaviour.name][Random.Range(0,EnemySkills[CallingCharacterBehaviour.name].Count)]; //not minus one because rondom range int is max-exclusive
-
-                Debug.Log(CallingCharacterBehaviour.name + " chose " + ChosenSkill.name, CallingCharacterBehaviour.gameObject);
-                Debug.Log(ChosenSkill.requiredSP, CallingCharacterBehaviour.gameObject);
-                Debug.Log(CallingCharacterBehaviour.CharacterEntity.sp, CallingCharacterBehaviour.gameObject);
-
 
                 if(ChosenSkill.requiredSP > CallingCharacterBehaviour.CharacterEntity.sp)
                 {
@@ -383,7 +379,7 @@ public static class ActionStatics
 
     public static void InflictModifier(Character InflictedCharacter, Modifier InflictingModifier)
     {
-        InflictedCharacter.modifiers[InflictingModifier.name].Add(InflictingModifier);
+        InflictedCharacter.modifiers.Add(InflictingModifier);
     }
 
     public static void BasicAttack(CharacterBehaviour CallingCharacterBehaviour)

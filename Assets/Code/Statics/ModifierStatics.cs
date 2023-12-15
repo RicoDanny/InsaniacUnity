@@ -16,17 +16,11 @@ public static class  ModifierStatics
     {
         List<string> ReturnList = new List<string>();
 
-        foreach(KeyValuePair<string, List<Modifier>> ModifierEntry in CallingCharacterBehaviour.CharacterEntity.modifiers)
+        foreach(Modifier modifier in CallingCharacterBehaviour.CharacterEntity.modifiers)
         {
-            if (ModifierEntry.Value.Count > 0)
-            {
-                ReturnList.Add(ModifierEntry.Key);
+            modifier.duration -= 1;
 
-                foreach( Modifier modifier in ModifierEntry.Value)
-                {
-                    modifier.duration -= 1;
-                }
-            }
+            ReturnList.Add(modifier.name);
         }
 
         return ReturnList.ToArray();
