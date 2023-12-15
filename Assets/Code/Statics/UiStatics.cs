@@ -32,27 +32,27 @@ public static class  UiStatics
 
     public static void UpdateHP(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = "HP: " + CallingCharacterBehaviour.CharacterEntity.hp.ToString();
+        CallingCharacterBehaviour.CharacterHPText.GetComponent<TMPro.TextMeshProUGUI>().text = "HP: " + (CallingCharacterBehaviour.CharacterEntity.hp).ToString();
     }
 
     public static void UpdateSP(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.CharacterSPText.GetComponent<TMPro.TextMeshProUGUI>().text = "SP: " + CallingCharacterBehaviour.CharacterEntity.sp.ToString();
+        CallingCharacterBehaviour.CharacterSPText.GetComponent<TMPro.TextMeshProUGUI>().text = "SP: " + (CallingCharacterBehaviour.CharacterEntity.sp).ToString();
     }
 
     public static void UpdateATK(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.CharacterATKText.GetComponent<TMPro.TextMeshProUGUI>().text = "ATK: " + CallingCharacterBehaviour.CharacterEntity.atk.ToString();
+        CallingCharacterBehaviour.CharacterATKText.GetComponent<TMPro.TextMeshProUGUI>().text = "ATK: " + (CallingCharacterBehaviour.CharacterEntity.atk + CallingCharacterBehaviour.CharacterEntity.atkboost).ToString();
     }
 
     public static void UpdateDEF(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.CharacterDEFText.GetComponent<TMPro.TextMeshProUGUI>().text = "DEF: " + CallingCharacterBehaviour.CharacterEntity.def.ToString();
+        CallingCharacterBehaviour.CharacterDEFText.GetComponent<TMPro.TextMeshProUGUI>().text = "DEF: " + (CallingCharacterBehaviour.CharacterEntity.def+CallingCharacterBehaviour.CharacterEntity.defboost).ToString();
     }
 
     public static void UpdateSPD(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.CharacterSPDText.GetComponent<TMPro.TextMeshProUGUI>().text = "SPD: " + CallingCharacterBehaviour.CharacterEntity.spd.ToString();
+        CallingCharacterBehaviour.CharacterSPDText.GetComponent<TMPro.TextMeshProUGUI>().text = "SPD: " + (CallingCharacterBehaviour.CharacterEntity.spd).ToString();
     }
 
     public static void UpdateHIT(CharacterBehaviour CallingCharacterBehaviour)

@@ -38,7 +38,7 @@ public class TickCounter : MonoBehaviour
     {
         if (ChosenCharacterStrings == null)
         {
-            ChosenCharacterStrings = new List<string>(){"Min"}; //Defealt team in case of bug ig
+            ChosenCharacterStrings = new List<string>(){"Min", "Pygor", "Grungo"}; //Defealt team in case of bug ig
         }
 
         SpawnCharacters(this);

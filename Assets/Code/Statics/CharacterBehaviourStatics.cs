@@ -249,7 +249,7 @@ public static class CharacterBehaviourStatics
             SkillText.name = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1) + "Text";
 
             TMPro.TextMeshProUGUI SkillTextTMP = SkillText.AddComponent<TMPro.TextMeshProUGUI>();
-            SkillTextTMP.text = char.ToUpper(( (string) SkillString)[0]) + ( (string) SkillString).Substring(1);
+            SkillTextTMP.text = SkillSkill.displayName;
             SkillTextTMP.fontSize = 20f;
             SkillTextTMP.alignment = TMPro.TextAlignmentOptions.Center;
         }

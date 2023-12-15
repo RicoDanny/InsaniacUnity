@@ -16,6 +16,7 @@ using static ModifierStatics;
 using static Min;
 using static Pygor;
 using static Grungo;
+using static Freddy;
     //enz.
 
 //Enemy statics
@@ -97,12 +98,8 @@ public class CharacterBehaviour : MonoBehaviour
                 CallStaticQuirk(CharacterQuirk, this);
             }
 
-            //Loop through modifiers and do their respective methods
-            string[] ModifierMethods = LoopThroughModifiers(this);
-            foreach (string CharacterModifier in ModifierMethods) 
-            {
-                CallStaticModifier(CharacterModifier, this);
-            }
+            //Loop through modifiers and inflict em
+            LoopThroughModifiers(this);
 
             //Do your move
             CallStaticAction(Actions[0], this);
@@ -177,29 +174,6 @@ public class CharacterBehaviour : MonoBehaviour
         else
         {
             Debug.LogError("Static method " + CharacterQuirk + " not found in " + staticClassType.Name);
-        }
-    }
-
-    public void CallStaticModifier(string CharacterModifier, CharacterBehaviour character)
-    {
-        object[] parameters;
-        
-        // Parameters for the function call
-
-        Type staticClassType = null;
-
-        parameters = new object[] { character };
-        staticClassType = typeof(ModifierStatics); 
-
-        MethodInfo method = staticClassType.GetMethod(CharacterModifier, BindingFlags.Public | BindingFlags.Static);
-
-        if (method != null)
-        {
-            method.Invoke(null, parameters);
-        }
-        else
-        {
-            Debug.LogError("Static method " + CharacterModifier + " not found in " + staticClassType.Name);
         }
     }
 }

@@ -22,6 +22,7 @@ public static class ActionStatics
     public class Skill
     {
         public string name;
+        public string displayName;
         public int targetNumber;
         public int requiredSP;
         public string description;
@@ -34,47 +35,60 @@ public static class ActionStatics
     public static Dictionary<string, Skill> Skills = new Dictionary<string, Skill>
         {
             //ALLY SKILLS
-            { "BasicAttack",    new Skill {name = "BasicAttack",    targetNumber = 1,   requiredSP = 0} },
+            { "BasicAttack", new Skill {name = "BasicAttack", targetNumber = 1, requiredSP = 0} },
 
             //Min
-            { "Swivel",         new Skill {name = "Swivel",         targetNumber = -3,  requiredSP = 0} },
-            { "LookOverThere",  new Skill {name = "LookOverThere",  targetNumber = 1,   requiredSP = 5} },
+            { "LookOverThere", new Skill {name = "LookOverThere", targetNumber = 1, requiredSP = 5, displayName = "Look over there!"} },
+            { "HypeUp", new Skill {name = "HypeUp", targetNumber = 1, requiredSP = 3, displayName = "Hype up!"} },
+            { "Speech", new Skill {name = "Speech", targetNumber = -1, requiredSP = 6, displayName = "Speech"} },
+            { "Overwork", new Skill {name = "Overwork", targetNumber = 1, requiredSP = 5, displayName = "Overwork"} },
 
             //Grungo
-            { "BodyCheck",      new Skill {name = "BodyCheck",      targetNumber = 1,   requiredSP = 4} },
-            { "Break",          new Skill {name = "Break",          targetNumber = 1,   requiredSP = 5} },
+            { "BodyCheck", new Skill {name = "BodyCheck", targetNumber = 1, requiredSP = 4, displayName = "Body check"} },
+            { "Break", new Skill {name = "Break", targetNumber = 1, requiredSP = 5, displayName = "Break"} },
+            { "ChainAttack", new Skill {name = "ChainAttack", targetNumber = -1,   requiredSP = 10, displayName = "Chain-attack"} },
+            { "Suffer", new Skill {name = "Suffer", targetNumber = -1,   requiredSP = 10, displayName = "Suffer"} },
 
             //Pygor
-            { "Matchsticks",    new Skill {name = "Matchsticks",    targetNumber = 1,   requiredSP = 1} },
-            { "LateForWork",    new Skill {name = "LateForWork",    targetNumber = 1,   requiredSP = 8} },
+            { "Matchsticks", new Skill {name = "Matchsticks", targetNumber = 1, requiredSP = 1, displayName = "Matchsticks"} },
+            { "LateForWork", new Skill {name = "LateForWork", targetNumber = 1, requiredSP = 8, displayName = "Late for work"} },
+            { "RiskyManeuver", new Skill {name = "RiskyManeuver", targetNumber = 2, requiredSP = 6, displayName = "Risky maneuver"} },
+            { "LitOnFire", new Skill {name = "LitOnFire", targetNumber = -2, requiredSP = 6, displayName = "Lit on fire"} },
+            { "FeastFlail", new Skill {name = "FeastFlail", targetNumber = -1, requiredSP = 4, displayName = "Feast flail"} },
+
+            //Freddy
+            { "RainOfPain", new Skill {name = "RainOfPain", targetNumber = 1, requiredSP = 7, displayName = "Rain of pain"} },
+            { "FinancialThreat", new Skill {name = "FinancialThreat", targetNumber = 1, requiredSP = 2, displayName = "Financial threat"} },
+            { "ArtificialDeflation", new Skill {name = "ArtificialDeflation", targetNumber = -2, requiredSP = 8, displayName = "Artificial deflation"} },
+            { "TakeALoan", new Skill {name = "TakeALoan", targetNumber = -3, requiredSP = 0, displayName = "Take a loan"} },
 
             //ENEMY SKILLS
             //LaVigneSuspecte
-            { "Grapeshot",      new Skill {name = "Grapeshot",      targetNumber = -2,  requiredSP = 3} },
+            { "Grapeshot", new Skill {name = "Grapeshot", targetNumber = -2, requiredSP = 3} },
 
             //Fantolectrique
-            { "ShockingNews",   new Skill {name = "ShockingNews",   targetNumber = 1,   requiredSP = 4} },
+            { "ShockingNews", new Skill {name = "ShockingNews", targetNumber = 1, requiredSP = 4} },
         };
 
     public static Dictionary<string, List<Skill>> ChosenSkills = new Dictionary<string, List<Skill>>
         {
-            { "Min",      new List<Skill>() {Skills["Swivel"]} },
-            { "Grungo",   new List<Skill>() {Skills["Swivel"]} },
-            { "Guinn",    new List<Skill>() {Skills["Swivel"]} },
-            { "Capri",    new List<Skill>() {Skills["Swivel"]} },
-            { "Freckle",  new List<Skill>() {Skills["Swivel"]} },
-            { "Freddy",   new List<Skill>() {Skills["Swivel"]} },
-            { "Orami",    new List<Skill>() {Skills["Swivel"]} },
-            { "RosyMary", new List<Skill>() {Skills["Swivel"]} },
-            { "Dough",    new List<Skill>() {Skills["Swivel"]} },
-            { "Tan",      new List<Skill>() {Skills["Swivel"]} },
-            { "Pygor",    new List<Skill>() {Skills["Swivel"]} },
-            { "Frogor",   new List<Skill>() {Skills["Swivel"]} },
-            { "Jazzy",    new List<Skill>() {Skills["Swivel"]} },
-            { "Cequeba",  new List<Skill>() {Skills["Swivel"]} },
-            { "Mick",     new List<Skill>() {Skills["Swivel"]} },
-            { "Poky",     new List<Skill>() {Skills["Swivel"]} },
-            { "Risleigh", new List<Skill>() {Skills["Swivel"]} }
+            { "Min",      new List<Skill>() {Skills["LookOverThere"], Skills["HypeUp"], Skills["Speech"], Skills["Overwork"]} },
+            { "Grungo",   new List<Skill>() {Skills["BodyCheck"], Skills["Break"], Skills["ChainAttack"], Skills["Suffer"]} },
+            { "Guinn",    new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Capri",    new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Freckle",  new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Freddy",   new List<Skill>() {Skills["RainOfPain"], Skills["FinancialThreat"], Skills["ArtificialDeflation"], Skills["TakeALoan"]} },
+            { "Orami",    new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "RosyMary", new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Dough",    new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Tan",      new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Pygor",    new List<Skill>() {Skills["Matchsticks"], Skills["LateForWork"], Skills["RiskyManeuver"], Skills["LitOnFire"], Skills["FeastFlail"]} },
+            { "Frogor",   new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Jazzy",    new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Cequeba",  new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Mick",     new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Poky",     new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
+            { "Risleigh", new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} }
         };
 
     public static Dictionary<string, int> MatchupNum = new Dictionary<string, int>
