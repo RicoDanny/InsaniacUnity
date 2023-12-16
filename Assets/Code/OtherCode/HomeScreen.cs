@@ -20,12 +20,22 @@ public class HomeScreen : MonoBehaviour
     public GameObject StoryLetterB;
     public GameObject StoryLetterC;
     public GameObject StoryLetterD;
+
     void Start() 
     {
         ChosenCharacters = new List<GameObject>();
         ChosenCharacterStrings= new List<string>();
 
         ChosenLetter = "0";
+
+        if(!PlayerPrefs.HasKey("ChapterProgress"))
+        {
+            PlayerPrefs.SetString("ChapterProgress", "Tutorial");
+            PlayerPrefs.SetString("StageProgress", "0-0");
+        }
+
+        Debug.Log(PlayerPrefs.GetString("ChapterProgress", "Tutorial"));
+        Debug.Log(PlayerPrefs.GetString("StageProgress", "0-0"));
     }
 
     public void CallSetChosenScene(string ProxyDesiredScene)
