@@ -1,0 +1,59 @@
+{
+  "dialogue":
+  [
+    {
+      "DialogueString": "<i>As Min starts rallying again, he seems to attract the exact kind of company they were talking about earlier.</i>",
+      "CharacterName": "",
+      "CharacterEmotion": "",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“Could ya bug off you plonker?”",
+      "CharacterName": "",
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“But why would I? Oh'so not kind citizen?”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Sarcasm",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“That's it, get em boys!”",
+      "CharacterName": "",
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“You grouches think you can mess with Geneva? Well, bring it!”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“Okay rookie, time for a practice run. We just need to give these guys a good wallop and they'll be scuttlin' back to their momma.”",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“You know how a scrap works at least a little right?”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“No, what do I do?”",
+      "CharacterName": "Pygor",
+      "CharacterEmotion": "Confused",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“Just hit one of 'em? Shouldn't be that hard, lemme show ya.”",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    }
+  ]
+}
