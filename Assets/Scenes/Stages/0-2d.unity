@@ -2532,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d026d30803a0449dadbbf7d59d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: 3f9cf913c277f0447860a09059df1dcd, type: 3}
+  textJSON: {fileID: 4900000, guid: 32d4d1ff169f3bc45baddf34e28d8812, type: 3}
   myDialogueList:
     dialogue: []
   CharacterNameToDisplay: 
@@ -2546,7 +2546,7 @@ MonoBehaviour:
   TextBoxComponent: {fileID: 4888851}
   NameBoxComponent: {fileID: 2000479808}
   DialogueNumber: 0
-  NextScene: 0-2b
+  NextScene: HomeScreen
 --- !u!4 &795824279
 Transform:
   m_ObjectHideFlags: 0

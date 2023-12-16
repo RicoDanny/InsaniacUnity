@@ -2,58 +2,94 @@
   "dialogue":
   [
     {
-      "DialogueString": "<i>As Min starts rallying again, he seems to attract the exact kind of company they were talking about earlier.</i>",
+      "DialogueString": "<i>The 'not-so-kind citizens' seem to have finally given up and scurried off, and Min didn't even flinch during his complete speech</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
-      "BackgroundImage": "Midbourgh"
+      "Backgroundimage": ""
     },
     {
-      "DialogueString": "“Could ya bug off you plonker?”",
-      "CharacterName": "",
+      "DialogueString": "With the money we will raise, I will buy ALL of Vincroyable and extract all the water from their grapes!”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Wow",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“I’ll use the land to build large factories to harness the water residing in the earth!”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Thinking",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“On another note, still on the same page, Dabey’s sea is receding more and more over the years.”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Scared",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“The fishes are dying and downtown Dabey is gaining a bigger and bigger ship graveyard.”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Sad",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“I reckon all the water is just evaporating and deciding it needs a new home because apparently Psychonia’s not good enough for them!”",
+      "CharacterName": "Min",
       "CharacterEmotion": "Angry",
-      "BackgroundImage": "Midbourgh"
+      "Backgroundimage": ""
     },
     {
-      "DialogueString": "“But why would I? Oh'so not kind citizen?”",
+      "DialogueString": "“This does leave the opportunity to send some researchers to that sea because boats have gone missing each time they tried to discover new land…”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Thinking",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“But the livelihood of the people comes first, so collecting raindrops it is!”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Disappointed",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“If you want to survive this crisis, vote for the only person that’s actively trying to save you; hint, it’s me!”",
       "CharacterName": "Min",
       "CharacterEmotion": "Sarcasm",
-      "BackgroundImage": "Midbourgh"
+      "Backgroundimage": ""
     },
     {
-      "DialogueString": "“That's it, get em boys!”",
-      "CharacterName": "",
-      "CharacterEmotion": "Angry",
-      "BackgroundImage": "Midbourgh"
-    },
-    {
-      "DialogueString": "“You grouches think you can mess with Geneva? Well, bring it!”",
+      "DialogueString": "“When I’m finally president of Midburgh, I’ll use my power to meet the Insaniac and have a good word with him!”",
       "CharacterName": "Min",
-      "CharacterEmotion": "Angry",
-      "BackgroundImage": "Midbourgh"
+      "CharacterEmotion": "Happy",
+      "Backgroundimage": ""
     },
     {
-      "DialogueString": "“Okay rookie, time for a practice run. We just need to give these guys a good wallop and they'll be scuttlin' back to their momma.”",
-      "CharacterName": "Grungo",
-      "CharacterEmotion": "Neutral",
-      "BackgroundImage": "Midbourgh"
-    },
-    {
-      "DialogueString": "“You know how a scrap works at least a little right?”",
-      "CharacterName": "Min",
-      "CharacterEmotion": "Neutral",
-      "BackgroundImage": "Midbourgh"
-    },
-    {
-      "DialogueString": "“No, what do I do?”",
+      "DialogueString": "“Y-you want to fight The Insaniac?!”",
       "CharacterName": "Pygor",
-      "CharacterEmotion": "Confused",
-      "BackgroundImage": "Midbourgh"
+      "CharacterEmotion": "Scared",
+      "Backgroundimage": ""
     },
     {
-      "DialogueString": "“Just hit one of 'em? Shouldn't be that hard, lemme show ya.”",
+      "DialogueString": "“Well, ‘fighting The Insaniac’ is the last resort.",
       "CharacterName": "Grungo",
-      "CharacterEmotion": "Neutral",
-      "BackgroundImage": "Midbourgh"
+      "CharacterEmotion": "Shocked",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“But he’s looked into this topic a lot and there doesn't exactly seem an explanation for where the water is going.",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Worried",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“A meeting with the Insaniac might seem like a pipedream, but it could be our only chance.",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Thinking",
+      "Backgroundimage": ""
+    },
+    {
+      "DialogueString": "“Well, that’s about it! I wish you all a very great afternoon and I’ll see you next time!”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Happy",
+      "Backgroundimage": ""
     }
   ]
 }
