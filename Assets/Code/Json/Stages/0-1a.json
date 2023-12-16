@@ -2,7 +2,7 @@
   "dialogue":
   [
     {
-      "DialogueString": "“Well hello sport, you seem a bit down on your luck. I have an enticing offer for you, if you’re willing to lend your ear?”",
+      "DialogueString": "“Well hello sport, you seem a bit down on your luck. I have an enticing offer for you, if you're willing to lend your ear?”",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
@@ -14,13 +14,13 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "“Oh golly, well the name’s Geneva if you weren’t aware, and as you may have seen, some people don’t really take kindly to the things I say when I’m doing my craft.”",
+      "DialogueString": "“Oh golly, well the name's Geneva if you weren't aware, and as you may have seen, some people don't really take kindly to the things I say when I'm doing my craft.”",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "“And lets just say I’d prefer it if I didn’t die before I became president.”",
+      "DialogueString": "“And lets just say I'd prefer it if I didn't die before I became president.”",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
@@ -32,7 +32,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "“Now you see that’s where you come in buddy, my bodyguard has been a bit on the slacking side lately,”",
+      "DialogueString": "“Now you see that's where you come in buddy, my bodyguard has been a bit on the slacking side lately,”",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Midbourgh"
@@ -50,7 +50,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "“Well look at you, you’re a freaking house! I don’t think any loon in their right mind wants to get on my case with you around!”",
+      "DialogueString": "“Well look at you, you're a freaking house! I don't think any loon in their right mind wants to get on my case with you around!”",
       "CharacterName": "Min",
       "CharacterEmotion": "Wow",
       "BackgroundImage": "Midbourgh"
@@ -92,7 +92,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“This is home base buddy, whatcha think? Isn’t the scenery and crowd not the best?”",
+      "DialogueString": "“This is home base buddy, whatcha think? Isn't the scenery and crowd not the best?”",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Robar"
@@ -104,7 +104,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Uh yea this is nice, I suppose…”",
+      "DialogueString": "“Uh yea this is nice, I suppose...”",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
@@ -122,7 +122,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Ughhh, yeayea, I'm up boss. What’s up? Who’s this guy?”",
+      "DialogueString": "“Ughhh, yeayea, I'm up boss. What's up? Who's this guy?”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Robar"
@@ -140,7 +140,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“You replacin’ me? Neat, I needed retirement anyway…”",
+      "DialogueString": "“You replacin' me? Neat, I needed retirement anyway...”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Sarcasm",
       "BackgroundImage": "Robar"
@@ -182,13 +182,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“And you were rallying while I wasn’t there to stand guard?”",
+      "DialogueString": "“And you were rallying while I wasn't there to stand guard?”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Worried",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Grungo Grungo Grungo, you’re too lazy! If I had to stick to your schedule I’d never get my numbers up!”",
+      "DialogueString": "“Grungo Grungo Grungo, you're too lazy! If I had to stick to your schedule I'd never get my numbers up!”",
       "CharacterName": "Min",
       "CharacterEmotion": "Sarcasm",
       "BackgroundImage": "Robar"
@@ -212,19 +212,19 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Wouldn’t that be a good thing?”",
+      "DialogueString": "“Wouldn't that be a good thing?”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Dumb",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I’m not stupid, you just pulled me over here cause you said you needed a bodyguard, you didn’t give me any more explanation than that...”",
+      "DialogueString": "“I'm not stupid, you just pulled me over here cause you said you needed a bodyguard, you didn't give me any more explanation than that...”",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Sad",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Oh damn, I’m very sorry about that, Min gets a bit ahead of his case easily.”",
+      "DialogueString": "“Oh damn, I'm very sorry about that, Min gets a bit ahead of his case easily.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Disappointed",
       "BackgroundImage": "Robar"
@@ -248,7 +248,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Okay so, the job’s basically making it so Mr. President over here doesn’t get beat up while he’s holding a rally.”",
+      "DialogueString": "“Okay so, the job's basically making it so Mr. President over here doesn't get beat up while he's holding a rally.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Robar"
@@ -296,7 +296,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“That’s… actually way better than I thought it was gonna be, my town had a lot of problems with the water shortage.”",
+      "DialogueString": "“That's... actually way better than I thought it was gonna be, my town had a lot of problems with the water shortage.”",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Sigh",
       "BackgroundImage": "Robar"
@@ -320,7 +320,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Yes…”",
+      "DialogueString": "“Yes...”",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Worried",
       "BackgroundImage": "Robar"
@@ -332,13 +332,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Oh gee, someone’s a bit scared of magic.”",
+      "DialogueString": "“Oh gee, someone's a bit scared of magic.”",
       "CharacterName": "Min",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I am for quite a good reason I’ll have you know...”",
+      "DialogueString": "“I am for quite a good reason I'll have you know...”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Sad",
       "BackgroundImage": "Robar"
@@ -362,7 +362,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Wait, you're gonna pay this guy? Be happy kid, I don’t even get that pleasure.”",
+      "DialogueString": "“Wait, you're gonna pay this guy? Be happy kid, I don't even get that pleasure.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Sarcasm",
       "BackgroundImage": "Robar"
@@ -374,49 +374,49 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“You’re the one that let’s me do it.”",
+      "DialogueString": "“You're the one that let's me do it.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Dumb",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Okay okay, now to get to the business. Let’s make it a bit enticing for you...”",
+      "DialogueString": "“Okay okay, now to get to the business. Let's make it a bit enticing for you...”",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn,”",
+      "DialogueString": "“I'll pay you double for the first week, double meaning double for what you'd need for food and a stay at the inn,”",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Which is better pay than any oddjob you’d find around here.”",
+      "DialogueString": "“Which is better pay than any oddjob you'd find around here.”",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Can confirm, they pay scratches ‘round here. No binding contracts either so you can up and quit anytime.”",
+      "DialogueString": "“Can confirm, they pay scratches 'round here. No binding contracts either so you can up and quit anytime.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I see, well I guess I can’t really refuse a good pay right now…”",
+      "DialogueString": "“I see, well I guess I can't really refuse a good pay right now...”",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Well if that isn’t just sublime! Let’s get back out there, I told my crowd I’d be back in a jiff after all!”",
+      "DialogueString": "“Well if that isn't just sublime! Let's get back out there, I told my crowd I'd be back in a jiff after all!”",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Yea that sounds like a plan, if something happens we’ll tell you what to do rookie.”",
+      "DialogueString": "“Yea that sounds like a plan, if something happens we'll tell you what to do rookie.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Robar"
@@ -428,7 +428,7 @@
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "<i>But he’s all the more worried about what he’s getting himself into.</i>",
+      "DialogueString": "<i>But he's all the more worried about what he's getting himself into.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Black"
