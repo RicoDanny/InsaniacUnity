@@ -11,6 +11,8 @@ public static class  TickCounterStatics
 {
     public static void SpawnCharacters(TickCounter CallingTickCounter)
     {
+        int displace = 200*(ChosenCharacterStrings.Count-1);
+
         foreach (Transform GoodGuysTransform in CallingTickCounter.GoodGuysObject.transform)
         {
             bool contained = false;
@@ -22,8 +24,9 @@ public static class  TickCounterStatics
                 if ( ChosenCharacter ==  GoodGuysTransform.name){
                     contained = true;
                     CallingTickCounter.AllyCount++;
-                    Debug.Log(CallingTickCounter.AllyCount,GoodGuysTransform.gameObject);
                     SpawnSkillList(GoodGuysTransform.gameObject.GetComponent<CharacterBehaviour>());
+                    GoodGuysTransform.position = CallingTickCounter.GoodGuysObject.transform.position + new Vector3(displace*0.2f,0,displace*0.2f);
+                    displace -= 200;
                 }
             }
             GoodGuysTransform.gameObject.SetActive(contained);
