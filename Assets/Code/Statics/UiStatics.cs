@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Main statics
+//Main statics 
 using static ActionStatics;
 
 public static class  UiStatics
