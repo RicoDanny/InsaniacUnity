@@ -102,7 +102,7 @@ public class CharacterBehaviour : MonoBehaviour
             LoopThroughModifiers(this);
 
             //Do your move
-            CallStaticAction(Actions[0], this);
+            CallStaticAction(Actions[0], this); //Psst, Ga in de toekomst [turns] als je niet wilt dat de turns worden verwijderd! (Non-Removal-Based NRM voor nerds (Moet ook in EndAction veranderen))
         }
 
         Death(this);
