@@ -291,7 +291,7 @@
     },
     {
       "DialogueString": "“A lot of stuff about the water, he wants to invest tax money into solutions but people do not seem to get it.”",
-      "CharacterName": "Pygor",
+      "CharacterName": "Grungo",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Robar"
     },
@@ -316,7 +316,7 @@
     {
       "DialogueString": "“Wait, you a druid?”",
       "CharacterName": "Grungo",
-      "CharacterEmotion": "Scared",
+      "CharacterEmotion": "Shocked",
       "BackgroundImage": "Robar"
     },
     {
@@ -380,7 +380,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Okay okay, now to get to the business. Let’s make it a bit enticing for you, I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn. Which is better pay than any oddjob you’d find around here.”",
+      "DialogueString": "“Okay okay, now to get to the business. Let’s make it a bit enticing for you...”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Thinking",
+      "BackgroundImage": "Robar"
+    },
+    {
+      "DialogueString": "“I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn. Which is better pay than any oddjob you’d find around here.”",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
