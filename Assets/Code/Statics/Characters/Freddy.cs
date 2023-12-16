@@ -5,6 +5,8 @@ using UnityEngine;
 //Main statics
 using static CharacterBehaviourStatics;
 using static ActionStatics;
+using static QuirkStatics;
+using static ModifierStatics;
 
 public static class Freddy
 {

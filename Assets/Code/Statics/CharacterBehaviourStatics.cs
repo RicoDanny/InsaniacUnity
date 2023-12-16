@@ -32,15 +32,15 @@ public static class CharacterBehaviourStatics
         public int atkboost = 0;
         public int defboost = 0;
         public int dmgboost = 0;
-        public double atkmultiplier = 1.0;
-        public double defmultiplier = 1.0;
-        public double luckymultiplier = 1.0;
-        public double critmultiplier = 1.0;
-        public double guardmultiplier = 1.0;
+        public float atkmultiplier = 1.0f;
+        public float defmultiplier = 1.0f;
+        public float luckymultiplier = 1.0f;
+        public float critmultiplier = 1.0f;
+        public float guardmultiplier = 1.0f;
         public int loweredspcost = 0;
         public int turn = 0;
         public string status;
-        public double statusmultiplier = 1.0;
+        public double statusmultiplier = 1.0f;
 
         //quirk dict because of that fcking stack bs (calmest flint comment)
         public Dictionary<string, List<Quirk>> quirks = new Dictionary<string, List<Quirk>>

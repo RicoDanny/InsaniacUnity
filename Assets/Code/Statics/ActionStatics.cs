@@ -46,8 +46,8 @@ public static class ActionStatics
             //Grungo
             { "BodyCheck", new Skill {name = "BodyCheck", targetNumber = 1, requiredSP = 4, displayName = "Body check"} },
             { "Break", new Skill {name = "Break", targetNumber = 1, requiredSP = 5, displayName = "Break"} },
-            { "ChainAttack", new Skill {name = "ChainAttack", targetNumber = -1,   requiredSP = 10, displayName = "Chain-attack"} },
-            { "Suffer", new Skill {name = "Suffer", targetNumber = -1,   requiredSP = 10, displayName = "Suffer"} },
+            { "ChainAttack", new Skill {name = "ChainAttack", targetNumber = -1, requiredSP = 10, displayName = "Chain-attack"} },
+            { "Suffer", new Skill {name = "Suffer", targetNumber = 1, requiredSP = 3, displayName = "Suffer"} },
 
             //Pygor
             { "Matchsticks", new Skill {name = "Matchsticks", targetNumber = 1, requiredSP = 1, displayName = "Matchsticks"} },
@@ -247,6 +247,8 @@ public static class ActionStatics
     public static int DmgCalculation(Character UserBattler, Character TargetBattler) 
     {
         UserBattler.statusmultiplier = StatusCalculation(UserBattler, TargetBattler);
+
+        UserBattler.luckymultiplier = Mathf.Pow(1.5, ((int) (UserBattler.luckp/60)));
         
         //Damage = (((ATK + ATK BOOST) x ATK MULTIPLIER) x LUCKY - DEF + DMG Buffs) x CRIT x STATUS MULTIPLIER x GUARD MULTIPLIER + FLAT DAMAGE/MINIMUM DAMAGE
         int DMG = (int)((((UserBattler.atk + UserBattler.atkboost) * UserBattler.atkmultiplier) * UserBattler.luckymultiplier - ((TargetBattler.def + TargetBattler.defboost) * TargetBattler.defmultiplier) + UserBattler.dmgboost) * UserBattler.critmultiplier * UserBattler.statusmultiplier * TargetBattler.guardmultiplier);
@@ -260,6 +262,8 @@ public static class ActionStatics
         {
             DMG = TargetBattler.hp;
         }
+
+        UserBattler.luckp -= ((int) (UserBattler.luckp/60))*60;
 
         return DMG;
     }

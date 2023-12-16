@@ -12,11 +12,11 @@ public static class  ModifierStatics
         public int atkboost = 0;
         public int defboost = 0;
         public int dmgboost = 0;
-        public double atkmultiplier = 1.0;
-        public double defmultiplier = 1.0;
-        public double luckymultiplier = 1.0;
-        public double critmultiplier = 1.0;
-        public double guardmultiplier = 1.0;
+        public float atkmultiplier = 1.0f;
+        public float defmultiplier = 1.0f;
+        public float luckymultiplier = 1.0f;
+        public float critmultiplier = 1.0f;
+        public float guardmultiplier = 1.0f;
     }
 
     public static void LoopThroughModifiers(CharacterBehaviour CallingCharacterBehaviour)
