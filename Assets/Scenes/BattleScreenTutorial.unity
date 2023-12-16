@@ -1934,6 +1934,7 @@ GameObject:
   - component: {fileID: 268636072}
   - component: {fileID: 268636071}
   - component: {fileID: 268636070}
+  - component: {fileID: 268636073}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2015,6 +2016,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 11.318, y: 0, z: 0}
+--- !u!114 &268636073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268636069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccba2213f6806d8409c4d1a32e9dbc7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278327538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2598,89 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &408137322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408137324}
+  - component: {fileID: 408137323}
+  m_Layer: 0
+  m_Name: CameraBars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &408137323
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408137322}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &408137324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408137322}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.07629475, y: 0.9053325, z: -0.18419193, w: -0.37500077}
+  m_LocalPosition: {x: 22, y: 20, z: 22}
+  m_LocalScale: {x: 1, y: 1, z: 3.7226}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 23, y: 225, z: 0}
 --- !u!1 &437153758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,6 +4109,7 @@ MonoBehaviour:
   Actions: []
   HighlightObject: {fileID: 0}
   HighlightRenderer: {fileID: 0}
+  ActiveHighlightRenderer: {fileID: 0}
   TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
@@ -4873,6 +4970,7 @@ MonoBehaviour:
   Actions: []
   HighlightObject: {fileID: 0}
   HighlightRenderer: {fileID: 0}
+  ActiveHighlightRenderer: {fileID: 0}
   TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
@@ -5469,6 +5567,7 @@ MonoBehaviour:
   Actions: []
   HighlightObject: {fileID: 0}
   HighlightRenderer: {fileID: 0}
+  ActiveHighlightRenderer: {fileID: 0}
   TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
@@ -6469,6 +6568,8 @@ MonoBehaviour:
   TickInterval: 0.5
   AllyCount: 0
   EnemyCount: 0
+  WinScreen: {fileID: 0}
+  LoseScreen: {fileID: 0}
 --- !u!1 &1105839681
 GameObject:
   m_ObjectHideFlags: 0
@@ -9442,6 +9543,7 @@ MonoBehaviour:
   Actions: []
   HighlightObject: {fileID: 0}
   HighlightRenderer: {fileID: 0}
+  ActiveHighlightRenderer: {fileID: 0}
   TickCounterObject: {fileID: 0}
   CharacterEntity:
     Name: 
@@ -12399,3 +12501,4 @@ SceneRoots:
   - {fileID: 211374543}
   - {fileID: 1930523813}
   - {fileID: 1772524031}
+  - {fileID: 408137324}

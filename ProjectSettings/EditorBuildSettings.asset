@@ -30,12 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/0-3a.unity
     guid: d7339c448c7223240ae26d5169c25b9a
   - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: 24d858dee39fabf458a3829f11a08d09
-  - enabled: 1
-    path: Assets/Scenes/LoseScreen.unity
-    guid: 3087940c56aa723489e3a19fa54e352b
-  - enabled: 1
     path: Assets/Scenes/Stages/0-2a.unity
     guid: 1d6c125a009163746b40cf3482cdd6c9
   - enabled: 1
