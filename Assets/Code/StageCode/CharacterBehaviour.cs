@@ -37,6 +37,7 @@ public class CharacterBehaviour : MonoBehaviour
     public List<CharacterBehaviour[]> TargetsPerAction; //List of Targets that are on the same Indexes as the Actions that they are Targets for in the Actions list
     public GameObject HighlightObject;
     public SpriteRenderer HighlightRenderer;
+    public SpriteRenderer ActiveHighlightRenderer;
     private CharacterBehaviour ThisCharacterBehaviour;
     public TickCounter TickCounterObject;
     public Character CharacterEntity;
