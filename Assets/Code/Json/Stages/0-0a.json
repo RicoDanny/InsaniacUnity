@@ -2,94 +2,88 @@
   "dialogue": 
   [
     {
-      "DialogueString": "He did WHAT!?!",
+      "DialogueString": "“He did WHAT!?!”",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Diabolical, ain't it...",
+      "DialogueString": "“Diabolical, ain't it...”",
       "CharacterName": "<s><i><b>Plijwolx</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Did he give any reason for this intervention? <s><i><b>Svfik</s></i></b> wouldn't just do that for no reason, right...",
+      "DialogueString": "“Did he give any reason for this intervention? <s><i><b>Svfik</s></i></b> wouldn't just do that for no reason, right...”",
       "CharacterName": "<s><i><b>Kixlbkmf</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "He's done this too many times... First the thing he did to Neoton, now this.",
+      "DialogueString": "“He's done this too many times... First the thing he did to Neoton, now this.”",
       "CharacterName": "<s><i><b>Jqroxb</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "I am through with this injustice! I will search for new ones to break this cycle!",
+      "DialogueString": "“I am through with this injustice! I will search for new ones to break this cycle!”",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "You're just gonna get more people killed, <s><i><b>Oixxy</s></i></b>.",
+      "DialogueString": "“You're just gonna get more people killed, <s><i><b>Oixxy</s></i></b>.”",
       "CharacterName": "<s><i><b>Plijwolx</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "I agree with <s><i><b>Plijwolx</s></i></b>, your 'calls to action' have only ended in those people dying.",
+      "DialogueString": "“I agree with <s><i><b>Plijwolx</s></i></b>, your 'calls to action' have only ended in those people dying.”",
       "CharacterName": "<s><i><b>Kixlbkmf</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Oh come on, <s><i><b>Jqroxb</s></i></b>, don't you agree at least?",
+      "DialogueString": "“Oh come on, <s><i><b>Jqroxb</s></i></b>, don't you agree at least?”",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "There isn't gonna be another one like <b>Crossfort</b>...",
+      "DialogueString": "“There isn't gonna be another one like <b>Crossfort</b>...”",
       "CharacterName": "<s><i><b>Jqroxb</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Nonsense! <b>Crossfort</b> was a spineless backstabber!",
+      "DialogueString": "“Nonsense! <b>Crossfort</b> was a spineless backstabber!”",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Don't say that!",
+      "DialogueString": "“Don't say that!”",
       "CharacterName": "<s><i><b>Jqroxb</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "I will resume my plans, elsewhere...",
+      "DialogueString": "“I will resume my plans, elsewhere...”",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "*Footsteps*",
+      "DialogueString": "<i>Footsteps</i>",
       "CharacterName": "",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "Alright, let's see how the carrier is doing, I think it's time...",
+      "DialogueString": "“Alright, let's see how the carrier is doing, I think it's time...”",
       "CharacterName": "<s><i><b>Oixxy</s></i></b>",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Black"
-    },
-    {
-        "DialogueString": "End scene",
-        "CharacterName": "",
-        "CharacterEmotion": "Neutral",
-        "BackgroundImage": "Black"
     }
   ]
 }

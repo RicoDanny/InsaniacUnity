@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 20dac920455adc747971544c72df7af4
   - enabled: 1
-    path: Assets/Scenes/Stages/0-2a.unity
+    path: Assets/Scenes/Stages/0-2b.unity
     guid: 1c0bb44704eddf44fa927200da62db45
   - enabled: 1
-    path: Assets/Scenes/Stages/0-2b.unity
+    path: Assets/Scenes/Stages/0-2c.unity
     guid: d86b77bdb7c04f04392edf5f84e29899
   - enabled: 1
     path: Assets/Scenes/Stages/0-3a.unity

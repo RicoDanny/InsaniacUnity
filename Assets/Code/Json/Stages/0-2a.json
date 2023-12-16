@@ -2,118 +2,64 @@
   "dialogue":
   [
     {
-      "DialogueString": "",
+      "DialogueString": "<i>As Min starts rallying again, he seems to attract the exact kind of company they were talking about earlier.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
-      "BackgroundImage": "Slide (0)"
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
+      "DialogueString": "“Could ya bug off you plonker?”",
       "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (1)"
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (2)"
+      "DialogueString": "“But why would I? Oh’so not kind citizen?”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Sarcasm",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
+      "DialogueString": "“That’s it, get em boys!”",
       "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (3)"
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (4)"
+      "DialogueString": "“You grouches think you can mess with Geneva? Well, bring it!”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (5)"
+      "DialogueString": "“Okay rookie, time for a practice run. We just need to give these guys a good wallop and they'll be scuttlin' back to their momma.”",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (6)"
+      "DialogueString": "“You know how a scrap works at least a little right?”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (7)"
+      "DialogueString": "“No, what do I do?”",
+      "CharacterName": "Pygor",
+      "CharacterEmotion": "Confused",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (8)"
+      "DialogueString": "“Just hit one of 'em? Shouldn't be that hard, lemme show ya.”",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (9)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (10)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (11)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (12)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (13)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (14)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (15)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (16)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (17)"
-    },
-    {
-      "DialogueString": "",
-      "CharacterName": "",
-      "CharacterEmotion": "",
-      "BackgroundImage": "Slide (18)"
+      "DialogueString": "“Okay now you do that.”",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Dumb",
+      "BackgroundImage": "Midbourgh"
     }
   ]
 }

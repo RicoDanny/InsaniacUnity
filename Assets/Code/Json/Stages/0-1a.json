@@ -8,7 +8,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Pygor inquires, saying that he's down on his luck currently would be an understatement.",
+      "DialogueString": "<i>Pygor inquires, saying that he's down on his luck currently would be an understatement.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Midbourgh"
@@ -68,25 +68,25 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Pygor follows as Min grasps him by the collar off his shirt, he pulls surprisingly hard considering his stature.",
+      "DialogueString": "<i>Pygor follows as Min grasps him by the collar off his shirt, he pulls surprisingly hard considering his stature.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "As he gets pulled into a dark alley, Pygor regrets the events that lead up to this point even more than before.",
+      "DialogueString": "<i>As he gets pulled into a dark alley, Pygor regrets the events that lead up to this point even more than before.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "His worries are tenfold as they enter into...",
+      "DialogueString": "<i>His worries are tenfold as they enter into...</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "What he guesses is Midbourghs dingiest bar.",
+      "DialogueString": "<i>What he guesses is Midbourghs dingiest bar.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Robar"
@@ -98,7 +98,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "Despite the scenery, there are a good amount of people present.",
+      "DialogueString": "<i>Despite the scenery, there are a good amount of people present.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Robar"
@@ -116,7 +116,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "A man sits up from one of the booths.",
+      "DialogueString": "<i>A man sits up from one of the booths.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Robar"
@@ -134,7 +134,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "Grug' gives him a good lookover.",
+      "DialogueString": "<i>'Grug' gives him a good lookover.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Robar"
@@ -152,13 +152,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Oh yea, I did say that yesterday…",
+      "DialogueString": "“Oh yea, I did say that yesterday...”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "Wait, when did you find this guy?”",
+      "DialogueString": "“Wait, when did you find this guy?”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Robar"
@@ -218,7 +218,7 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I’m not stupid, you just pulled me over here cause you said you needed a bodyguard, you didn’t give me any more explanation than that…”",
+      "DialogueString": "“I’m not stupid, you just pulled me over here cause you said you needed a bodyguard, you didn’t give me any more explanation than that...”",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Sad",
       "BackgroundImage": "Robar"
@@ -248,13 +248,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“Okay so, the job’s basically making it so Mr. President over here doesn’t get beat up while he’s holding a rally.",
+      "DialogueString": "“Okay so, the job’s basically making it so Mr. President over here doesn’t get beat up while he’s holding a rally.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "Considering your build, I assume you know how to punch someone.”",
+      "DialogueString": "“Considering your build, I assume you know how to punch someone.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
@@ -338,19 +338,19 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I am for quite a good reason I’ll have you know…",
+      "DialogueString": "“I am for quite a good reason I’ll have you know...”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Sad",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "Just please watch out around me when using your ajimaji bullcrap.”",
+      "DialogueString": "“Just please watch out around me when using your ajimaji bullcrap.”",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Worried",
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "That's just plain offensive...",
+      "DialogueString": "<i>That's just plain offensive...</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Robar"
@@ -410,13 +410,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "And just like that they walk out off the bar, Pygor does appreciate not being pulled like last time.",
+      "DialogueString": "<i>And just like that they walk out off the bar, Pygor does appreciate not being pulled like last time.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Black"
     },
     {
-      "DialogueString": "But he’s all the more worried about what he’s getting himself into.",
+      "DialogueString": "<i>But he’s all the more worried about what he’s getting himself into.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Black"
