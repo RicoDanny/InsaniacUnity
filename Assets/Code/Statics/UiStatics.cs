@@ -9,7 +9,12 @@ public static class  UiStatics
 {
     public static void UpdateHighlight(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.HighlightRenderer.color = new Color(255, 255, 255, 255 * (CallingCharacterBehaviour.TickCounterObject.Targets.Contains(CallingCharacterBehaviour) ? 1 : 0) * (CallingCharacterBehaviour.TickCounterObject.Targeting ? 1 : 0));
+        CallingCharacterBehaviour.HighlightRenderer.color = new Color(0, 255, 255, 255 * (CallingCharacterBehaviour.TickCounterObject.Targets.Contains(CallingCharacterBehaviour) ? 1 : 0) * (CallingCharacterBehaviour.TickCounterObject.Targeting ? 1 : 0));
+    }
+
+    public static void UpdateActiveHighlight(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.ActiveHighlightRenderer.color = new Color(255, 255, 0, 255 * (CallingCharacterBehaviour.TickCounterObject.Active.Contains(CallingCharacterBehaviour) ? 1 : 0));
     }
 
     public static void DefineSelectBanners(CharacterBehaviour CallingCharacterBehaviour)
