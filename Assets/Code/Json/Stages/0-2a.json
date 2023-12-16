@@ -54,12 +54,6 @@
       "CharacterName": "Grungo",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Midbourgh"
-    },
-    {
-      "DialogueString": "“Okay now you do that.”",
-      "CharacterName": "Grungo",
-      "CharacterEmotion": "Dumb",
-      "BackgroundImage": "Midbourgh"
     }
   ]
 }
