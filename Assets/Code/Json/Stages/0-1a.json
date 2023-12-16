@@ -2,15 +2,39 @@
   "dialogue":
   [
     {
+      "DialogueString": "<i>In the distance Pygor hears a very loud man talking about ideals and the future or whatnot. Frowns could be seen on most people near him...</i>",
+      "CharacterName": "",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "<i>Pygor locks eyes with the man... He stares back. It sends a chill down his spine...</i>",
+      "CharacterName": "",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "“It seems that I have a job to take care of everyone! I will return on a second's notice!”",
+      "CharacterName": "",
+      "CharacterEmotion": "Happy",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "<i>Oh no... Why is he approaching...</i>",
+      "CharacterName": "",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
       "DialogueString": "“Well hello sport, you seem a bit down on your luck. I have an enticing offer for you, if you're willing to lend your ear?”",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "<i>Pygor inquires, saying that he's down on his luck currently would be an understatement.</i>",
-      "CharacterName": "",
-      "CharacterEmotion": "",
+      "DialogueString": "“What? What are you talking about? Who are you?”",
+      "CharacterName": "Pygor",
+      "CharacterEmotion": "Disappointed",
       "BackgroundImage": "Midbourgh"
     },
     {
