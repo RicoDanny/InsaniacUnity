@@ -20,7 +20,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "<i>Oh no... Why is he approaching...</i>",
+      "DialogueString": "<i>Oh no... Why is he approaching...?</i>",
       "CharacterName": "",
       "CharacterEmotion": "Neutral",
       "BackgroundImage": "Midbourgh"
@@ -44,7 +44,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "And lets just say I'd prefer it if I didn't die before I became president.",
+      "DialogueString": "And let's just say I'd prefer it if I didn't die before I became president.",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
@@ -56,7 +56,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Now you see that's where you come in buddy, my bodyguard has been a bit on the slacking side lately,",
+      "DialogueString": "Now you see that's where you come in buddy. My bodyguard has been a bit on the slacking side lately,",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Midbourgh"
@@ -104,7 +104,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "<i>His worries are tenfold as they enter into...</i>",
+      "DialogueString": "<i>His worries increased tenfold as they enter into...</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Black"
