@@ -283,6 +283,15 @@ public static class ActionStatics
 
         if(CallingCharacterBehaviour.CharacterEntity.hp == 0)
         {
+            if(CallingCharacterBehaviour.transform.parent.name == "Goodguys")
+            {
+                CallingCharacterBehaviour.TickCounterObject.AllyCount--;
+            }
+            else
+            {
+                CallingCharacterBehaviour.TickCounterObject.EnemyCount--;
+            }
+
             CallingCharacterBehaviour.gameObject.SetActive(false);
             CallingCharacterBehaviour.TickCounterObject.Units.Remove(CallingCharacterBehaviour.gameObject);
         }
