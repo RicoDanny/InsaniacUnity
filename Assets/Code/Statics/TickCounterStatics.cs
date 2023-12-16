@@ -90,10 +90,10 @@ public static class  TickCounterStatics
 
     public static bool PlayerWon(TickCounter CallingTickCounter)
     {
-        return (CallingTickCounter.EnemyCount == 0 && CallingTickCounter.TimeDiff > 2);
+        return (CallingTickCounter.EnemyCount == 0 && CallingTickCounter.TimeDiff > 0.5f);
     }
     public static bool PlayerLost(TickCounter CallingTickCounter)
     {
-        return (CallingTickCounter.AllyCount == 0 && CallingTickCounter.TimeDiff > 2);
+        return (CallingTickCounter.AllyCount == 0 && CallingTickCounter.TimeDiff > 0.5f);
     }
 }

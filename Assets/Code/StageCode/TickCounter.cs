@@ -33,6 +33,8 @@ public class TickCounter : MonoBehaviour
     public double TickInterval = 0.5;
     public int AllyCount = 0;
     public int EnemyCount = 0;
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
 
     void Start()
     {
@@ -62,11 +64,11 @@ public class TickCounter : MonoBehaviour
 
         if(PlayerWon(this))
         {
-            SceneManager.LoadScene("WinScreen");
+            WinScreen.SetActive(true);
         }
         else if(PlayerLost(this))
         {
-            SceneManager.LoadScene("LoseScreen");
+            LoseScreen.SetActive(true);
         }
     }
 
