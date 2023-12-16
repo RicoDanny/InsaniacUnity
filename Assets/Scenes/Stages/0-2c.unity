@@ -1824,7 +1824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinSpeechTextBox: {fileID: 86505107}
-  MinNameTag: {fileID: 0}
+  MinNameTag: {fileID: 1097868268}
   MinSpeech:
   - "\u201CGrrrreetings my loyal supporters! Excuse me for my brief departure, I
     needed to <i>heighten my chances of survival</i>.\u201D"

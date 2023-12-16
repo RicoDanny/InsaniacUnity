@@ -306,9 +306,7 @@ public static class ActionStatics
     {
         Debug.Log(CallingCharacterBehaviour.name + " performed " + CallingCharacterBehaviour.Actions[0] + " on " +  CallingCharacterBehaviour.TargetsPerAction[0][0].name);
 
-        Debug.Log(CallingCharacterBehaviour.CharacterEntity.sp);
         CallingCharacterBehaviour.CharacterEntity.sp -= Skills[CallingCharacterBehaviour.Actions[0]].requiredSP;
-        Debug.Log(CallingCharacterBehaviour.CharacterEntity.sp);
 
         CallingCharacterBehaviour.Actions.RemoveAt(0);
         CallingCharacterBehaviour.TargetsPerAction.RemoveAt(0);

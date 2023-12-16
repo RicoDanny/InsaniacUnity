@@ -79,6 +79,7 @@ public static class Pygor
 
     public static void LitOnFire(CharacterBehaviour CallingCharacterBehaviour)
     {
+        
         CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
         Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Main statics
 using static QuirkStatics;
@@ -35,7 +36,6 @@ public static class  TickCounterStatics
         foreach (Transform BadGuysTransform in CallingTickCounter.BadGuysObject.transform)
         {
             CallingTickCounter.EnemyCount++;
-            Debug.Log(CallingTickCounter.EnemyCount,BadGuysTransform.gameObject);
         }
     }
 
@@ -90,10 +90,24 @@ public static class  TickCounterStatics
 
     public static bool PlayerWon(TickCounter CallingTickCounter)
     {
-        return (CallingTickCounter.EnemyCount == 0 && CallingTickCounter.TimeDiff > 0.5f);
+        if(CallingTickCounter.EnemyCount == 0 && CallingTickCounter.TimeDiff > 0.5f)
+        {
+            if(SceneManager.GetActiveScene().name == "0-2c"){SceneManager.LoadScene("0-2d");return false;}
+
+            return true;
+        }
+
+        return false;
     }
     public static bool PlayerLost(TickCounter CallingTickCounter)
     {
-        return (CallingTickCounter.AllyCount == 0 && CallingTickCounter.TimeDiff > 0.5f);
+        if(CallingTickCounter.AllyCount == 0 && CallingTickCounter.TimeDiff > 0.5f)
+        {
+            if(SceneManager.GetActiveScene().name == "0-2c"){SceneManager.LoadScene("0-2d");return false;}
+
+            return true;
+        }
+
+        return false;
     }
 }
