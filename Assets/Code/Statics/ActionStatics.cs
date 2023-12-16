@@ -126,6 +126,7 @@ public static class ActionStatics
         {
             { "LaVigneSuspecte",     new List<Skill>() {Skills["BasicAttack"], Skills["Grapeshot"]} },
             { "Fantolectrique",      new List<Skill>() {Skills["BasicAttack"], Skills["ShockingNews"]} },
+            { "AngryOnlooker",      new List<Skill>() {Skills["BasicAttack"]} }
         };
 
     public static void ActionAccepted(CharacterBehaviour CallingCharacterBehaviour)
