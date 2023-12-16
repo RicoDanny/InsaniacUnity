@@ -22,6 +22,7 @@ public static class  TickCounterStatics
                 if ( ChosenCharacter ==  GoodGuysTransform.name){
                     contained = true;
                     CallingTickCounter.AllyCount++;
+                    Debug.Log(CallingTickCounter.AllyCount,GoodGuysTransform.gameObject);
                     SpawnSkillList(GoodGuysTransform.gameObject.GetComponent<CharacterBehaviour>());
                 }
             }
@@ -31,6 +32,7 @@ public static class  TickCounterStatics
         foreach (Transform BadGuysTransform in CallingTickCounter.BadGuysObject.transform)
         {
             CallingTickCounter.EnemyCount++;
+            Debug.Log(CallingTickCounter.EnemyCount,BadGuysTransform.gameObject);
         }
     }
 
@@ -85,10 +87,10 @@ public static class  TickCounterStatics
 
     public static bool PlayerWon(TickCounter CallingTickCounter)
     {
-        return (CallingTickCounter.EnemyCount == 0);
+        return (CallingTickCounter.EnemyCount == 0 && CallingTickCounter.TimeDiff > 2);
     }
     public static bool PlayerLost(TickCounter CallingTickCounter)
     {
-        return (CallingTickCounter.AllyCount == 0);
+        return (CallingTickCounter.AllyCount == 0 && CallingTickCounter.TimeDiff > 2);
     }
 }
