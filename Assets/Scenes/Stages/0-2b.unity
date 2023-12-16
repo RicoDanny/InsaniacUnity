@@ -526,7 +526,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Now it's our chance to show them who's the boss of Midbourgh! Hit accept
-    and knck 'em out, kid!
+    and knock 'em out, kid!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e3d88bb44378eed4b8346f1de55835f5, type: 2}
   m_sharedMaterial: {fileID: -4135950350893023962, guid: e3d88bb44378eed4b8346f1de55835f5, type: 2}
@@ -5260,7 +5260,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Great! Now, in our bottom-left corner there's a bunch of magic numbers.
-    Ignore it all and press on "Weapons", kid!
+    Ignore it all and press on "Weapon", kid!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e3d88bb44378eed4b8346f1de55835f5, type: 2}
   m_sharedMaterial: {fileID: -4135950350893023962, guid: e3d88bb44378eed4b8346f1de55835f5, type: 2}
@@ -8244,7 +8244,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: ATK stands for Attack, obviously. The higher the number, the more pain
-    these buggers feel when ya punch them. Its seems ya pack quite the punch, Pygor.
+    these buggers feel when ya punch them. It seems ya pack quite the punch, Pygor.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e3d88bb44378eed4b8346f1de55835f5, type: 2}
   m_sharedMaterial: {fileID: -4135950350893023962, guid: e3d88bb44378eed4b8346f1de55835f5, type: 2}

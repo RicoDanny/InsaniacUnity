@@ -228,7 +228,7 @@ public static class CharacterBehaviourStatics
             RectTransform SkillRectTransform = Skill.AddComponent<RectTransform>();
             SkillRectTransform.anchoredPosition = new Vector2(0.5f, 0.5f + yOffset);
             yOffset -= yOffsetDelta;
-            SkillRectTransform.sizeDelta = new Vector2(buttonWidth, buttonHeight);
+            SkillRectTransform.sizeDelta = new Vector2(buttonWidth*( (float) Screen.width)/960f, buttonHeight*( (float) Screen.height)/540f);
 
             CanvasRenderer SkillCanvasRenderer = Skill.AddComponent<CanvasRenderer>();
 
@@ -250,7 +250,7 @@ public static class CharacterBehaviourStatics
 
             TMPro.TextMeshProUGUI SkillTextTMP = SkillText.AddComponent<TMPro.TextMeshProUGUI>();
             SkillTextTMP.text = SkillSkill.displayName;
-            SkillTextTMP.fontSize = 20f;
+            SkillTextTMP.fontSize = 20f*( (float) Screen.width)/960f;
             SkillTextTMP.alignment = TMPro.TextAlignmentOptions.Center;
         }
 
@@ -262,7 +262,7 @@ public static class CharacterBehaviourStatics
 
         RectTransform BackButtonRectTransform = BackButton.AddComponent<RectTransform>();
         BackButtonRectTransform.anchoredPosition = new Vector2(4.20f, (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(ChosenSkills[CallingCharacterBehaviour.name].Count-1)))/2 + 40f*buttonScaler);
-        BackButtonRectTransform.sizeDelta = new Vector2(50f, 50f);
+        BackButtonRectTransform.sizeDelta = new Vector2(50f*( (float) Screen.width)/960f, 50f*( (float) Screen.height)/540f);
 
         CanvasRenderer BackButtonCanvasRenderer = BackButton.AddComponent<CanvasRenderer>();
 
