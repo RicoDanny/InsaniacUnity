@@ -36,11 +36,20 @@ public static class DialogueStatics
     {
         if(CallingDialogueScript.DialogueNumber < CallingDialogueScript.myDialogueList.dialogue.Length)
         {
-            CallingDialogueScript.TextBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString;
             CallingDialogueScript.CharacterNameToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterName;
             CallingDialogueScript.NameBoxComponent.text = CallingDialogueScript.CharacterNameToDisplay;
-            CallingDialogueScript.NameBoxSprite.SetActive(CallingDialogueScript.CharacterNameToDisplay != ""); //Als het de scene is die dingen zegt, dan moet de sprite achter de naam weg, want er is geen naam :0! 
-            
+
+            if(CallingDialogueScript.CharacterNameToDisplay != "")
+            {
+                CallingDialogueScript.TextBoxComponent.text = "“" + (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString + "”";
+                CallingDialogueScript.NameBoxSprite.SetActive(true);
+            }
+            else
+            {
+                CallingDialogueScript.NameBoxSprite.SetActive(false); //Als het de scene is die dingen zegt, dan moet de sprite achter de naam weg, want er is geen naam :0! 
+                CallingDialogueScript.TextBoxComponent.text = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].DialogueString;
+            }
+
             CallingDialogueScript.CharacterEmotionToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].CharacterEmotion;
             CallingDialogueScript.BackgroundToDisplay = (string) CallingDialogueScript.myDialogueList.dialogue[CallingDialogueScript.DialogueNumber].BackgroundImage;
         }
