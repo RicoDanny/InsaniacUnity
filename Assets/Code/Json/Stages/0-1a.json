@@ -386,7 +386,13 @@
       "BackgroundImage": "Robar"
     },
     {
-      "DialogueString": "“I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn. Which is better pay than any oddjob you’d find around here.”",
+      "DialogueString": "“I’ll pay you double for the first week, double meaning double for what you’d need for food and a stay at the inn,”",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Thinking",
+      "BackgroundImage": "Robar"
+    },
+    {
+      "DialogueString": "“Which is better pay than any oddjob you’d find around here.”",
       "CharacterName": "Min",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Robar"
