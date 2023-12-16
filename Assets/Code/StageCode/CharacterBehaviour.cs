@@ -67,6 +67,7 @@ public class CharacterBehaviour : MonoBehaviour
         DefineSelectBanners(this); //Definieer de banners die zeggen wat je moet selecten
 
         UpdateHighlight(this); //Elke frame wordt er gekeken naar of de character getarget is, zo ja, highlight aan
+        UpdateActiveHighlight(this);
 
         EnableActionSubmit(this); //Elke frame wanneer je target wordt er gekeken of je het juiste aantal targets hebt, dan pas kan je submit klikken
 
