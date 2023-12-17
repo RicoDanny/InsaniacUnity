@@ -14,7 +14,13 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Hahaha! No, our job has just started! I may want to become president of <i>Midbourgh</i>, but I actually want to provide for those who need it in the surrounding cities as well.",
+      "DialogueString": "Hahaha! No, our job has just started! I may want to become president of <i>Midbourgh</i>,",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Happy",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "but I actually want to provide for those who need it in the surrounding cities as well.",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
@@ -26,43 +32,67 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Boss, I know we get enough funds from your folks, but not <i>enough</i> enough funds to pay for all the transport we'd be needing. Most cities are wayyyyy too far for us to reach on foot... Except-",
+      "DialogueString": "Boss, I know we get enough funds from your folks, but not <i>enough</i> enough funds to pay for all the transport we'd be needing.",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Wait... Ya pullin' ma leg here right? You wanna go to the fields and steal the grapes?! {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{///////////////////////}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} die observatie komt letterlijk uit het niets and makes no sense",
+      "DialogueString": "Most cities are wayyyyy too far for us to reach on foot... Except-",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Confused",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Wait... Ya pullin' ma leg here right? Boss, I know Vincroyable is near Midbourgh, but walking on foot will take days!",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Shocked",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Well, it will take days at my pace...",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Dumb",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "(I regret my life decisions...)",
+      "DialogueString": "Wait, when are we leaving for Vincroyable?",
       "CharacterName": "Pygor",
-      "CharacterEmotion": "Disappointed",
+      "CharacterEmotion": "Worried",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Let's get a-move on! I don't want to be late for my reservation at the winery~ {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{///////////////////////}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} What?",
+      "DialogueString": "No time to dilly-dally! We are departing in 2 minutes flat!",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "You never said nothin 'bout a reservation, you wanna buy out a farm in Dabey? Can you really afford that?! {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{///////////////////////}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} Hoe komt deze dude op deze fcking ideeen?? slaat nergens op??",
-      "CharacterName": "Grungo",
-      "CharacterEmotion": "Thinking",
+      "DialogueString": "Huh?! Now?! (I haven't even signed a contract yet!)",
+      "CharacterName": "Pygor",
+      "CharacterEmotion": "Shocked",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Chill it, big guy, I'm sure we could get a good deal.",
+      "DialogueString": "Precisely! I wouldn't want to be late for my reservation at the winery~",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Happy",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Another <i>reservation</i> at Jacques, eh? Just like the last 5 times?",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Sarcasm",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Chill it, big guy, I'm sure we could get a good deal this time.",
       "CharacterName": "Min",
       "CharacterEmotion": "Sarcasm",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "What about me? Is this something I'm gonna be involved in??",
+      "DialogueString": "A deal? Aren't I too inexperienced to accompany a treaty? Is this something I'm gonna be involved in??",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Midbourgh"
@@ -80,13 +110,19 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Well then, let's head out!",
+      "DialogueString": "Well then, let's head out, sports!",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "What have I done with my life...",
+      "DialogueString": "Aye, boss!",
+      "CharacterName": "Grungo",
+      "CharacterEmotion": "Wow",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Mr. Geneva! What about the contract?! (Aaaand he left...)",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Sad",
       "BackgroundImage": "Midbourgh"
