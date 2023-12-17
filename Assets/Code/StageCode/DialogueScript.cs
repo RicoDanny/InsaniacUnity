@@ -20,6 +20,8 @@ public class DialogueScript : MonoBehaviour
     public TMPro.TextMeshProUGUI NameBoxComponent;
     public int DialogueNumber = 0;
     public string NextScene = "HomeScreen";
+    public int SetStageProgress;
+    public int SetChapterProgress;
     
     void Start()
     {

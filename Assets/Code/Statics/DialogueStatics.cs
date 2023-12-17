@@ -110,7 +110,25 @@ public static class DialogueStatics
         }
         else
         {
+            if(CallingDialogueScript.SetStageProgress != 0)
+            {
+                if(CallingDialogueScript.SetStageProgress > PlayerPrefs.GetInt("StageProgress"))
+                {
+                    PlayerPrefs.SetInt("StageProgress", CallingDialogueScript.SetStageProgress);
+                }
+            }
+
+            if(CallingDialogueScript.SetChapterProgress != 0)
+            {
+                if(CallingDialogueScript.SetChapterProgress > PlayerPrefs.GetInt("ChapterProgress"))
+                {
+                    PlayerPrefs.SetInt("ChapterProgress", CallingDialogueScript.SetChapterProgress);
+                    PlayerPrefs.SetInt("StageProgress", CallingDialogueScript.SetStageProgress);
+                }
+            }
+
             SceneManager.LoadScene(CallingDialogueScript.NextScene);
+
             return false;
         }
     }

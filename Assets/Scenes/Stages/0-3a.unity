@@ -2547,6 +2547,8 @@ MonoBehaviour:
   NameBoxComponent: {fileID: 2000479808}
   DialogueNumber: 0
   NextScene: HomeScreen
+  SetStageProgress: 0
+  SetChapterProgress: 1
 --- !u!4 &795824279
 Transform:
   m_ObjectHideFlags: 0

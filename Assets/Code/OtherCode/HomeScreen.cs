@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using static HomeScreenStatics;
@@ -24,18 +25,48 @@ public class HomeScreen : MonoBehaviour
     void Start() 
     {
         ChosenCharacters = new List<GameObject>();
-        ChosenCharacterStrings= new List<string>();
+        ChosenCharacterStrings = new List<string>();
 
         ChosenLetter = "0";
 
         if(!PlayerPrefs.HasKey("ChapterProgress"))
         {
-            PlayerPrefs.SetString("ChapterProgress", "Tutorial");
-            PlayerPrefs.SetString("StageProgress", "0-0");
+            PlayerPrefs.SetInt("ChapterProgress", 0);
+            PlayerPrefs.SetInt("StageProgress", 0);
         }
 
-        Debug.Log(PlayerPrefs.GetString("ChapterProgress", "Tutorial"));
-        Debug.Log(PlayerPrefs.GetString("StageProgress", "0-0"));
+        int ChapterProgress = PlayerPrefs.GetInt("ChapterProgress");
+        int StageProgress = PlayerPrefs.GetInt("StageProgress");
+
+        Debug.Log(ChapterProgress);
+        Debug.Log(StageProgress);
+
+        bool unlocked = true;
+
+        foreach (Transform ChapterTransform in GameObject.Find("LevelSelection").transform)
+        {
+            foreach (Transform StageSelectTransform in ChapterTransform)
+            {
+                StageSelectTransform.gameObject.SetActive(unlocked);
+
+                if(ChapterTransform.name[7].ToString() == ChapterProgress.ToString() && StageSelectTransform.name[2].ToString() == StageProgress.ToString())
+                {
+                    unlocked = false;
+                }
+            }
+        }
+
+        unlocked = true;
+
+        foreach (Transform ChapterClip in GameObject.Find("ChapterClips").transform)
+        {
+            ChapterClip.gameObject.SetActive(unlocked);
+
+            if (ChapterClip.name[7].ToString() == ChapterProgress.ToString())
+            {
+                unlocked = false;
+            }
+        }
     }
 
     public void CallSetChosenScene(string ProxyDesiredScene)
