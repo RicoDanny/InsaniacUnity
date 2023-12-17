@@ -2,6 +2,12 @@
   "dialogue":
   [
     {
+      "DialogueString": "<i>After wrapping up his speech, Min walks away from the stand. Pygor and Grungo follow.</i>",
+      "CharacterName": "",
+      "CharacterEmotion": "",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
       "DialogueString": "Great speech boss. Guess this' where I take my leave then-",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Happy",
@@ -14,19 +20,19 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Mr. Geneva, this isn't part of the job, right? (Am I mistaken?)",
+      "DialogueString": "Mr. Geneva, this isn't part of the job, right?",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Boss, I know we are mostly funded by your folks, but we don't have transport. Most cities are wayyyyy too far for us to reach on foot except-",
+      "DialogueString": "Boss, I know we get enough funds from your folks, but not <i>enough</i> enough funds to pay for all the transport we'd be needing. Most cities are wayyyyy too far for us to reach on foot... Except-",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Ya pullin' ma leg here right? You wanna go to the fields and steal the grapes???",
+      "DialogueString": "Wait... Ya pullin' ma leg here right? You wanna go to the fields and steal the grapes?! {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{///////////////////////}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} die observatie komt letterlijk uit het niets and makes no sense",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Dumb",
       "BackgroundImage": "Midbourgh"
@@ -38,13 +44,13 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Let's get a-move on! I don't want to be late for my reservation at the winery~",
+      "DialogueString": "Let's get a-move on! I don't want to be late for my reservation at the winery~ {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{///////////////////////}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} What?",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "You never said nothin 'bout a reservation, you wanna buy out a farm in Dabey? Can you really afford that???",
+      "DialogueString": "You never said nothin 'bout a reservation, you wanna buy out a farm in Dabey? Can you really afford that?! {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{///////////////////////}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} Hoe komt deze dude op deze fcking ideeen?? slaat nergens op??",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Thinking",
       "BackgroundImage": "Midbourgh"
@@ -56,15 +62,15 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "What about me, is this something I'm gonna be involved in???",
+      "DialogueString": "What about me? Is this something I'm gonna be involved in??",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Confused",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Well if you're so excited to join, you can definitely come along!",
+      "DialogueString": "I like your excitement! I'll definitely let you tag along!",
       "CharacterName": "Min",
-      "CharacterEmotion": "Neutral",
+      "CharacterEmotion": "Dumb",
       "BackgroundImage": "Midbourgh"
     },
     {
