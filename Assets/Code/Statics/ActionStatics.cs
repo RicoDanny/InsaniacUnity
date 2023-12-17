@@ -288,7 +288,7 @@ public static class ActionStatics
 
         if(CallingCharacterBehaviour.CharacterEntity.hp == 0)
         {
-            if(CallingCharacterBehaviour.transform.parent.name == "Goodguys")
+            if(CallingCharacterBehaviour.transform.parent.name == "GoodGuys")
             {
                 CallingCharacterBehaviour.TickCounterObject.AllyCount--;
             }
