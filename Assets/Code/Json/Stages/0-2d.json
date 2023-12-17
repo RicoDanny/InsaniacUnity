@@ -62,13 +62,13 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Y-you want to fight The Insaniac?!",
+      "DialogueString": "H-he wants to fight The Insaniac?!",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Shocked",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Well, 'fighting The Insaniac' is the last resort.",
+      "DialogueString": "Well, 'fighting The Insaniac' is Min's last resort.",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Shocked",
       "BackgroundImage": "Midbourgh"
@@ -86,7 +86,7 @@
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Well, that's about it! I wish you all a very great afternoon and I'll see you next time!",
+      "DialogueString": "Well, that's about it, folks! I wish you all a very great afternoon and I'll see you next time!",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"

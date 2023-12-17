@@ -2,101 +2,88 @@
   "dialogue":
   [
     {
-<<<<<<< Updated upstream
-      "DialogueString": "There's no dialogue here yet",
-      "CharacterName": "Min",
-      "CharacterEmotion": "Dumb",
-      "BackgroundImage": "Black"
-    },
-    {
-      "DialogueString": "Yeah.. the frick happenened here?",
-      "CharacterName": "Min",
-      "CharacterEmotion": "Thinking",
-      "BackgroundImage": "Black"
-=======
       "DialogueString": "Great speech boss. Guess this' where I take my leave then-",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Happy",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "Hahaha! No, our job has just started! I may want to become president of Midbourgh, but I actually want to provide for those who need it in the surrounding cities.",
+      "DialogueString": "Hahaha! No, our job has just started! I may want to become president of <i>Midbourgh</i>, but I actually want to provide for those who need it in the surrounding cities as well.",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Mr. Geneva, this isn't part of the job, right? (Am I mistaken?)",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Confused",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Boss, I know we are mostly funded by your folks, but we don't have transport. Most cities are wayyyyy too far for us to reach on foot except-",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Confused",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Ya pullin' ma leg here right? You wanna go to the fields and steal the grapes???",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Dumb",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "(I regret my life decisions...)",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Disappointed",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Let's get a-move on! I don't want to be late for my reservation at the winery~",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "You never said nothin 'bout a reservation, you wanna buy out a farm in Dabey? Can you really afford that???",
       "CharacterName": "Grungo",
       "CharacterEmotion": "Thinking",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Chill it, big guy, I'm sure we could get a good deal.",
       "CharacterName": "Min",
       "CharacterEmotion": "Sarcasm",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "What about me, is this something I'm gonna be involved in???",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Confused",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Well if you're so excited to join, you can definitely come along!",
       "CharacterName": "Min",
       "CharacterEmotion": "Neutral",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "(THAT IS NOT WHAT I MEANT)",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Disappointed",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Well then, let's head out!",
       "CharacterName": "Min",
       "CharacterEmotion": "Happy",
-      "Backgroundimage": "MidBourgh"
+      "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "What have I done with my life...",
       "CharacterName": "Pygor",
       "CharacterEmotion": "Sad",
-      "Backgroundimage": "MidBourgh"
->>>>>>> Stashed changes
+      "BackgroundImage": "Midbourgh"
     }
   ]
 }
