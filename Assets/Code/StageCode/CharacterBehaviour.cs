@@ -11,6 +11,7 @@ using static ActionStatics;
 using static UiStatics;
 using static QuirkStatics;
 using static ModifierStatics;
+using static EmoteStatics;
 
 //Character statics
 using static Min;
@@ -50,6 +51,7 @@ public class CharacterBehaviour : MonoBehaviour
     public GameObject SelectUnitBanner;
     public CharacterList myCharacterList = new CharacterList();
     public GameObject SkillList;
+    public GameObject EmoteList;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,7 @@ public class CharacterBehaviour : MonoBehaviour
         if(IsGoodGuy(this))
         {
             SpawnSkillList(this);
+            SpawnEmoteList(this);
         }
     }
 
@@ -136,7 +139,25 @@ public class CharacterBehaviour : MonoBehaviour
         parameters = new object[] { character };
 
         if(functionName != "BasicAttack"){
-            staticClassType = Type.GetType(name);
+
+            bool IsEmote = false;
+
+            foreach(Skill Emote in Emotes)
+            {
+                if(functionName == Emote.name)
+                {
+                    IsEmote = true;
+                }
+            }
+
+            if(IsEmote)
+            {
+                staticClassType = typeof(EmoteStatics);
+            }
+            else
+            {
+                staticClassType = Type.GetType(name);
+            }
         }
         else
         {

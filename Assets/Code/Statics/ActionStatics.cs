@@ -68,6 +68,10 @@ public static class ActionStatics
 
             //Fantolectrique
             { "ShockingNews", new Skill {name = "ShockingNews", targetNumber = 1, requiredSP = 4} },
+
+            //EMOTES
+            { "Emote1", new Skill {name = "Emote1", targetNumber = -3, requiredSP = 4, displayName = "Emote no. 1"} },
+            { "Emote2", new Skill {name = "Emote2", targetNumber = -3, requiredSP = 4, displayName = "Emote no. Zwei"} },
         };
 
     public static Dictionary<string, List<Skill>> ChosenSkills = new Dictionary<string, List<Skill>>
@@ -89,6 +93,12 @@ public static class ActionStatics
             { "Mick",     new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
             { "Poky",     new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} },
             { "Risleigh", new List<Skill>() {Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"], Skills["BasicAttack"]} }
+        };
+
+    public static List<Skill> Emotes = new List<Skill>
+        {
+            Skills["Emote1"],
+            Skills["Emote2"],
         };
 
     public static Dictionary<string, int> MatchupNum = new Dictionary<string, int>

@@ -456,7 +456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &38539637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -519,7 +519,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 38539639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1262756713}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &38539639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +704,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 315545987}
+  EmoteList: {fileID: 1147739427}
 --- !u!114 &44312485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6454,6 +6467,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 1757599720}
+  EmoteList: {fileID: 1262756713}
 --- !u!114 &659389873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9280,7 +9294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &995687274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9355,7 +9369,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 995687277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 231683716}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &995687277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11108,7 +11134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1152263848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11183,7 +11209,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1152263851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 904831283}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1152263851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12303,7 +12341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1360616614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12378,7 +12416,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1360616617}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1147739427}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1360616617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14560,6 +14610,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 149998607}
+  EmoteList: {fileID: 904831283}
 --- !u!114 &1580168106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15572,7 +15623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1624751618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15647,7 +15698,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1624751621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1003735709}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1624751621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15943,6 +16006,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 1654302047}
+  EmoteList: {fileID: 1003735709}
 --- !u!114 &1721804509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16868,7 +16932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1772262186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16943,7 +17007,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1772262189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 360468076}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1772262189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18182,7 +18258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1909320313
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18257,7 +18333,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1909320316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 790575023}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1909320316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19217,7 +19305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1974345710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19292,7 +19380,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1974345713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626827979}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1974345713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20578,6 +20678,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 0}
+  EmoteList: {fileID: 0}
 --- !u!1 &4066287476514103588
 GameObject:
   m_ObjectHideFlags: 0
@@ -20815,6 +20916,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 0}
+  EmoteList: {fileID: 0}
 --- !u!224 &4999028029755317665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21210,6 +21312,7 @@ MonoBehaviour:
   myCharacterList:
     character: []
   SkillList: {fileID: 0}
+  EmoteList: {fileID: 0}
 --- !u!222 &8364567450172412690
 CanvasRenderer:
   m_ObjectHideFlags: 0

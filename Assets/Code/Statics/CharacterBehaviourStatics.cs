@@ -274,6 +274,83 @@ public static class CharacterBehaviourStatics
         BackButtonButton.onClick.AddListener(() => CallingCharacterBehaviour.SkillList.SetActive(false));
     }
 
+    public static void SpawnEmoteList(CharacterBehaviour CallingCharacterBehaviour)
+    {
+
+        float buttonHeight = 50f;
+        float buttonWidth = 150f;
+
+        float buttonMargin = 10f;
+
+        float buttonScaler = 0.05f;
+
+        float yOffset = (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(Emotes.Count-1)))/2;
+        float yOffsetDelta = buttonScaler*(buttonHeight + buttonMargin);
+
+        foreach (Skill EmoteEmote in Emotes)
+        {
+            string EmoteString = EmoteEmote.name;
+
+            GameObject Emote = new GameObject();
+            Emote.layer = LayerMask.NameToLayer("UI");
+            Emote.transform.parent = CallingCharacterBehaviour.EmoteList.transform;
+
+            GameObject EmoteText = new GameObject();
+            EmoteText.layer = LayerMask.NameToLayer("UI");
+            EmoteText.transform.parent = Emote.transform;
+
+            //Emote gameobject definitions
+            Emote.name = char.ToUpper(( (string) EmoteString)[0]) + ( (string) EmoteString).Substring(1);
+
+            RectTransform EmoteRectTransform = Emote.AddComponent<RectTransform>();
+            EmoteRectTransform.anchoredPosition = new Vector2(0.5f, 0.5f + yOffset);
+            yOffset -= yOffsetDelta;
+            EmoteRectTransform.sizeDelta = new Vector2(buttonWidth*( (float) Screen.width)/960f, buttonHeight*( (float) Screen.height)/540f);
+
+            CanvasRenderer EmoteCanvasRenderer = Emote.AddComponent<CanvasRenderer>();
+
+            Image EmoteImage = Emote.AddComponent<Image>();
+            EmoteImage.sprite = CallingCharacterBehaviour.TickCounterObject.SkillSprite;
+
+            Button EmoteButton = Emote.AddComponent<Button>();
+            EmoteButton.targetGraphic = EmoteImage;
+            EmoteButton.onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting(Emote.name));
+            EmoteButton.onClick.AddListener(() => CallingCharacterBehaviour.EmoteList.SetActive(false));
+
+            CheckSkillSP EmoteCheckEmoteSP = Emote.AddComponent<CheckSkillSP>();
+            EmoteCheckEmoteSP.CharacterObject = CallingCharacterBehaviour.gameObject;
+            EmoteCheckEmoteSP.RequiredSP = EmoteEmote.requiredSP;
+            EmoteCheckEmoteSP.SkillButton = EmoteButton;
+
+            //Emotetext gameobject definitions
+            EmoteText.name = char.ToUpper(( (string) EmoteString)[0]) + ( (string) EmoteString).Substring(1) + "Text";
+
+            TMPro.TextMeshProUGUI EmoteTextTMP = EmoteText.AddComponent<TMPro.TextMeshProUGUI>();
+            EmoteTextTMP.text = EmoteEmote.displayName;
+            EmoteTextTMP.fontSize = 20f*( (float) Screen.width)/960f;
+            EmoteTextTMP.alignment = TMPro.TextAlignmentOptions.Center;
+        }
+
+        GameObject BackButton = new GameObject();
+        BackButton.layer = LayerMask.NameToLayer("UI");
+        BackButton.transform.parent = CallingCharacterBehaviour.EmoteList.transform;
+
+        BackButton.name = "BackButton";
+
+        RectTransform BackButtonRectTransform = BackButton.AddComponent<RectTransform>();
+        BackButtonRectTransform.anchoredPosition = new Vector2(4.20f, (buttonScaler*(((buttonHeight+buttonMargin)/2) + (buttonHeight + buttonMargin)*(Emotes.Count-1)))/2 + 40f*buttonScaler);
+        BackButtonRectTransform.sizeDelta = new Vector2(50f*( (float) Screen.width)/960f, 50f*( (float) Screen.height)/540f);
+
+        CanvasRenderer BackButtonCanvasRenderer = BackButton.AddComponent<CanvasRenderer>();
+
+        Image BackButtonImage = BackButton.AddComponent<Image>();
+        BackButtonImage.sprite = CallingCharacterBehaviour.TickCounterObject.BackButtonSprite;
+
+        Button BackButtonButton = BackButton.AddComponent<Button>();
+        BackButtonButton.targetGraphic = BackButtonImage;
+        BackButtonButton.onClick.AddListener(() => CallingCharacterBehaviour.EmoteList.SetActive(false));
+    }
+
     public static bool IsGoodGuy(CharacterBehaviour CallingCharacterBehaviour)
     {
         return (CallingCharacterBehaviour.transform.parent.name == "GoodGuys");
