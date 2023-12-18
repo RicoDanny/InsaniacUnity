@@ -12,7 +12,7 @@ using static ModifierStatics;
 
 public static class  EmoteStatics
 {
-    public static void Emote1(CharacterBehaviour CallingCharacterBehaviour)
+    public static void Giggle(CharacterBehaviour CallingCharacterBehaviour)
     {
         CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
         Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
@@ -20,7 +20,59 @@ public static class  EmoteStatics
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        TargetBattler.status = "Manic";
+        TargetBattler.status = "Thrilled";
+
+        EndAction(CallingCharacterBehaviour);
+    }
+
+    public static void Complain(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
+        Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
+
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
+
+        TargetBattler.status = "Vexed";
+
+        EndAction(CallingCharacterBehaviour);
+    }
+
+    public static void Whisper(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
+        Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
+
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
+
+        TargetBattler.status = "Paranoid";
+
+        EndAction(CallingCharacterBehaviour);
+    }
+
+    public static void Wallow(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
+        Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
+
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
+
+        TargetBattler.status = "Empty";
+
+        EndAction(CallingCharacterBehaviour);
+    }
+
+    public static void Delude(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
+        Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
+
+        //Je weet dat in basic attack er maar 1 target is dus
+        Character TargetBattler = TargetBattlerList[0].CharacterEntity;
+
+        TargetBattler.status = "Delusional";
 
         EndAction(CallingCharacterBehaviour);
     }

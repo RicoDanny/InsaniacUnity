@@ -70,8 +70,11 @@ public static class ActionStatics
             { "ShockingNews", new Skill {name = "ShockingNews", targetNumber = 1, requiredSP = 4} },
 
             //EMOTES
-            { "Emote1", new Skill {name = "Emote1", targetNumber = -3, requiredSP = 4, displayName = "Emote no. 1"} },
-            { "Emote2", new Skill {name = "Emote2", targetNumber = -3, requiredSP = 4, displayName = "Emote no. Zwei"} },
+            { "Giggle", new Skill {name = "Giggle", targetNumber = 1, requiredSP = 3, displayName = "Giggle"} },
+            { "Complain", new Skill {name = "Complain", targetNumber = 1, requiredSP = 3, displayName = "Complain"} },
+            { "Whisper", new Skill {name = "Whisper", targetNumber = 1, requiredSP = 3, displayName = "Whisper"} },
+            { "Wallow", new Skill {name = "Wallow", targetNumber = 1, requiredSP = 3, displayName = "Wallow"} },
+            { "Delude", new Skill {name = "Delude", targetNumber = 1, requiredSP = 3, displayName = "Delude"} },
         };
 
     public static Dictionary<string, List<Skill>> ChosenSkills = new Dictionary<string, List<Skill>>
@@ -97,23 +100,26 @@ public static class ActionStatics
 
     public static List<Skill> Emotes = new List<Skill>
         {
-            Skills["Emote1"],
-            Skills["Emote2"],
+            Skills["Giggle"],
+            Skills["Complain"],
+            Skills["Whisper"],
+            Skills["Wallow"],
+            Skills["Delude"],
         };
 
     public static Dictionary<string, int> MatchupNum = new Dictionary<string, int>
         {
-            { "empty",      0 },
-            { "thrilled",   1 },
-            { "paranoid",   2 },
-            { "delusional", 3 },
-            { "vexed",      4 },
-            { "depressed",  5 },
-            { "manic",      6 },
-            { "hysterical", 7 },
-            { "psycho",     8 },
-            { "throthing",  9 },
-            { "bored",      10 }
+            { "Empty",      0 },
+            { "Thrilled",   1 },
+            { "Paranoid",   2 },
+            { "Delusional", 3 },
+            { "Vexed",      4 },
+            { "Depressed",  5 },
+            { "Manic",      6 },
+            { "Hysterical", 7 },
+            { "Psycho",     8 },
+            { "Throthing",  9 },
+            { "Bored",      10 }
         };
 
     public static double[,] StatusChart = 
