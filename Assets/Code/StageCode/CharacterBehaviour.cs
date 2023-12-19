@@ -47,11 +47,10 @@ public class CharacterBehaviour : MonoBehaviour
     public bool User;
     public string TempActionString;
     public TextAsset textJSON;
-    public GameObject SelectTargetBanner;
-    public GameObject SelectUnitBanner;
     public CharacterList myCharacterList = new CharacterList();
     public GameObject SkillList;
     public GameObject EmoteList;
+    public GameObject GoodGuyMenuPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +59,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(IsGoodGuy(this))
         {
+            SpawnGoodGuyMenu(this);
             SpawnSkillList(this);
             SpawnEmoteList(this);
         }
@@ -67,8 +67,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     void Update()
     {
-        DefineSelectBanners(this); //Definieer de banners die zeggen wat je moet selecten
-
         UpdateHighlight(this); //Elke frame wordt er gekeken naar of de character getarget is, zo ja, highlight aan
         UpdateActiveHighlight(this);
 

@@ -17,16 +17,6 @@ public static class  UiStatics
         CallingCharacterBehaviour.ActiveHighlightRenderer.color = new Color(255, 255, 0, 255 * (CallingCharacterBehaviour.TickCounterObject.Active.Contains(CallingCharacterBehaviour) ? 1 : 0));
     }
 
-    public static void DefineSelectBanners(CharacterBehaviour CallingCharacterBehaviour)
-    {
-        if(CallingCharacterBehaviour.SelectTargetBanner == null)
-        {
-            CallingCharacterBehaviour.SelectTargetBanner = CallingCharacterBehaviour.transform.parent.gameObject.transform.parent.gameObject.GetComponent<ToggleActive>().SelectTargetBanner;
-
-            CallingCharacterBehaviour.SelectUnitBanner = CallingCharacterBehaviour.transform.parent.gameObject.transform.parent.gameObject.GetComponent<ToggleActive>().SelectUnitBanner;
-        }
-    }
-
     public static void EnableActionSubmit(CharacterBehaviour CallingCharacterBehaviour)
     {
         if(CallingCharacterBehaviour.TickCounterObject.Targeting && CallingCharacterBehaviour.User) 

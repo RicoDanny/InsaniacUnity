@@ -172,7 +172,7 @@ public static class ActionStatics
 
     public static void InitiateTargeting(CharacterBehaviour CallingCharacterBehaviour, string ActionString)
     {
-        CallingCharacterBehaviour.SelectTargetBanner.SetActive(!CallingCharacterBehaviour.SelectTargetBanner.activeSelf);
+        CallingCharacterBehaviour.TickCounterObject.SelectTargetBanner.SetActive(!CallingCharacterBehaviour.TickCounterObject.SelectTargetBanner.activeSelf);
 
         CallingCharacterBehaviour.TargetingType = Skills[ActionString].targetNumber;
 

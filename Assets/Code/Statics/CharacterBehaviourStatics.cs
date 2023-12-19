@@ -196,6 +196,35 @@ public static class CharacterBehaviourStatics
         }
     }
 
+    public static void SpawnGoodGuyMenu(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        GameObject Menu = Object.Instantiate(CallingCharacterBehaviour.GoodGuyMenuPrefab, new Vector3(0,0,0), Quaternion.identity);
+
+        Menu.name = CallingCharacterBehaviour.name + "Menu";
+
+        Menu.transform.SetParent(CallingCharacterBehaviour.TickCounterObject.BattleUIObject.transform, false);
+
+        foreach(Transform ThingToAssign in Menu.transform)
+        {
+            if(ThingToAssign.name == "StatInformation")
+            {
+                foreach (Transform StatToAssign in ThingToAssign)
+                {
+                    if(StatToAssign.name == "SP"){CallingCharacterBehaviour.CharacterSPText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "ATK"){CallingCharacterBehaviour.CharacterATKText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "DEF"){CallingCharacterBehaviour.CharacterDEFText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "SPD"){CallingCharacterBehaviour.CharacterSPDText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "HIT"){CallingCharacterBehaviour.CharacterHITText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "AVO"){CallingCharacterBehaviour.CharacterAVOText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "LUCK"){CallingCharacterBehaviour.CharacterLUCKText = StatToAssign.gameObject;}
+                }
+            }
+
+            if(ThingToAssign.name == "EmoteList"){CallingCharacterBehaviour.EmoteList = ThingToAssign.gameObject;}
+            if(ThingToAssign.name == "SkillList"){CallingCharacterBehaviour.SkillList = ThingToAssign.gameObject;}
+        }
+    }
+
     public static void SpawnSkillList(CharacterBehaviour CallingCharacterBehaviour)
     {
         if(!(CallingCharacterBehaviour.SkillList)){return;}

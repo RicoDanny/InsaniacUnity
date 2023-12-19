@@ -35,6 +35,7 @@ public class TickCounter : MonoBehaviour
     public int EnemyCount = 0;
     public GameObject WinScreen;
     public GameObject LoseScreen;
+    public GameObject BattleUIObject;
 
     void Start()
     {

@@ -699,12 +699,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 315545987}
   EmoteList: {fileID: 1147739427}
+  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &44312485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6462,12 +6461,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 1757599720}
   EmoteList: {fileID: 1262756713}
+  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &659389873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10486,6 +10484,7 @@ MonoBehaviour:
   EnemyCount: 0
   WinScreen: {fileID: 538339894}
   LoseScreen: {fileID: 2064373379}
+  BattleUIObject: {fileID: 447595630}
 --- !u!1 &1083626783
 GameObject:
   m_ObjectHideFlags: 0
@@ -14605,12 +14604,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 149998607}
   EmoteList: {fileID: 904831283}
+  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &1580168106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16001,12 +15999,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 1654302047}
   EmoteList: {fileID: 1003735709}
+  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &1721804509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20673,12 +20670,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
+  GoodGuyMenuPrefab: {fileID: 0}
 --- !u!1 &4066287476514103588
 GameObject:
   m_ObjectHideFlags: 0
@@ -20911,12 +20907,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
+  GoodGuyMenuPrefab: {fileID: 0}
 --- !u!224 &4999028029755317665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21307,12 +21302,11 @@ MonoBehaviour:
   User: 0
   TempActionString: 
   textJSON: {fileID: 4900000, guid: 976004dba736e644cb5433204ddc6981, type: 3}
-  SelectTargetBanner: {fileID: 1369214864}
-  SelectUnitBanner: {fileID: 638438753}
   myCharacterList:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
+  GoodGuyMenuPrefab: {fileID: 0}
 --- !u!222 &8364567450172412690
 CanvasRenderer:
   m_ObjectHideFlags: 0
