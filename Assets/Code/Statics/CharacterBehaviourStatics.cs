@@ -175,7 +175,7 @@ public static class CharacterBehaviourStatics
     {
         CallingCharacterBehaviour.CharacterEntity.turn = 0;
 
-        CallingCharacterBehaviour.myCharacterList = JsonUtility.FromJson<CharacterList>(CallingCharacterBehaviour.textJSON.text);
+        CallingCharacterBehaviour.myCharacterList = JsonUtility.FromJson<CharacterList>(CallingCharacterBehaviour.CharactersJSON.text);
         
         CallingCharacterBehaviour.HighlightObject = CallingCharacterBehaviour.gameObject.transform.Find("Highlight").gameObject;
 
@@ -193,6 +193,16 @@ public static class CharacterBehaviourStatics
             {
                 CallingCharacterBehaviour.CharacterEntity = JsonCharacter;
             }
+        }
+    }
+
+    public static void DefineHighlights(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        foreach(Transform CharacterChild in CallingCharacterBehaviour.transform)
+        {
+            if(CharacterChild.name == CallingCharacterBehaviour.name + "HP"){CallingCharacterBehaviour.CharacterHPText = CharacterChild.gameObject;}
+            if(CharacterChild.name == "Highlight"){CallingCharacterBehaviour.HighlightObject = CharacterChild.gameObject; CallingCharacterBehaviour.HighlightRenderer = CharacterChild.GetComponent<SpriteRenderer>();}
+            if(CharacterChild.name == "ActiveHighlight"){CallingCharacterBehaviour.ActiveHighlightRenderer = CharacterChild.GetComponent<SpriteRenderer>();}
         }
     }
 

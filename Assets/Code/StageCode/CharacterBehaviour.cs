@@ -26,37 +26,39 @@ using static Fantolectrique;
 
 public class CharacterBehaviour : MonoBehaviour
 {
-    public GameObject CharacterHPText;
-    public GameObject CharacterSPText;
-    public GameObject CharacterATKText;
-    public GameObject CharacterDEFText;
-    public GameObject CharacterSPDText;
-    public GameObject CharacterHITText;
-    public GameObject CharacterAVOText;
-    public GameObject CharacterLUCKText;
-    public GameObject ClockHand;
-    public List<string> Actions; //List of premoves of Abilities/Actions
-    public List<CharacterBehaviour[]> TargetsPerAction; //List of Targets that are on the same Indexes as the Actions that they are Targets for in the Actions list
-    public GameObject HighlightObject;
-    public SpriteRenderer HighlightRenderer;
-    public SpriteRenderer ActiveHighlightRenderer;
-    private CharacterBehaviour ThisCharacterBehaviour;
+    [HideInInspector] public GameObject CharacterHPText;
+    [HideInInspector] public GameObject CharacterSPText;
+    [HideInInspector] public GameObject CharacterATKText;
+    [HideInInspector] public GameObject CharacterDEFText;
+    [HideInInspector] public GameObject CharacterSPDText;
+    [HideInInspector] public GameObject CharacterHITText;
+    [HideInInspector] public GameObject CharacterAVOText;
+    [HideInInspector] public GameObject CharacterLUCKText;
+    [HideInInspector] public GameObject ClockHand;
+    [HideInInspector] public List<string> Actions; //List of premoves of Abilities/Actions
+    [HideInInspector] public List<CharacterBehaviour[]> TargetsPerAction; //List of Targets that are on the same Indexes as the Actions that they are Targets for in the Actions list
+    [HideInInspector] public GameObject HighlightObject;
+    [HideInInspector] public SpriteRenderer HighlightRenderer;
+    [HideInInspector] public SpriteRenderer ActiveHighlightRenderer;
+    [HideInInspector] private CharacterBehaviour ThisCharacterBehaviour;
     public TickCounter TickCounterObject;
-    public Character CharacterEntity;
-    public int TargetingType;
-    public bool IsTarget;
-    public bool User;
-    public string TempActionString;
-    public TextAsset textJSON;
-    public CharacterList myCharacterList = new CharacterList();
-    public GameObject SkillList;
-    public GameObject EmoteList;
+    [HideInInspector] public Character CharacterEntity;
+    [HideInInspector] public int TargetingType;
+    [HideInInspector] public bool IsTarget;
+    [HideInInspector] public bool User;
+    [HideInInspector] public string TempActionString;
+    public TextAsset CharactersJSON;
+    [HideInInspector] public CharacterList myCharacterList = new CharacterList();
+    [HideInInspector] public GameObject SkillList;
+    [HideInInspector] public GameObject EmoteList;
     public GameObject MenuPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         DefineCharacter(this); //Definieerd de character, gebruikt de json file
+
+        DefineHighlights(this);
 
         if(IsGoodGuy(this))
         {
