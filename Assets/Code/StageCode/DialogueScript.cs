@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static DialogueStatics;
 using UnityEngine.UI;
+
+using static DialogueStatics;
+using static PauseStatics;
 
 public class DialogueScript : MonoBehaviour
 {
@@ -34,7 +36,7 @@ public class DialogueScript : MonoBehaviour
 
     void Update()
     {
-        if(CheckNextDialogue(this))
+        if(CheckNextDialogue(this) && !IsPaused)
         {
             DisplayDialogue(this);
             DisplayBackground(this);

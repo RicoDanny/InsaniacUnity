@@ -52,12 +52,15 @@ public class ForceCameraAspectRatio : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            IsPaused = !IsPaused;
-
-            if(IsPaused)
+            if(PauseMenu) //Als het pausable is 
             {
-                GameObject PauseMenuObject = GameObject.Instantiate(PauseMenu, new Vector3(0.5f,0.5f,0), Quaternion.identity);
-                PauseMenuObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
+                IsPaused = !IsPaused;
+
+                if(IsPaused)
+                {
+                    GameObject PauseMenuObject = GameObject.Instantiate(PauseMenu, new Vector3(0.5f,0.5f,0), Quaternion.identity);
+                    PauseMenuObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
+                }
             }
         }
     }
