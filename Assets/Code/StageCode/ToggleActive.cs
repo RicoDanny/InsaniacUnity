@@ -17,7 +17,7 @@ public class ToggleActive : MonoBehaviour
 
     void Start()
     {
-        TickCounterObject = GameObject.Find("MainCanvas").GetComponent<TickCounter>();
+        TickCounterObject = GameObject.Find("Canvas").GetComponent<TickCounter>();
 
         SelectUnitBanner = GameObject.Find("SelectUnit");
 

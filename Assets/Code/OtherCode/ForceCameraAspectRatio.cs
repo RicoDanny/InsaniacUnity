@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static PauseStatics;
+
 public class ForceCameraAspectRatio : MonoBehaviour
 {
+    [SerializeField] GameObject PauseMenu;
+
     void Update () 
     {
         // set the desired aspect ratio (the values in this example are
@@ -44,6 +48,17 @@ public class ForceCameraAspectRatio : MonoBehaviour
             rect.y = 0;
 
             camera.rect = rect;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            IsPaused = !IsPaused;
+
+            if(IsPaused)
+            {
+                GameObject PauseMenuObject = GameObject.Instantiate(PauseMenu, new Vector3(0.5f,0.5f,0), Quaternion.identity);
+                PauseMenuObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            }
         }
     }
 }

@@ -179,7 +179,7 @@ public static class CharacterBehaviourStatics
         
         CallingCharacterBehaviour.HighlightObject = CallingCharacterBehaviour.gameObject.transform.Find("Highlight").gameObject;
 
-        CallingCharacterBehaviour.TickCounterObject = GameObject.Find("MainCanvas").GetComponent<TickCounter>();
+        CallingCharacterBehaviour.TickCounterObject = GameObject.Find("Canvas").GetComponent<TickCounter>();
 
         CallingCharacterBehaviour.HighlightRenderer = CallingCharacterBehaviour.HighlightObject.GetComponent<SpriteRenderer>();
 
