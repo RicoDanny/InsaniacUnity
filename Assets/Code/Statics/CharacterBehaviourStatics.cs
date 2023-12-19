@@ -198,7 +198,7 @@ public static class CharacterBehaviourStatics
 
     public static void SpawnGoodGuyMenu(CharacterBehaviour CallingCharacterBehaviour)
     {
-        GameObject Menu = Object.Instantiate(CallingCharacterBehaviour.GoodGuyMenuPrefab, new Vector3(0,0,0), Quaternion.identity);
+        GameObject Menu = GameObject.Instantiate(CallingCharacterBehaviour.GoodGuyMenuPrefab, new Vector3(0,0,0), Quaternion.identity);
 
         Menu.name = CallingCharacterBehaviour.name + "Menu";
 
@@ -220,9 +220,13 @@ public static class CharacterBehaviourStatics
                 }
             }
 
+            if(ThingToAssign.name == "Weapon"){ThingToAssign.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting("BasicAttack"));}
+
             if(ThingToAssign.name == "EmoteList"){CallingCharacterBehaviour.EmoteList = ThingToAssign.gameObject;}
             if(ThingToAssign.name == "SkillList"){CallingCharacterBehaviour.SkillList = ThingToAssign.gameObject;}
         }
+
+        CallingCharacterBehaviour.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.transform.parent.parent.GetComponent<ToggleActive>().ToggleObjectActive(Menu));
     }
 
     public static void SpawnSkillList(CharacterBehaviour CallingCharacterBehaviour)
