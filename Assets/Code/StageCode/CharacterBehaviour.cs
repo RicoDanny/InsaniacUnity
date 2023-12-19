@@ -34,6 +34,7 @@ public class CharacterBehaviour : MonoBehaviour
     public GameObject CharacterHITText;
     public GameObject CharacterAVOText;
     public GameObject CharacterLUCKText;
+    public GameObject ClockHand;
     public List<string> Actions; //List of premoves of Abilities/Actions
     public List<CharacterBehaviour[]> TargetsPerAction; //List of Targets that are on the same Indexes as the Actions that they are Targets for in the Actions list
     public GameObject HighlightObject;
@@ -50,7 +51,7 @@ public class CharacterBehaviour : MonoBehaviour
     public CharacterList myCharacterList = new CharacterList();
     public GameObject SkillList;
     public GameObject EmoteList;
-    public GameObject GoodGuyMenuPrefab;
+    public GameObject MenuPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,10 @@ public class CharacterBehaviour : MonoBehaviour
             SpawnSkillList(this);
             SpawnEmoteList(this);
         }
+        else
+        {
+            SpawnBadGuyMenu(this);
+        }
     }
 
     void Update()
@@ -74,18 +79,16 @@ public class CharacterBehaviour : MonoBehaviour
 
         //Update de stats van de characters
         UpdateHP(this);
+        UpdateSP(this);
+        UpdateATK(this);
+        UpdateDEF(this);
+        UpdateSPD(this);
+        UpdateHIT(this);
+        UpdateAVO(this);
+        UpdateLUCK(this);
+        UpdateClockHand(this);
         
-        if(IsGoodGuy(this))
-        {
-            UpdateSP(this);
-            UpdateATK(this);
-            UpdateDEF(this);
-            UpdateSPD(this);
-            UpdateHIT(this);
-            UpdateAVO(this);
-            UpdateLUCK(this);
-        }
-        else
+        if(!IsGoodGuy(this))
         {
             AImove(this);
         }

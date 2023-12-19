@@ -413,7 +413,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &44312485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,7 +2514,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &659389873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4126,7 +4126,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &1580168106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4464,7 +4464,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!114 &1721804509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6122,7 +6122,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 0}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!1 &4066287476514103588
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,7 +6359,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 0}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!224 &4999028029755317665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6754,7 +6754,7 @@ MonoBehaviour:
     character: []
   SkillList: {fileID: 0}
   EmoteList: {fileID: 0}
-  GoodGuyMenuPrefab: {fileID: 0}
+  MenuPrefab: {fileID: 1555396161391540483, guid: fd458034d4d614b46bf9a738f0dd1bd7, type: 3}
 --- !u!222 &8364567450172412690
 CanvasRenderer:
   m_ObjectHideFlags: 0

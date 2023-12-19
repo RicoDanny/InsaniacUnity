@@ -58,14 +58,14 @@ public static class  TickCounterStatics
         foreach (GameObject character in CallingTickCounter.Units)
         {
             CharacterBehaviour characterScript = character.GetComponent<CharacterBehaviour>();
+            
+            characterScript.CharacterEntity.energy += characterScript.CharacterEntity.spd;
 
             if (characterScript.CharacterEntity.energy >= 60) {
                 CallingTickCounter.Active.Add(characterScript);
 
                 characterScript.CharacterEntity.energy -= 60;
             }
-
-            characterScript.CharacterEntity.energy += characterScript.CharacterEntity.spd;
         }
     }
 

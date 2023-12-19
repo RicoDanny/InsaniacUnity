@@ -41,7 +41,7 @@ public class TickCounter : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "0-2c")
         {
-            ChosenCharacterStrings = new List<string>(){"Pygor", "Grungo"}; //Defealt team in case of bug ig
+            ChosenCharacterStrings = new List<string>(){"Pygor", "Grungo"}; //Defealt team 
         }
 
         SpawnCharacters(this);

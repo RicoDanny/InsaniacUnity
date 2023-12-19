@@ -65,6 +65,11 @@ public static class  UiStatics
         CallingCharacterBehaviour.CharacterLUCKText.GetComponent<TMPro.TextMeshProUGUI>().text = "LUCK: " + CallingCharacterBehaviour.CharacterEntity.luck.ToString();
     }
 
+    public static void UpdateClockHand(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        CallingCharacterBehaviour.ClockHand.transform.rotation = Quaternion.Euler(0, 0, -6*(CallingCharacterBehaviour.CharacterEntity.energy));
+    }
+
     public static void UpdateSelectUnitBanner(TickCounter CallingTickCounter)
     {
         CallingTickCounter.SelectUnitBanner.SetActive(!CallingTickCounter.Selected);

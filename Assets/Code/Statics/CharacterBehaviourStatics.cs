@@ -198,7 +198,7 @@ public static class CharacterBehaviourStatics
 
     public static void SpawnGoodGuyMenu(CharacterBehaviour CallingCharacterBehaviour)
     {
-        GameObject Menu = GameObject.Instantiate(CallingCharacterBehaviour.GoodGuyMenuPrefab, new Vector3(0,0,0), Quaternion.identity);
+        GameObject Menu = GameObject.Instantiate(CallingCharacterBehaviour.MenuPrefab, new Vector3(0,0,0), Quaternion.identity);
 
         Menu.name = CallingCharacterBehaviour.name + "Menu";
 
@@ -219,11 +219,52 @@ public static class CharacterBehaviourStatics
                     if(StatToAssign.name == "LUCK"){CallingCharacterBehaviour.CharacterLUCKText = StatToAssign.gameObject;}
                 }
             }
+            else if(ThingToAssign.name == "ClockHand")
+            {
+                CallingCharacterBehaviour.ClockHand = ThingToAssign.gameObject;
+            }
 
             if(ThingToAssign.name == "Weapon"){ThingToAssign.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting("BasicAttack"));}
 
             if(ThingToAssign.name == "EmoteList"){CallingCharacterBehaviour.EmoteList = ThingToAssign.gameObject;}
             if(ThingToAssign.name == "SkillList"){CallingCharacterBehaviour.SkillList = ThingToAssign.gameObject;}
+        }
+
+        CallingCharacterBehaviour.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.transform.parent.parent.GetComponent<ToggleActive>().ToggleObjectActive(Menu));
+    }
+
+    public static void SpawnBadGuyMenu(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        GameObject Menu = GameObject.Instantiate(CallingCharacterBehaviour.MenuPrefab, new Vector3(0,0,0), Quaternion.identity);
+
+        Menu.name = CallingCharacterBehaviour.name + "Menu";
+
+        Menu.transform.SetParent(CallingCharacterBehaviour.TickCounterObject.BattleUIObject.transform, false);
+
+        foreach(Transform ThingToAssign in Menu.transform)
+        {
+            if(ThingToAssign.name == "StatInformation")
+            {
+                foreach (Transform StatToAssign in ThingToAssign)
+                {
+                    if(StatToAssign.name == "SP"){CallingCharacterBehaviour.CharacterSPText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "ATK"){CallingCharacterBehaviour.CharacterATKText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "DEF"){CallingCharacterBehaviour.CharacterDEFText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "SPD"){CallingCharacterBehaviour.CharacterSPDText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "HIT"){CallingCharacterBehaviour.CharacterHITText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "AVO"){CallingCharacterBehaviour.CharacterAVOText = StatToAssign.gameObject;}
+                    if(StatToAssign.name == "LUCK"){CallingCharacterBehaviour.CharacterLUCKText = StatToAssign.gameObject;}
+                }
+            }
+            else if(ThingToAssign.name == "ClockHand")
+            {
+                CallingCharacterBehaviour.ClockHand = ThingToAssign.gameObject;
+            }
+            else
+            {
+                ThingToAssign.gameObject.SetActive(false);
+            }
+           
         }
 
         CallingCharacterBehaviour.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.transform.parent.parent.GetComponent<ToggleActive>().ToggleObjectActive(Menu));
