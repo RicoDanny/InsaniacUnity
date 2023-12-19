@@ -4727,6 +4727,8 @@ MonoBehaviour:
   NameBoxComponent: {fileID: 2000479808}
   DialogueNumber: 0
   NextScene: 0-2c
+  SetStageProgress: 0
+  SetChapterProgress: 0
 --- !u!4 &795824279
 Transform:
   m_ObjectHideFlags: 0
@@ -5202,6 +5204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccba2213f6806d8409c4d1a32e9dbc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 2889026656179035732, guid: 15d1ff49cef395f4dba6ff7e0d651428, type: 3}
 --- !u!1 &882542810
 GameObject:
   m_ObjectHideFlags: 0
