@@ -2,26 +2,92 @@
   "dialogue":
   [
     {
-      "DialogueString": "<i>As Min starts rallying again, he seems to attract the exact kind of company they were talking about earlier.</i>",
+      "DialogueString": "<i>Leaving the bar, Min was immediately bugged by three tipsy citizens that watched his earlier rally.</i>",
       "CharacterName": "",
       "CharacterEmotion": "",
       "BackgroundImage": "Midbourgh"
     },
     {
       "DialogueString": "Could ya bug off you plonker?",
-      "CharacterName": "Angry Onlooker",
+      "CharacterName": "Bailey",
       "CharacterEmotion": "Angry",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "But why would I? Oh'so not kind citizen?",
+      "DialogueString": "But why would I? Oh'so not kind citizen? Enjoy the show for now, I'm sure you'll like it!",
       "CharacterName": "Min",
-      "CharacterEmotion": "Sarcasm",
+      "CharacterEmotion": "Happy",
       "BackgroundImage": "Midbourgh"
     },
     {
-      "DialogueString": "That's it, get em boys!",
-      "CharacterName": "Angry Onlooker",
+      "DialogueString": "Yer bloody annoying, ya know that?",
+      "CharacterName": "Addison",
+      "CharacterEmotion": "Angry",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "<i>Min signed at Grungo and walked to his stage to continue his speech.</i>",
+      "CharacterName": "",
+      "CharacterEmotion": "",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Grrrreetings my loyal supporters! Excuse me for my brief departure, I needed to <i>heighten my chances of survival</i>.",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Happy",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "But anyways, it's high time we return to our main topic: the silly ol' water crisis.",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Dumb",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Water prices are skyrocketing and the lower classes are failing to pay for clean drinking water!",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Worried",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "The regions hit hardest by this tomfoolery are Tumbletree, Dusty and a large orphanage near the recently uhh c-consumed Yonder with a lack of better words.",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Thinking",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "Luckily, these regions are near Midburgh, unluckily, Midburgh is also struggling. If we want to act, we need to act <i>fast</i>!",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Neutral",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "But do not worry friends! I've already devised a quick plan that will solve this petty crisis in a blink of only a single eye!",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Wow",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "So here's the plan, we collect all the rainwater we can find and allocate it to the poor!",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Happy",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "But you might be asking: 'How do we do that Mr. Handsome?' Well contain your excitement peeps;",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Happy",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "<b>WE RAISE TAXES</b>",
+      "CharacterName": "Min",
+      "CharacterEmotion": "Wow",
+      "BackgroundImage": "Midbourgh"
+    },
+    {
+      "DialogueString": "That's it. Let's wipe that bratty smile off of that bastard!",
+      "CharacterName": "Jack",
       "CharacterEmotion": "Angry",
       "BackgroundImage": "Midbourgh"
     },

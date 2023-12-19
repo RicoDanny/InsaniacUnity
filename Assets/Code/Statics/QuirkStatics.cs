@@ -53,11 +53,11 @@ public static class  QuirkStatics
     //Methods for Individual quirks under here
     public static void Ablaze(CharacterBehaviour CallingCharacterBehaviour)
     {
-        List<Quirk> AblazeList = CallingCharacterBehaviour.CharacterEntity.quirks["Ablaze"];
+        List<Quirk> SpecificQuirkList = CallingCharacterBehaviour.CharacterEntity.quirks["Ablaze"];
 
-        int NumberOfStacksOfThree = (int) AblazeList.Count/3; //Hier truncate de cast van int de float de decimalen, oftewel de floor function alleen dan efficient
+        int NumberOfStacksOfThree = (int) SpecificQuirkList.Count/3; //Hier truncate de cast van int de float de decimalen, oftewel de floor function alleen dan efficient
 
-        foreach(Quirk AblazeQuirk in AblazeList)
+        foreach(Quirk AblazeQuirk in SpecificQuirkList)
         {
             if(AblazeQuirk.duration + 1 == AblazeQuirk.totalduration) //+1 want in loopthrough quirks wordt al de 1 van duration eraf gehaald
             {
@@ -66,7 +66,7 @@ public static class  QuirkStatics
             
             if (AblazeQuirk.duration + 1 == 0)
             {
-                AblazeList.Remove(AblazeQuirk);
+                SpecificQuirkList.Remove(AblazeQuirk);
 
                 //undo stuff from first turn like atk/0.9 (restoring atk to its former glory)
             }
@@ -76,18 +76,112 @@ public static class  QuirkStatics
             }
         }
         
-        if(NumberOfStacksOfThree == AblazeList.Count/3 && AblazeList[AblazeList.Count-1].duration + 1 == AblazeList[AblazeList.Count-1].totalduration)
+        if(NumberOfStacksOfThree == SpecificQuirkList.Count/3 && SpecificQuirkList[SpecificQuirkList.Count-1].duration + 1 == AblazeList[AblazeList.Count-1].totalduration)
         {
             //reset all countdowns
-            foreach(Quirk AblazeQuirk in AblazeList)
+            foreach(Quirk AblazeQuirk in SpecificQuirkList)
             {
                 AblazeQuirk.duration = AblazeQuirk.totalduration;
             }
         }
     }
 
+    public static void Defenseless(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        List<Quirk> SpecificQuirkList = CallingCharacterBehaviour.CharacterEntity.quirks["Defenseless"];
+
+        foreach(Quirk DefenselessQuirk in SpecificQuirkList)
+        {
+            if(DefenselessQuirk.duration + 1 == DefenselessQuirk.totalduration) //+1 want in loopthrough quirks wordt al de 1 van duration eraf gehaald
+            {
+                //Do stuff that should be done one time when quirk is recieved like atk*0.9
+            }
+            
+            if (DefenselessQuirk.duration + 1 == 0)
+            {
+                SpecificQuirkList.Remove(DefenselessQuirk);
+
+                //undo stuff from first turn like atk/0.9 (restoring atk to its former glory)
+            }
+            else
+            {
+                //Hier dingen elke turn
+            }
+        }
+        
+        if(NumberOfStacksOfThree == SpecificQuirkList.Count/3 && SpecificQuirkList[SpecificQuirkList.Count-1].duration + 1 == DefenselessList[DefenselessList.Count-1].totalduration)
+        {
+            //reset all countdowns
+            foreach(Quirk DefenselessQuirk in SpecificQuirkList)
+            {
+                DefenselessQuirk.duration = DefenselessQuirk.totalduration;
+            }
+        }
+    }
+
     public static void Paralyzed(CharacterBehaviour CallingCharacterBehaviour)
     {
-        //Oh no, anyways
+        List<Quirk> SpecificQuirkList = CallingCharacterBehaviour.CharacterEntity.quirks["Paralyzed"];
+
+        foreach(Quirk ParalyzedQuirk in SpecificQuirkList)
+        {
+            if(ParalyzedQuirk.duration + 1 == ParalyzedQuirk.totalduration) //+1 want in loopthrough quirks wordt al de 1 van duration eraf gehaald
+            {
+                //Do stuff that should be done one time when quirk is recieved like atk*0.9
+            }
+            
+            if (ParalyzedQuirk.duration + 1 == 0)
+            {
+                SpecificQuirkList.Remove(ParalyzedQuirk);
+
+                //undo stuff from first turn like atk/0.9 (restoring atk to its former glory)
+            }
+            else
+            {
+                //Hier dingen elke turn
+            }
+        }
+        
+        if(NumberOfStacksOfThree == SpecificQuirkList.Count/3 && SpecificQuirkList[SpecificQuirkList.Count-1].duration + 1 == ParalyzedList[ParalyzedList.Count-1].totalduration)
+        {
+            //reset all countdowns
+            foreach(Quirk ParalyzedQuirk in SpecificQuirkList)
+            {
+                ParalyzedQuirk.duration = ParalyzedQuirk.totalduration;
+            }
+        }
+    }
+
+    public static void Bleeding(CharacterBehaviour CallingCharacterBehaviour)
+    {
+        List<Quirk> SpecificQuirkList = CallingCharacterBehaviour.CharacterEntity.quirks["Bleeding"];
+
+        foreach(Quirk BleedingQuirk in SpecificQuirkList)
+        {
+            if(BleedingQuirk.duration + 1 == BleedingQuirk.totalduration) //+1 want in loopthrough quirks wordt al de 1 van duration eraf gehaald
+            {
+                //Do stuff that should be done one time when quirk is recieved like atk*0.9
+            }
+            
+            if (BleedingQuirk.duration + 1 == 0)
+            {
+                SpecificQuirkList.Remove(BleedingQuirk);
+
+                //undo stuff from first turn like atk/0.9 (restoring atk to its former glory)
+            }
+            else
+            {
+                //Hier dingen elke turn
+            }
+        }
+        
+        if(NumberOfStacksOfThree == SpecificQuirkList.Count/3 && SpecificQuirkList[SpecificQuirkList.Count-1].duration + 1 == BleedingList[BleedingList.Count-1].totalduration)
+        {
+            //reset all countdowns
+            foreach(Quirk BleedingQuirk in SpecificQuirkList)
+            {
+                BleedingQuirk.duration = BleedingQuirk.totalduration;
+            }
+        }
     }
 }
