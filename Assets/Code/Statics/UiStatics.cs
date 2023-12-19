@@ -67,7 +67,8 @@ public static class  UiStatics
 
     public static void UpdateClockHand(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CallingCharacterBehaviour.ClockHand.transform.rotation = Quaternion.Euler(0, 0, -6*(CallingCharacterBehaviour.CharacterEntity.energy));
+        CallingCharacterBehaviour.ClockHand.transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, -6*(CallingCharacterBehaviour.CharacterEntity.energy));
+        CallingCharacterBehaviour.ClockHand.transform.GetChild(1).transform.rotation = Quaternion.Euler(0, 0, -6*(CallingCharacterBehaviour.CharacterEntity.energy + CallingCharacterBehaviour.CharacterEntity.spd));
     }
 
     public static void UpdateSelectUnitBanner(TickCounter CallingTickCounter)
