@@ -26,6 +26,7 @@ public static class ActionStatics
         public int targetNumber;
         public int requiredSP;
         public string description;
+        int hitcount = 1; //multihit basically
     }
 
     //-3: Target Self
