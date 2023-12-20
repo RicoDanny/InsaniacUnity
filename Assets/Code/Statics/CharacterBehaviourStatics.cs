@@ -11,6 +11,7 @@ public static class CharacterBehaviourStatics
     [System.Serializable]
     public class Character
     {
+        public CharacterBehaviour ParentCharacterBehaviour;
         public string Name;
         public int hp;
         public int maxhp;
@@ -194,6 +195,8 @@ public static class CharacterBehaviourStatics
                 CallingCharacterBehaviour.CharacterEntity = JsonCharacter;
             }
         }
+
+        CallingCharacterBehaviour.CharacterEntity.ParentCharacterBehaviour = CallingCharacterBehaviour;
     }
 
     public static void DefineHighlights(CharacterBehaviour CallingCharacterBehaviour)
@@ -203,6 +206,7 @@ public static class CharacterBehaviourStatics
             if(CharacterChild.name == CallingCharacterBehaviour.name + "HP"){CallingCharacterBehaviour.CharacterHPText = CharacterChild.gameObject;}
             if(CharacterChild.name == "Highlight"){CallingCharacterBehaviour.HighlightObject = CharacterChild.gameObject; CallingCharacterBehaviour.HighlightRenderer = CharacterChild.GetComponent<SpriteRenderer>();}
             if(CharacterChild.name == "ActiveHighlight"){CallingCharacterBehaviour.ActiveHighlightRenderer = CharacterChild.GetComponent<SpriteRenderer>();}
+            if(CharacterChild.name == "DamageTaken"){CallingCharacterBehaviour.DamageTakenText = CharacterChild.GetComponent<TMPro.TextMeshProUGUI>();}
         }
     }
 
@@ -234,7 +238,21 @@ public static class CharacterBehaviourStatics
                 CallingCharacterBehaviour.ClockHand = ThingToAssign.gameObject;
             }
 
-            if(ThingToAssign.name == "Weapon"){ThingToAssign.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting("BasicAttack"));}
+            if(ThingToAssign.name == "Weapon")
+            {
+                ThingToAssign.GetComponent<Button>().onClick.AddListener(() => CallingCharacterBehaviour.HandleTargeting("BasicAttack"));
+                ThingToAssign.GetComponent<Button>().onClick.AddListener(() => Menu.SetActive(false));
+            }
+
+            if(ThingToAssign.name == "Emote")
+            {
+                ThingToAssign.GetComponent<Button>().onClick.AddListener(() => Menu.SetActive(false));
+            }
+
+            if(ThingToAssign.name == "Skill")
+            {
+                ThingToAssign.GetComponent<Button>().onClick.AddListener(() => Menu.SetActive(false));
+            }
 
             if(ThingToAssign.name == "EmoteList"){CallingCharacterBehaviour.EmoteList = ThingToAssign.gameObject;}
             if(ThingToAssign.name == "SkillList"){CallingCharacterBehaviour.SkillList = ThingToAssign.gameObject;}

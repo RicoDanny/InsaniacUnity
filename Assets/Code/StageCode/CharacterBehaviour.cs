@@ -40,6 +40,7 @@ public class CharacterBehaviour : MonoBehaviour
     [HideInInspector] public GameObject HighlightObject;
     [HideInInspector] public SpriteRenderer HighlightRenderer;
     [HideInInspector] public SpriteRenderer ActiveHighlightRenderer;
+    [HideInInspector] public TMPro.TextMeshProUGUI DamageTakenText;
     [HideInInspector] private CharacterBehaviour ThisCharacterBehaviour;
     public TickCounter TickCounterObject;
     [HideInInspector] public Character CharacterEntity;

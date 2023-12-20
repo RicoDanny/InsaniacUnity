@@ -328,6 +328,12 @@ public static class ActionStatics
         CallingCharacterBehaviour.TargetsPerAction.RemoveAt(0);
     }
 
+    public static void DisplayDamage(Character TargetCharacter, int DamageDone)
+    {
+        TargetCharacter.ParentCharacterBehaviour.DamageTakenText.text = "-" + DamageDone.ToString();
+        TargetCharacter.ParentCharacterBehaviour.DamageTakenText.color = new Color(TargetCharacter.ParentCharacterBehaviour.DamageTakenText.color.r, TargetCharacter.ParentCharacterBehaviour.DamageTakenText.color.g, TargetCharacter.ParentCharacterBehaviour.DamageTakenText.color.b, 255);
+    }
+
     public static void AImove(CharacterBehaviour CallingCharacterBehaviour)
     {
         if(CallingCharacterBehaviour.TickCounterObject.Active.Contains(CallingCharacterBehaviour))
@@ -437,7 +443,11 @@ public static class ActionStatics
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        int DMG = DmgCalculation(UserBattler, TargetBattler);
+
+        TargetBattler.hp -= DMG;
+
+        DisplayDamage(TargetBattler, DMG);
 
         EndAction(CallingCharacterBehaviour);
     }
