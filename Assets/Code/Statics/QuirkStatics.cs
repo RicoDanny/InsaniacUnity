@@ -10,6 +10,7 @@ public static class  QuirkStatics
         public string name;
         public int totalduration;
         public int duration;
+        public bool ispositive;
         public bool tickbased = false;
     }
 

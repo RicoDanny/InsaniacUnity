@@ -9,6 +9,7 @@ public static class  ModifierStatics
     {
         public int totalduration;
         public int duration;
+        public bool ispositive;
         public int atkboost = 0;
         public int defboost = 0;
         public int dmgboost = 0;
