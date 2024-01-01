@@ -416,7 +416,9 @@ public static class ActionStatics
                 }
                 else if(ChosenSkill.targetNumber == 2)
                 {
+                    AITargets.Add( CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>() );
                     
+                    AITargets.Add( CallingCharacterBehaviour.TickCounterObject.GoodGuysObject.transform.Cast<Transform>().Where(child => child.gameObject.activeSelf && !AITargets.Contains(child.GetComponent<CharacterBehaviour>())).Skip(Random.Range(0,ChosenCharacterStrings.Count)).FirstOrDefault()?.gameObject.GetComponent<CharacterBehaviour>() );
                 }
                 //Als targetNumber 3 is, dan is het hele enemy team, dus -2, dus gebeurd niet bij enemy skills
             
