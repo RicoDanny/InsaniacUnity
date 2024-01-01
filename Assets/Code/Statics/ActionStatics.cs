@@ -264,7 +264,7 @@ public static class ActionStatics
         return false;
     }
 
-    public static int DmgCalculation(Character UserBattler, Character TargetBattler) 
+    public static int DmgCalculation(Character UserBattler, Character TargetBattler, Skill UsingSkill) 
     {
         UserBattler.statusmultiplier = StatusCalculation(UserBattler, TargetBattler);
 
