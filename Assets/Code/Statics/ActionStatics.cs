@@ -449,7 +449,7 @@ public static class ActionStatics
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        int DMG = DmgCalculation(UserBattler, TargetBattler);
+        int DMG = DmgCalculation(UserBattler, TargetBattler, Skills["BasicAttack"]);
 
         TargetBattler.hp -= DMG;
 

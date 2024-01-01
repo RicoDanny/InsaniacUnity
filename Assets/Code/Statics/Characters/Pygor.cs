@@ -19,7 +19,7 @@ public static class Pygor
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["Matchsticks"]);
 
         //inflict ablaze
         InflictQuirk(TargetBattler, new Quirk{name = "Ablaze", duration = 3, totalduration = 3});
@@ -46,7 +46,7 @@ public static class Pygor
 
         UserBattler.atk = UserBattler.spd;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["LateForWork"]);
 
         //Reset
         UserBattler.atk = tempatk;
@@ -71,7 +71,7 @@ public static class Pygor
         {
             Character TargetBattler = TargetBattlerCharacterBehaviour.CharacterEntity;
 
-            TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+            TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["RiskyManeuver"]);
         }
 
         EndAction(CallingCharacterBehaviour);
@@ -86,7 +86,7 @@ public static class Pygor
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["LitOnFire"]);
 
         EndAction(CallingCharacterBehaviour);
     }
@@ -99,7 +99,7 @@ public static class Pygor
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["FeastFlail"]);
 
         EndAction(CallingCharacterBehaviour);
     }

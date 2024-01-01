@@ -24,7 +24,7 @@ public static class Min
 
         TargetBattler.def = 0;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["LookOverThere"]);
 
         TargetBattler.def += TargetBattlerDef;
 

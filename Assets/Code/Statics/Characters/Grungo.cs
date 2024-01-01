@@ -31,7 +31,7 @@ public static class Grungo
             UserBattler.critmultiplier *= 1.5f;
         }
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["BodyCheck"]);
 
         //reset stats
         UserBattler.critmultiplier = tempcritmultiplier;
@@ -55,7 +55,7 @@ public static class Grungo
         if(TargetBattler.status == "Vexed" || TargetBattler.status == "Throthing")
         {
             //BasicAttack
-            TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+            TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["Break"]);
         }
 
         EndAction(CallingCharacterBehaviour);
@@ -88,7 +88,7 @@ public static class Grungo
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;
 
         //Basicattack
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["Suffer"]);
 
         //Inflict bleeding
         InflictQuirk(TargetBattler, new Quirk{name = "Bleeding", duration = -1, totalduration = -1});

@@ -19,7 +19,7 @@ public static class LaVigneSuspecte
 
         UserBattler.atk += 1;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["Grapeshot"]);
 
         UserBattler.atk -= 1;
 

@@ -18,7 +18,7 @@ public static class Fantolectrique
 
         UserBattler.atk -= 1;
 
-        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler);
+        TargetBattler.hp -= DmgCalculation(UserBattler, TargetBattler, Skills["ShockingNews"]);
 
         UserBattler.atk += 1;
 
