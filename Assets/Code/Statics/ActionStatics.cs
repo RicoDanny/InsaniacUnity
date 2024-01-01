@@ -25,6 +25,9 @@ public static class ActionStatics
         public string displayName;
         public int targetNumber;
         public int requiredSP;
+        public string type;
+        public int cooldown = 0;
+        public int startup = 0;
         public string description;
         int hitcount = 1; //multihit basically
     }
@@ -39,43 +42,43 @@ public static class ActionStatics
             { "BasicAttack", new Skill {name = "BasicAttack", targetNumber = 1, requiredSP = 0} },
 
             //Min
-            { "LookOverThere", new Skill {name = "LookOverThere", targetNumber = 1, requiredSP = 5, displayName = "Look over there!"} },
-            { "HypeUp", new Skill {name = "HypeUp", targetNumber = 1, requiredSP = 3, displayName = "Hype up!"} },
-            { "Speech", new Skill {name = "Speech", targetNumber = -1, requiredSP = 6, displayName = "Speech"} },
-            { "Overwork", new Skill {name = "Overwork", targetNumber = 1, requiredSP = 5, displayName = "Overwork"} },
+            { "LookOverThere", new Skill {name = "LookOverThere", targetNumber = 1, requiredSP = 5, type = "Rushdown", displayName = "Look over there!"} },
+            { "HypeUp", new Skill {name = "HypeUp", targetNumber = 1, requiredSP = 3, type = "Rushdown", displayName = "Hype up!"} },
+            { "Speech", new Skill {name = "Speech", targetNumber = -1, requiredSP = 6, type = "Rushdown", displayName = "Speech"} },
+            { "Overwork", new Skill {name = "Overwork", targetNumber = 1, requiredSP = 5, type = "Rushdown", displayName = "Overwork"} },
 
             //Grungo
-            { "BodyCheck", new Skill {name = "BodyCheck", targetNumber = 1, requiredSP = 4, displayName = "Body check"} },
-            { "Break", new Skill {name = "Break", targetNumber = 1, requiredSP = 5, displayName = "Break"} },
-            { "ChainAttack", new Skill {name = "ChainAttack", targetNumber = -1, requiredSP = 10, displayName = "Chain-attack"} },
-            { "Suffer", new Skill {name = "Suffer", targetNumber = 1, requiredSP = 3, displayName = "Suffer"} },
+            { "BodyCheck", new Skill {name = "BodyCheck", targetNumber = 1, requiredSP = 4, type = "Rushdown", displayName = "Body check"} },
+            { "Break", new Skill {name = "Break", targetNumber = 1, requiredSP = 5, type = "Rushdown", displayName = "Break"} },
+            { "ChainAttack", new Skill {name = "ChainAttack", targetNumber = -1, requiredSP = 10, type = "Rushdown", displayName = "Chain-attack"} },
+            { "Suffer", new Skill {name = "Suffer", targetNumber = 1, requiredSP = 3, type = "Rushdown", displayName = "Suffer"} },
 
             //Pygor
-            { "Matchsticks", new Skill {name = "Matchsticks", targetNumber = 1, requiredSP = 1, displayName = "Matchsticks"} },
-            { "LateForWork", new Skill {name = "LateForWork", targetNumber = 1, requiredSP = 8, displayName = "Late for work"} },
-            { "RiskyManeuver", new Skill {name = "RiskyManeuver", targetNumber = 2, requiredSP = 6, displayName = "Risky maneuver"} },
-            { "LitOnFire", new Skill {name = "LitOnFire", targetNumber = -2, requiredSP = 6, displayName = "Lit on fire"} },
-            { "FeastFlail", new Skill {name = "FeastFlail", targetNumber = -1, requiredSP = 4, displayName = "Feast flail"} },
+            { "Matchsticks", new Skill {name = "Matchsticks", targetNumber = 1, requiredSP = 1, type = "Rushdown", displayName = "Matchsticks"} },
+            { "LateForWork", new Skill {name = "LateForWork", targetNumber = 1, requiredSP = 8, type = "Rushdown", displayName = "Late for work"} },
+            { "RiskyManeuver", new Skill {name = "RiskyManeuver", targetNumber = 2, requiredSP = 6, type = "Rushdown", displayName = "Risky maneuver"} },
+            { "LitOnFire", new Skill {name = "LitOnFire", targetNumber = -2, requiredSP = 6, type = "Rushdown", displayName = "Lit on fire"} },
+            { "FeastFlail", new Skill {name = "FeastFlail", targetNumber = -1, requiredSP = 4, type = "Rushdown", displayName = "Feast flail"} },
 
             //Freddy
-            { "RainOfPain", new Skill {name = "RainOfPain", targetNumber = 1, requiredSP = 7, displayName = "Rain of pain"} },
-            { "FinancialThreat", new Skill {name = "FinancialThreat", targetNumber = 1, requiredSP = 2, displayName = "Financial threat"} },
-            { "ArtificialDeflation", new Skill {name = "ArtificialDeflation", targetNumber = -2, requiredSP = 8, displayName = "Artificial deflation"} },
-            { "TakeALoan", new Skill {name = "TakeALoan", targetNumber = -3, requiredSP = 0, displayName = "Take a loan"} },
+            { "RainOfPain", new Skill {name = "RainOfPain", targetNumber = 1, requiredSP = 7, type = "Rushdown", displayName = "Rain of pain"} },
+            { "FinancialThreat", new Skill {name = "FinancialThreat", targetNumber = 1, requiredSP = 2, type = "Rushdown", displayName = "Financial threat"} },
+            { "ArtificialDeflation", new Skill {name = "ArtificialDeflation", targetNumber = -2, requiredSP = 8, type = "Rushdown", displayName = "Artificial deflation"} },
+            { "TakeALoan", new Skill {name = "TakeALoan", targetNumber = -3, requiredSP = 0, type = "Rushdown", displayName = "Take a loan"} },
 
             //ENEMY SKILLS
             //LaVigneSuspecte
-            { "Grapeshot", new Skill {name = "Grapeshot", targetNumber = -2, requiredSP = 3} },
+            { "Grapeshot", new Skill {name = "Grapeshot", targetNumber = -2, requiredSP = 3, type = "Rushdown"} },
 
             //Fantolectrique
-            { "ShockingNews", new Skill {name = "ShockingNews", targetNumber = 1, requiredSP = 4} },
+            { "ShockingNews", new Skill {name = "ShockingNews", targetNumber = 1, requiredSP = 4, type = "Rushdown"} },
 
             //EMOTES
-            { "Giggle", new Skill {name = "Giggle", targetNumber = 1, requiredSP = 3, displayName = "Giggle"} },
-            { "Complain", new Skill {name = "Complain", targetNumber = 1, requiredSP = 3, displayName = "Complain"} },
-            { "Whisper", new Skill {name = "Whisper", targetNumber = 1, requiredSP = 3, displayName = "Whisper"} },
-            { "Wallow", new Skill {name = "Wallow", targetNumber = 1, requiredSP = 3, displayName = "Wallow"} },
-            { "Delude", new Skill {name = "Delude", targetNumber = 1, requiredSP = 3, displayName = "Delude"} },
+            { "Giggle", new Skill {name = "Giggle", targetNumber = 1, requiredSP = 3, type = "Emote", displayName = "Giggle"} },
+            { "Complain", new Skill {name = "Complain", targetNumber = 1, requiredSP = 3, type = "Emote", displayName = "Complain"} },
+            { "Whisper", new Skill {name = "Whisper", targetNumber = 1, requiredSP = 3, type = "Emote", displayName = "Whisper"} },
+            { "Wallow", new Skill {name = "Wallow", targetNumber = 1, requiredSP = 3, type = "Emote", displayName = "Wallow"} },
+            { "Delude", new Skill {name = "Delude", targetNumber = 1, requiredSP = 3, type = "Emote", displayName = "Delude"} },
         };
 
     public static Dictionary<string, List<Skill>> ChosenSkills = new Dictionary<string, List<Skill>>
