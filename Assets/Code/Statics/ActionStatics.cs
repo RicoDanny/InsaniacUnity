@@ -285,6 +285,11 @@ public static class ActionStatics
             DMG = TargetBattler.hp;
         }
 
+        if(TargetBattler.avop >= 60)
+        {
+            DMG = 0;
+        }
+
         UserBattler.luckp -= ((int) (UserBattler.luckp/60))*60;
 
         UserBattler.critp -= ((int) (UserBattler.critp/60))*60;
