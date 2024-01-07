@@ -167,7 +167,6 @@ public static class ActionStatics
 
         if(IsCharacterActive)
         {
-            CallingCharacterBehaviour.CharacterEntity.turn++;
             CallingCharacterBehaviour.TickCounterObject.Active.Remove(CallingCharacterBehaviour);
         }
 

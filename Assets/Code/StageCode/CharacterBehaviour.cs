@@ -100,6 +100,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         if(CharacterActive(this)) //Does char have turn right now?
         {
+            Debug.Log(CharacterEntity.turn, this.gameObject);
             //Loop through quirks and do their respective methods
             string[] QuirkMethods = LoopThroughQuirks(this);
             foreach (string CharacterQuirk in QuirkMethods) 
@@ -112,6 +113,8 @@ public class CharacterBehaviour : MonoBehaviour
 
             //Do your move
             CallStaticAction(Actions[0], this); //Psst, Ga in de toekomst [turns] als je niet wilt dat de turns worden verwijderd! (Non-Removal-Based NRM voor nerds (Moet ook in EndAction veranderen))
+
+            CharacterEntity.turn++;
         }
 
         Death(this);
