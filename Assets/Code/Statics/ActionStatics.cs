@@ -274,12 +274,17 @@ public static class ActionStatics
         //Damage = (((ATK + ATK BOOST) x ATK MULTIPLIER) x LUCKY - DEF + DMG Buffs) x CRIT x STATUS MULTIPLIER x GUARD MULTIPLIER + FLAT DAMAGE/MINIMUM DAMAGE
         int DMG = (int) Mathf.Round((float) ((((UserBattler.atk + UserBattler.atkboost) * UserBattler.atkmultiplier) * UserBattler.luckymultiplier - ((TargetBattler.def + TargetBattler.defboost) * TargetBattler.defmultiplier) + UserBattler.dmgboost) * UserBattler.critmultiplier * UserBattler.statusmultiplier * TargetBattler.guardmultiplier));
 
-        if (DMG < TargetBattler.basedmg)
+        if(DMG > 99)
+        {
+            DMG = 99;
+        }
+
+        if(DMG < TargetBattler.basedmg)
         {
             DMG = TargetBattler.basedmg;
         }
 
-        if (TargetBattler.hp - DMG < 0)
+        if(TargetBattler.hp - DMG < 0)
         {
             DMG = TargetBattler.hp;
         }
@@ -292,6 +297,15 @@ public static class ActionStatics
         UserBattler.luckp -= ((int) (UserBattler.luckp/60))*60;
 
         UserBattler.critp -= ((int) (UserBattler.critp/60))*60;
+
+        if(DMG > 0)
+        {
+            UserBattler.luckp += UserBattler.luck * UserBattler.luckpmultiplier;
+
+            UserBattler.critp += UserBattler.crit * UserBattler.critpmultiplier;
+
+            TargetBattler.avop += TargetBattler.avo * TargetBattler.avopmultiplier;
+        }
 
         return DMG;
     }
@@ -335,9 +349,6 @@ public static class ActionStatics
         Debug.Log(CallingCharacterBehaviour.name + " performed " + CallingCharacterBehaviour.Actions[0] + " on " +  CallingCharacterBehaviour.TargetsPerAction[0][0].name);
 
         CallingCharacterBehaviour.CharacterEntity.sp -= Skills[CallingCharacterBehaviour.Actions[0]].requiredSP;
-
-        CallingCharacterBehaviour.Actions.RemoveAt(0);
-        CallingCharacterBehaviour.TargetsPerAction.RemoveAt(0);
     }
 
     public static void DisplayDamage(Character TargetCharacter, int DamageDone)
@@ -441,6 +452,7 @@ public static class ActionStatics
 
     public static void InflictQuirk(Character InflictedCharacter, Quirk InflictingQuirk)
     {
+        
         InflictedCharacter.quirks[InflictingQuirk.name].Add(InflictingQuirk);
     }
 
@@ -451,8 +463,8 @@ public static class ActionStatics
 
     public static void BasicAttack(CharacterBehaviour CallingCharacterBehaviour)
     {
-        CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[0];
         Character UserBattler = CallingCharacterBehaviour.CharacterEntity;
+        CharacterBehaviour[] TargetBattlerList = CallingCharacterBehaviour.TargetsPerAction[UserBattler.turn];
 
         //Je weet dat in basic attack er maar 1 target is dus
         Character TargetBattler = TargetBattlerList[0].CharacterEntity;

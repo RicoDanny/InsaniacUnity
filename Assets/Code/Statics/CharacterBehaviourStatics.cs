@@ -37,6 +37,9 @@ public static class CharacterBehaviourStatics
         public float defmultiplier = 1.0f;
         public float luckymultiplier = 1.0f;
         public float critmultiplier = 1.0f;
+        public float luckpmultiplier = 1.0f;
+        public float critpmultiplier = 1.0f;
+        public float avopmultiplier = 1.0f;
         public float guardmultiplier = 1.0f;
         public int loweredspcost = 0;
         public int turn = 0;

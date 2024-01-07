@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static CharacterBehaviourStatics;
+
 public static class  QuirkStatics
 {
     [System.Serializable]
@@ -12,6 +14,7 @@ public static class  QuirkStatics
         public int duration;
         public bool ispositive;
         public bool tickbased = false;
+        public Character inflictor;
     }
 
     public static string[] LoopThroughQuirks(CharacterBehaviour CallingCharacterBehaviour)
