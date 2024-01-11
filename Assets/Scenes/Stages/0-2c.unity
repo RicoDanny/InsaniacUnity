@@ -402,6 +402,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -2509,6 +2512,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -3593,6 +3599,134 @@ MonoBehaviour:
   WinScreen: {fileID: 538339894}
   LoseScreen: {fileID: 2064373379}
   BattleUIObject: {fileID: 447595630}
+--- !u!1 &1097385920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097385922}
+  - component: {fileID: 1097385921}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1097385921
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097385920}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 11acdf11e25f8ff4db3ae8bb379dd165, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.52
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1097385922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097385920}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 212.88542, y: 226.55823, z: 619.2567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229672075
 GameObject:
   m_ObjectHideFlags: 0
@@ -4720,6 +4854,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -5211,6 +5348,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -7022,6 +7162,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -7262,6 +7405,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -7662,6 +7808,9 @@ MonoBehaviour:
     defmultiplier: 1
     luckymultiplier: 1
     critmultiplier: 1
+    luckpmultiplier: 1
+    critpmultiplier: 1
+    avopmultiplier: 1
     guardmultiplier: 1
     loweredspcost: 0
     turn: 0
@@ -7956,3 +8105,4 @@ SceneRoots:
   - {fileID: 1930523813}
   - {fileID: 1772524031}
   - {fileID: 772948780}
+  - {fileID: 1097385922}
