@@ -300,11 +300,11 @@ public static class ActionStatics
 
         if(DMG > 0)
         {
-            UserBattler.luckp += UserBattler.luck * UserBattler.luckpmultiplier;
+            UserBattler.luckp += (int) (UserBattler.luck * UserBattler.luckpmultiplier);
 
-            UserBattler.critp += UserBattler.crit * UserBattler.critpmultiplier;
+            UserBattler.critp += (int) (UserBattler.crit * UserBattler.critpmultiplier);
 
-            TargetBattler.avop += TargetBattler.avo * TargetBattler.avopmultiplier;
+            TargetBattler.avop += (int) (TargetBattler.avo * TargetBattler.avopmultiplier);
         }
 
         return DMG;
